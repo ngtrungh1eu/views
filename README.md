@@ -2,7 +2,7 @@
 
 ### Table of contents
 - [*VieWS*](#views)
-    - [Table of contents](#table-of-contents)
+- [Table of contents](#table-of-contents)
 - [Member](#member)
 - [About the project](#about-the-project)
 - [Wireframe](#wireframe)
