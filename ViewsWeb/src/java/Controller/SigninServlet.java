@@ -5,8 +5,8 @@
  */
 package Controller;
 
-import Registration.ViewsDAO;
-import Registration.ViewsDTO;
+import Registration.AccountsDAO;
+import Registration.AccountsDTO;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.SQLException;
@@ -39,8 +39,8 @@ public class SigninServlet extends HttpServlet {
         String email = request.getParameter("txtEmail");
         String password = request.getParameter("txtPassword");
         try {
-            ViewsDAO dao  = new ViewsDAO();
-            ViewsDTO result = dao.checklogin(email, password);
+            AccountsDAO dao  = new AccountsDAO();
+            AccountsDTO result = dao.checklogin(email, password);
             if(result !=  null){
                 url = "signin.jsp";
             }

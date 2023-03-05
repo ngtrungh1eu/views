@@ -902,7 +902,7 @@
                                     <ul class="ah-list ah-list--design2 ah-list--link-color-secondary">
                                         <li>
 
-                                            <a href="listofall">NEW ARRIVALS</a></li>
+                                            <a href="listProduct">NEW ARRIVALS</a></li>
                                         <li class="has-dropdown">
 
                                             <a>PAGES<i class="fas fa-angle-down u-s-m-l-6"></i></a>
@@ -1137,19 +1137,19 @@
                                             <ul style="width:200px">
                                                 <li>
 
-                                                    <a href="blog-left-sidebar.html">CURNON</a></li>
+                                                    <a href="/ViewsWeb/listProduct?brand=CURNON">CURNON</a></li>
                                                 <li>
 
-                                                    <a href="blog-right-sidebar.html">EterNoWatch</a></li>
+                                                    <a href="/ViewsWeb/listProduct?brand=EterNoWatch">EterNoWatch</a></li>
                                                 <li>
 
-                                                    <a href="blog-sidebar-none.html">KLASERN</a></li>
+                                                    <a href="/ViewsWeb/listProduct?brand=KLASERN">KLASERN</a></li>
                                                 <li>
 
-                                                    <a href="blog-masonry.html">VIWAT</a></li>
+                                                    <a href="/ViewsWeb/listProduct?brand=VIWAT">VIWAT</a></li>
                                                 <li>
 
-                                                    <a href="blog-detail.html">YORS</a></li>
+                                                    <a href="/ViewsWeb/listProduct?brand=YORS">YORS</a></li>
                                             </ul>
                                             <!--====== End - Dropdown ======-->
                                         </li>

@@ -5,8 +5,8 @@
  */
 package Controller;
 
-import Registration.ViewsDAO;
-import Registration.ViewsDTO;
+import Registration.ProductsDAO;
+import Registration.ProductsDTO;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.RequestDispatcher;
@@ -34,10 +34,12 @@ public class ListProductServlet extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         String url = "list-products.jsp";
+        String typeValue = request.getParameter("type");
+        String brandValue = request.getParameter("brand");
+        
         try {
-            ViewsDAO dao = new ViewsDAO();
-            dao.getAll();
-            request.setAttribute("ListP", dao.getList());
+            ProductsDAO dao =  new ProductsDAO();
+            request.setAttribute("ListP", dao.getList(brandValue, typeValue));
         } catch (Exception e) {
         }
         RequestDispatcher rd = request.getRequestDispatcher(url);

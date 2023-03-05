@@ -4,6 +4,7 @@
     Author     : ROG
 --%>
 
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html class="no-js" lang="en">
@@ -143,31 +144,31 @@
                             <div class="row">
                                 <div class="col-lg-5 col-md-5 u-s-m-b-30">
 
-                                    <a class="collection" href="shop-side-version-2.html">
+                                    <a class="collection" href="/ViewsWeb/listProduct?type=women">
                                         <div class="aspect aspect--bg-grey aspect--square">
 
-                                            <img class="aspect__img collection__img" src="images/collection/coll-1.jpg" alt=""></div>
+                                            <img class="aspect__img collection__img" src="images/collection/women-1.jpg" alt=""></div>
                                     </a></div>
                                 <div class="col-lg-7 col-md-7 u-s-m-b-30">
 
-                                    <a class="collection" href="shop-side-version-2.html">
+                                    <a class="collection" href="/ViewsWeb/listProduct?type=male">
                                         <div class="aspect aspect--bg-grey aspect--1286-890">
 
-                                            <img class="aspect__img collection__img" src="images/collection/coll-2.jpg" alt=""></div>
+                                            <img class="aspect__img collection__img" src="images/collection/men.jpg" alt=""></div>
                                     </a></div>
                                 <div class="col-lg-7 col-md-7 u-s-m-b-30">
 
-                                    <a class="collection" href="shop-side-version-2.html">
+                                    <a class="collection" href="/ViewsWeb/listProduct?brand=Eternowatch">
                                         <div class="aspect aspect--bg-grey aspect--1286-890">
 
-                                            <img class="aspect__img collection__img" src="images/collection/coll-3.jpg" alt=""></div>
+                                            <img class="aspect__img collection__img" src="images/collection/men-2.jpg" alt=""></div>
                                     </a></div>
                                 <div class="col-lg-5 col-md-5 u-s-m-b-30">
 
-                                    <a class="collection" href="shop-side-version-2.html">
+                                    <a class="collection" href="/ViewsWeb/listProduct?brand=CURNON">
                                         <div class="aspect aspect--bg-grey aspect--square">
 
-                                            <img class="aspect__img collection__img" src="images/collection/coll-4.jpg" alt=""></div>
+                                            <img class="aspect__img collection__img" src="images/collection/curnon.jpg" alt=""></div>
                                     </a></div>
                             </div>
                         </div>
@@ -182,7 +183,7 @@
                 <div class="u-s-p-b-60">
 
                     <!--====== Section Intro ======-->
-                    <div class="section__intro u-s-m-b-16">
+<!--                    <div class="section__intro u-s-m-b-16">
                         <div class="container">
                             <div class="row">
                                 <div class="col-lg-12">
@@ -195,21 +196,21 @@
                             </div>
                         </div>
                     </div>
-                    <!--====== End - Section Intro ======-->
+                    ====== End - Section Intro ======-->
 
 
                     <!--====== Section Content ======-->
-                    <div class="section__content">
+<!--                    <div class="section__content">
                         <div class="container">
                             <div class="row">
                                 <div class="col-lg-12">
-                                    <div class="filter-category-container">
+                                    <form action="home">
+                                    <div class="filter-category-container">          
                                         <div class="filter__category-wrapper">
-
                                             <button class="btn filter__btn filter__btn--style-1 js-checked" type="button" data-filter="*">ALL</button></div>
                                         <div class="filter__category-wrapper">
 
-                                            <button class="btn filter__btn filter__btn--style-1" type="button" data-filter=".headphone">HEADPHONES</button></div>
+                                            <button class="btn filter__btn filter__btn--style-1" type="submit" data-filter=".CURNON" name="brand" value="CURNON">CURNON</button></div>
                                         <div class="filter__category-wrapper">
 
                                             <button class="btn filter__btn filter__btn--style-1" type="button" data-filter=".smartphone">SMARTPHONES</button></div>
@@ -219,10 +220,12 @@
                                         <div class="filter__category-wrapper">
 
                                             <button class="btn filter__btn filter__btn--style-1" type="button" data-filter=".dslr">DSLR</button></div>
-                                    </div>
+                                    </form>
+                                        </div>
                                     <div class="filter__grid-wrapper u-s-m-t-30">
                                         <div class="row">
-                                            <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6 u-s-m-b-30 filter__item headphone">
+                                        <c:forEach var="dto" items="${ListP}" >
+                                            <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6 u-s-m-b-30 filter__item ${dto.brand}">
                                                 <div class="product-o product-o--hover-on product-o--radius">
                                                     <div class="product-o__wrap">
 
@@ -263,6 +266,7 @@
                                                         <span class="product-o__discount">$160.00</span></span>
                                                 </div>
                                             </div>
+                                            </c:forEach>
                                             <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6 u-s-m-b-30 filter__item headphone">
                                                 <div class="product-o product-o--hover-on product-o--radius">
                                                     <div class="product-o__wrap">
@@ -602,15 +606,15 @@
                             </div>
                         </div>
                     </div>
-                    <!--====== End - Section Content ======-->
+                    ====== End - Section Content ======
                 </div>
-                <!--====== End - Section 2 ======-->
+                ====== End - Section 2 ======
 
 
-                <!--====== Section 3 ======-->
+                ====== Section 3 ======
                 <div class="u-s-p-b-60">
 
-                    <!--====== Section Intro ======-->
+                    ====== Section Intro ======
                     <div class="section__intro u-s-m-b-46">
                         <div class="container">
                             <div class="row">
@@ -626,10 +630,10 @@
                             </div>
                         </div>
                     </div>
-                    <!--====== End - Section Intro ======-->
+                    ====== End - Section Intro ======
 
 
-                    <!--====== Section Content ======-->
+                    ====== Section Content ======
                     <div class="section__content">
                         <div class="container">
                             <div class="row">
@@ -724,15 +728,15 @@
                             </div>
                         </div>
                     </div>
-                    <!--====== End - Section Content ======-->
+                    ====== End - Section Content ======
                 </div>
-                <!--====== End - Section 3 ======-->
+                ====== End - Section 3 ======
 
 
-                <!--====== Section 4 ======-->
+                ====== Section 4 ======
                 <div class="u-s-p-b-60">
 
-                    <!--====== Section Intro ======-->
+                    ====== Section Intro ======
                     <div class="section__intro u-s-m-b-46">
                         <div class="container">
                             <div class="row">
@@ -746,10 +750,10 @@
                             </div>
                         </div>
                     </div>
-                    <!--====== End - Section Intro ======-->
+                    ====== End - Section Intro ======
 
 
-                    <!--====== Section Content ======-->
+                    ====== Section Content ======
                     <div class="section__content">
                         <div class="container">
                             <div class="slider-fouc">
@@ -1003,14 +1007,14 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </div>-->
                     <!--====== End - Section Content ======-->
                 </div>
                 <!--====== End - Section 4 ======-->
 
 
                 <!--====== Section 5 ======-->
-                <div class="banner-bg">
+                <div class="banner-bg"
 
                     <!--====== Section Content ======-->
                     <div class="section__content">
