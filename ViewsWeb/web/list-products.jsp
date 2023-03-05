@@ -1022,7 +1022,7 @@
                                             <div class="product-m">
                                                 <div class="product-m__thumb">
 
-                                                    <a class="aspect aspect--bg-grey aspect--square u-d-block" href="product-detail.html">
+                                                    <a class="aspect aspect--bg-grey aspect--square u-d-block" href="">
 
                                                         <img class="aspect__img" src="${dto.image}" alt=""></a>
                                                     <div class="product-m__quick-look">

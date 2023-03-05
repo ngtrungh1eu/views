@@ -16,6 +16,10 @@
         <servlet-name>AccountServlet</servlet-name>
         <servlet-class>Controller.AccountServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>SignoutServlet</servlet-name>
+        <servlet-class>Controller.SignoutServlet</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>SigninServlet</servlet-name>
         <url-pattern>/signin</url-pattern>
@@ -31,6 +35,10 @@
     <servlet-mapping>
         <servlet-name>AccountServlet</servlet-name>
         <url-pattern>/account</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>SignoutServlet</servlet-name>
+        <url-pattern>/signout</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

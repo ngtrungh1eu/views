@@ -20,9 +20,9 @@ import java.util.List;
  */
 public class AccountsDAO implements Serializable {
 
-    public AccountsDTO checklogin(String email, String password) throws SQLException {
-        ArrayList<AccountsDTO> list;
-        list = new ArrayList<AccountsDTO>();
+    public AccountsDTO checklogin(String email, String password, String id) throws SQLException {
+//        ArrayList<AccountsDTO> list;
+//        list = new ArrayList<AccountsDTO>();
         Connection con = null;
         PreparedStatement stm = null;
         ResultSet rs = null;
@@ -31,16 +31,32 @@ public class AccountsDAO implements Serializable {
         try {
             con = DBHelper.getConnection();
             if (con != null) {
-                String sql = "select * from users "
-                        + "where username = ? and password = ?";
+                String sql = "select * from users ";
+                String where = " where ";
+                  if(email != null && password != null){
+                      sql += where; 
+                      sql += " email = ? and password = ?";
+                      where = " and ";
+                  }
+                  if(id != null){
+                      sql += where; 
+                      sql += " id = ? ";
+                      where = " and ";
+                  }
                 stm = con.prepareStatement(sql);
-                stm.setString(1, email);
-                stm.setString(2, password);
-
+                int index = 1;
+                if(email != null && password != null){
+                    stm.setString(index, email);
+                    index++;
+                    stm.setString(index, password);
+                    index++;
+                  }
+                 if(id != null){
+                    stm.setString(index, id);
+                 }
                 rs = stm.executeQuery();
-
                 if (rs.next()) {
-                    list.add(new AccountsDTO(rs.getInt(1),
+                    result = new AccountsDTO(rs.getInt(1),
                                              rs.getString(2),
                                              rs.getString(3),
                                              rs.getString(4),
@@ -50,7 +66,7 @@ public class AccountsDAO implements Serializable {
                                              rs.getString(8),
                                              rs.getString(9),
                                              rs.getString(10)
-                    ));
+                    );
                 }
             }
         } finally {

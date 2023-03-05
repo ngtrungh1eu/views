@@ -38,10 +38,11 @@ public class HomeServlet extends HttpServlet {
         String url = "home.jsp";
         String typeValue = request.getParameter("type");
         String brandValue = request.getParameter("brand");
+        String searchValue =  request.getParameter("txtSearch");
         
         try {
              ProductsDAO dao =  new ProductsDAO();
-            request.setAttribute("ListP", dao.getList(brandValue, typeValue));
+            request.setAttribute("ListP", dao.getList(brandValue, typeValue, searchValue));
         } catch (Exception e) {
         }
         RequestDispatcher rd = request.getRequestDispatcher(url);

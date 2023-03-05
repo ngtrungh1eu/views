@@ -5,21 +5,19 @@
  */
 package Controller;
 
-import Registration.ProductsDAO;
-import Registration.ProductsDTO;
 import java.io.IOException;
 import java.io.PrintWriter;
-import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 /**
  *
  * @author ROG
  */
-public class ListProductServlet extends HttpServlet {
+public class SignoutServlet extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -33,18 +31,9 @@ public class ListProductServlet extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-        String url = "list-products.jsp";
-        String typeValue = request.getParameter("type");
-        String brandValue = request.getParameter("brand");
-        String searchValue =  request.getParameter("txtSearch");
-        
-        try {
-            ProductsDAO dao =  new ProductsDAO();
-            request.setAttribute("ListP", dao.getList(brandValue, typeValue, searchValue));
-        } catch (Exception e) {
-        }
-        RequestDispatcher rd = request.getRequestDispatcher(url);
-        rd.forward(request, response);
+        HttpSession session = request.getSession();
+        session.removeAttribute("Account");
+        response.sendRedirect("home.jsp");
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

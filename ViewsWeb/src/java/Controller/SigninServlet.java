@@ -15,6 +15,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 /**
  *
@@ -38,10 +39,17 @@ public class SigninServlet extends HttpServlet {
         String url  = "";
         String email = request.getParameter("txtEmail");
         String password = request.getParameter("txtPassword");
+        String id = null;
         try {
             AccountsDAO dao  = new AccountsDAO();
-            AccountsDTO result = dao.checklogin(email, password);
+            AccountsDTO result = dao.checklogin(email, password,id);
             if(result !=  null){
+                url = "home.jsp";
+                HttpSession session =  request.getSession();
+                session.setAttribute("Account", result); 
+                System.out.println(result);
+            }else{
+                request.setAttribute("mess", "Wrong Email or Password");
                 url = "signin.jsp";
             }
         } catch (SQLException ex) {

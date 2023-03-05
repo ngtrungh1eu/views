@@ -19,7 +19,7 @@ import java.util.List;
  * @author ROG
  */
 public class ProductsDAO implements Serializable{
-    public List<ProductsDTO> getList(String brandValue, String typeValue){
+    public List<ProductsDTO> getList(String brandValue, String typeValue, String searchValue){
         ArrayList<ProductsDTO> list;  
         list = new ArrayList<ProductsDTO>();
         PreparedStatement stm = null;
@@ -35,11 +35,11 @@ public class ProductsDAO implements Serializable{
                      sql += " brand  = ? ";
                      where = " and ";
                  }
-//                 if (searchValue != null){
-//                     sql += where;
-//                     sql += " name  = ? ";
-//                     where = " and ";
-//                 }
+                 if (searchValue != null){
+                     sql += where;
+                     sql += " [Name] like ? ";
+                     where = " and ";
+                 }
                  if (typeValue != null){
                      sql += where;
                      sql += " Type  = ? ";
@@ -51,10 +51,10 @@ public class ProductsDAO implements Serializable{
                      stm.setString(index, brandValue);
                      index ++; 
                  }
-//                 if (searchValue != null){
-//                     stm.setString(index, "%" + searchValue +"%");
-//                     index ++; 
-//                 }
+                 if (searchValue != null){
+                     stm.setString(index, "%" + searchValue + "%");
+                     index ++; 
+                 }
                  if (typeValue != null ){
                      stm.setString(index, typeValue);
                      index ++;
