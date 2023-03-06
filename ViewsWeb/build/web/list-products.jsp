@@ -1022,7 +1022,7 @@
                                             <div class="product-m">
                                                 <div class="product-m__thumb">
 
-                                                    <a class="aspect aspect--bg-grey aspect--square u-d-block" href="">
+                                                    <a class="aspect aspect--bg-grey aspect--square u-d-block" href="product-detail.html">
 
                                                         <img class="aspect__img" src="${dto.image}" alt=""></a>
                                                     <div class="product-m__quick-look">
@@ -1042,11 +1042,7 @@
                                                     <div class="product-m__rating gl-rating-style"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i><i class="far fa-star"></i><i class="far fa-star"></i>
 
                                                         <span class="product-m__review">(23)</span></div>
-                                                    <div class="product-m__price">$${dto.newPrice}
-                                                        <c:if test="${dto.saleoff != '0'}">
-                                                        <span class="product-l__discount">$${dto.price}</span>
-                                                        </c:if>
-                                                    </div>
+                                                    <div class="product-m__price">$${dto.price}</div>
                                                     <div class="product-m__hover">
                                                         <div class="product-m__preview-description">
 
