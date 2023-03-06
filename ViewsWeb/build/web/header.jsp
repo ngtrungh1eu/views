@@ -1,5 +1,4 @@
 
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!--====== Main Header ======-->
             <header class="header--style-1">
@@ -20,11 +19,11 @@
 
 
                             <!--====== Search Form ======-->
-                            <form class="main-form" action="listProduct">
+                            <form class="main-form">
 
                                 <label for="main-search"></label>
 
-                                <input class="input-text input-text--border-radius input-text--style-1" type="text" id="main-search" name="txtSearch" placeholder="Search">
+                                <input class="input-text input-text--border-radius input-text--style-1" type="text" id="main-search" placeholder="Search">
 
                                 <button class="btn btn--icon fas fa-search main-search-button" type="submit"></button></form>
                             <!--====== End - Search Form ======-->
@@ -59,23 +58,17 @@
 
                                                     <a href="signup.jsp"><i class="fas fa-user-plus u-s-m-r-6"></i>
 
-                                                        <span>Signup</span></a></li> 
-                                                <c:if test="${sessionScope.Account == null}">
+                                                        <span>Signup</span></a></li>
                                                 <li>
 
                                                     <a href="signin.jsp"><i class="fas fa-lock u-s-m-r-6"></i>
 
                                                         <span>Signin</span></a></li>
-                                                </c:if>
-                                                
-                                                <c:if test="${sessionScope.Account != null}">  
                                                 <li>
 
-                                                    <a href="signout"><i class="fas fa-lock-open u-s-m-r-6"></i>
+                                                    <a href="signup.jsp"><i class="fas fa-lock-open u-s-m-r-6"></i>
 
-                                                         <span>Signout</span></a>
-                                                </li>
-                                                </c:if>
+                                                        <span>Signout</span></a></li>
                                             </ul>
                                             <!--====== End - Dropdown ======-->
                                         </li>
@@ -1188,12 +1181,9 @@
 
                                     <!--====== List ======-->
                                     <ul class="ah-list ah-list--design1 ah-list--link-color-secondary">
-                                        <c:if test="${sessionScope.Account != null}">
-                                            <li>
-                                                <a href="account?id=${sessionScope.Account.user_id}"> Hello ${sessionScope.Account.last_name}<i ></i></a>
-                                            </li>
-                                        </c:if>
-                                        
+                                        <li>
+
+                                            <a href="index.html"><i class="fas fa-home u-c-brand"></i></a></li>
                                         <li>
 
                                             <a href="wishlist.html"><i class="far fa-heart"></i></a></li>
