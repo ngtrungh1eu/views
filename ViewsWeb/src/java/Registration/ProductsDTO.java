@@ -10,18 +10,17 @@ package Registration;
  * @author ROG
  */
 public class ProductsDTO {
-     private int product_id;
+
+    private int product_id;
     private String product_name;
     private double price;
     private String image;
     private String brand;
     private int cate_id;
     private String type;
+    private int saleOff;
 
-    public ProductsDTO() {
-    }
-
-    public ProductsDTO(int product_id, String product_name, double price, String image, String brand, int cate_id, String type) {
+    public ProductsDTO(int product_id, String product_name, double price, String image, String brand, int cate_id, String type, int saleOff) {
         this.product_id = product_id;
         this.product_name = product_name;
         this.price = price;
@@ -29,6 +28,10 @@ public class ProductsDTO {
         this.brand = brand;
         this.cate_id = cate_id;
         this.type = type;
+        this.saleOff = saleOff;
+    }
+
+    public ProductsDTO() {
     }
 
     public int getProduct_id() {
@@ -86,6 +89,13 @@ public class ProductsDTO {
     public void setType(String type) {
         this.type = type;
     }
-    
-    
+
+    public int getSaleOff() {
+        return saleOff;
+    }
+
+    public void setSaleOff(int saleOff) {
+        this.saleOff = saleOff;
+    }
+
 }

@@ -41,15 +41,15 @@ public class AccountsDAO implements Serializable {
 
                 if (rs.next()) {
                     list.add(new AccountsDTO(rs.getInt(1),
-                                             rs.getString(2),
-                                             rs.getString(3),
-                                             rs.getString(4),
-                                             rs.getString(5),
-                                             rs.getString(6),
-                                             rs.getString(7),
-                                             rs.getString(8),
-                                             rs.getString(9),
-                                             rs.getString(10)
+                            rs.getString(2),
+                            rs.getString(3),
+                            rs.getString(4),
+                            rs.getString(5),
+                            rs.getString(6),
+                            rs.getString(7),
+                            rs.getString(8),
+                            rs.getString(9),
+                            rs.getString(10)
                     ));
                 }
             }
@@ -66,8 +66,7 @@ public class AccountsDAO implements Serializable {
         }
         return result;
     }
-     
-     
+
 //     public List<ViewsDTO> getListByPara(String keyword){
 //        Connection con = null;
 //        PreparedStatement stm = null;
@@ -102,8 +101,7 @@ public class AccountsDAO implements Serializable {
 //         }
 //         return list;
 //     }
-     
-     // Test ham getList()//
+    // Test ham getList()//
 //     public static void main(String[] args) {
 //        AccountsDAO dao = new AccountsDAO();
 //        String brandValue = null;
@@ -116,6 +114,4 @@ public class AccountsDAO implements Serializable {
 //         }
 //         
 //    }
-     
-     
 }

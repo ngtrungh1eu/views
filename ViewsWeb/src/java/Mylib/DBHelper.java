@@ -28,20 +28,20 @@ public class DBHelper {
         }
         return null;
     }
-//    private final static String serverName = "26.188.101.12";
-//    private final static String dbName = "Views";
-//    private final static String portNumber = "1433";
-//    private final static String instance = "";//LEAVE THIS ONE EMPTY IF YOUR SQL IS A SINGLE INSTANCE
-//    private final static String userID = "thanhtung";
-//    private final static String password = "123456";
-    
-       /* serverName phu */
-    private final static String serverName = "localhost";
+    private final static String serverName = "26.188.101.12";
     private final static String dbName = "Views";
     private final static String portNumber = "1433";
     private final static String instance = "";//LEAVE THIS ONE EMPTY IF YOUR SQL IS A SINGLE INSTANCE
     private final static String userID = "sa";
-    private final static String password = "sa123";
+    private final static String password = "123456";
+    
+       /* serverName phu */
+//    private final static String serverName = "localhost";
+//    private final static String dbName = "Views";
+//    private final static String portNumber = "1433";
+//    private final static String instance = "";//LEAVE THIS ONE EMPTY IF YOUR SQL IS A SINGLE INSTANCE
+//    private final static String userID = "sa";
+//    private final static String password = "sa123";
     
     
     
