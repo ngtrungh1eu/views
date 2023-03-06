@@ -17,18 +17,20 @@ public class ProductsDTO {
     private String brand;
     private int cate_id;
     private String type;
+    private int saleoff;
+    private double newPrice;
 
     public ProductsDTO() {
     }
 
-    public ProductsDTO(int product_id, String product_name, double price, String image, String brand, int cate_id, String type) {
+    public ProductsDTO(int product_id, String product_name, double price, String image, int cate_id, String type, int saleoff) {
         this.product_id = product_id;
         this.product_name = product_name;
         this.price = price;
         this.image = image;
-        this.brand = brand;
         this.cate_id = cate_id;
         this.type = type;
+        this.saleoff = saleoff;
     }
 
     public int getProduct_id() {
@@ -85,6 +87,22 @@ public class ProductsDTO {
 
     public void setType(String type) {
         this.type = type;
+    }
+
+    public int getSaleoff() {
+        return saleoff;
+    }
+
+    public void setSaleoff(int saleoff) {
+        this.saleoff = saleoff;
+    }
+    
+    public double getNewPrice() {
+        return (price - (price * saleoff)/100);
+    }
+
+    public void setNewPrice(double newPrice) {
+        this.newPrice = newPrice;
     }
     
     

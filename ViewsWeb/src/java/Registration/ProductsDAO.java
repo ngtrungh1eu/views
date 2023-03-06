@@ -28,11 +28,11 @@ public class ProductsDAO implements Serializable{
          try {
              Connection con =  DBHelper.getConnection();
              if(con != null){
-                 String sql = "select * from products ";
+                 String sql = "select * from products join Categories on products.CateID = Categories.CateID ";
                  String where = " where ";
                  if (brandValue != null){
                      sql += where;
-                     sql += " brand  = ? ";
+                     sql += " BrandName = ? ";
                      where = " and ";
                  }
                  if (searchValue != null){
@@ -65,10 +65,11 @@ public class ProductsDAO implements Serializable{
                      String product_name = rs.getString("Name");
                      double price = rs.getDouble("Price");
                      String image = rs.getString("Image");
-                     String brand = rs.getString("Brand");
                      int cateID = rs.getInt("CateID");
                      String type = rs.getString("Type");
-                     result = new ProductsDTO(product_id, product_name, price, image, brand, cateID, type);
+                     int saleof = rs.getInt("SaleOff");
+                     result = new ProductsDTO(product_id, product_name, price, image, cateID, type, saleof);
+                     System.out.println(rs.getString("Image"));
                      list.add(result);
                      System.out.println(list.get(0));
                     
