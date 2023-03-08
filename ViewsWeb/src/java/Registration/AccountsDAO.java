@@ -82,6 +82,81 @@ public class AccountsDAO implements Serializable {
         }
         return result;
     }
+    
+    public boolean addAccount(int id, String email, String password, String firstname, String lastname, String country, String city, String phone, String gender, String role){
+        boolean r = false;
+        try {
+            Connection con = DBHelper.getConnection();
+            String sql = "insert into users (email, [password], first_name, last_name, country, city, phone, gender, [role] ) \n"
+                    + "values ("
+                    + "?, ?, ?, ?, ?, ?, ?, ?, ? )";
+            PreparedStatement stm = con.prepareStatement(sql);
+            stm.setString(1, email);
+            stm.setString(2, password);
+            stm.setString(3, firstname);
+            stm.setString(4, lastname);
+            stm.setString(5, country);
+            stm.setString(6, city);
+            stm.setString(7, phone);
+            stm.setString(8, gender);
+            stm.setString(9, role);
+            System.out.println(email);
+            int rs = stm.executeUpdate();
+            System.out.println(rs);
+            if(rs!= 0 ){
+                r =true;
+            } else {
+                r =false;
+            }
+        } catch (SQLException e) {
+        }
+        return r;
+    }
+    
+    public String checkEmail(String email) throws SQLException {
+//        ArrayList<AccountsDTO> list;
+//        list = new ArrayList<AccountsDTO>();
+        Connection con = null;
+        PreparedStatement stm = null;
+        ResultSet rs = null;
+        String result = null;
+
+        try {
+            con = DBHelper.getConnection();
+            if (con != null) {
+                String sql = "select * from users ";
+                String where = " where ";
+                  if(email != null){
+                      sql += where; 
+                      sql += " email = ? ";
+                      where = " and ";
+                  }
+                  
+                stm = con.prepareStatement(sql);
+                int index = 1;
+                if(email != null ){
+                    stm.setString(index, email);
+                    index++;
+                   
+                rs = stm.executeQuery();
+                if (rs.next()) {
+                   result =  rs.getString("email");
+                }
+            }
+            }
+        } finally {
+            if (rs != null) {
+                rs.close();
+            }
+            if (stm != null) {
+                stm.close();
+            }
+            if (con != null) {
+                con.close();
+            }
+        }
+        return result;
+    }
      
      
 //     public List<ViewsDTO> getListByPara(String keyword){

@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html class="no-js" lang="en">
 <head>
@@ -89,7 +90,8 @@
                                 <div class="l-f-o">
                                     <div class="l-f-o__pad-box">
                                         <h1 class="gl-h1">PERSONAL INFORMATION</h1>
-                                        <form class="l-f-o__form">
+                                        
+                                        <form class="l-f-o__form" action="DispatchController">
 <!--                                            <div class="gl-s-api">
                                                 <div class="u-s-m-b-15">
 
@@ -106,19 +108,22 @@
 
                                                 <label class="gl-label" for="reg-fname">FIRST NAME *</label>
 
-                                                <input class="input-text input-text--primary-style" type="text" id="reg-fname" placeholder="First Name"></div>
+                                                <input class="input-text input-text--primary-style" type="text" name="txtNewFirstName" id="reg-fname" placeholder="First Name">
+                                            </div>
                                             <div class="u-s-m-b-30">
 
                                                 <label class="gl-label" for="reg-lname">LAST NAME *</label>
 
-                                                <input class="input-text input-text--primary-style" type="text" id="reg-lname" placeholder="Last Name"></div>
+                                                <input class="input-text input-text--primary-style" type="text" name="txtNewLastName" id="reg-lname" placeholder="Last Name"></div>
                                             <div class="gl-inline">
                                                 <div class="u-s-m-b-30">
 
                                                     <!--====== Date of Birth Select-Box ======-->
 
                                                     <span class="gl-label">BIRTHDAY</span>
-                                                    <div class="gl-dob"><select class="select-box select-box--primary-style">
+                                                    <div class="gl-dob">
+                                                        <input class="date-calender" type="date" name="DoB">
+<!--                                                        <select class="select-box select-box--primary-style">
                                                             <option selected>Month</option>
                                                             <option value="male">January</option>
                                                             <option value="male">February</option>
@@ -136,32 +141,38 @@
                                                             <option value="1992">1992</option>
                                                             <option value="1993">1993</option>
                                                             <option value="1994">1994</option>
-                                                        </select></div>
+                                                        </select>-->
+                                                    </div>
                                                     <!--====== End - Date of Birth Select-Box ======-->
                                                 </div>
                                                 <div class="u-s-m-b-30">
-
-                                                    <label class="gl-label" for="gender">GENDER</label><select class="select-box select-box--primary-style u-w-100" id="gender">
-                                                        <option selected>Select</option>
+                                                    
+                                                    <label class="gl-label" for="gender">GENDER</label><select name="NewGender" class="select-box select-box--primary-style u-w-100" id="gender">
+                                                        <option value="">Select</option>
                                                         <option value="male">Male</option>
-                                                        <option value="male">Female</option>
+                                                        <option value="female">Female</option>
                                                     </select></div>
                                             </div>
                                             <div class="u-s-m-b-30">
 
                                                 <label class="gl-label" for="reg-email">E-MAIL *</label>
 
-                                                <input class="input-text input-text--primary-style" type="text" id="reg-email" placeholder="Enter E-mail"></div>
+                                                <input class="input-text input-text--primary-style" type="text" id="reg-email" name="txtNewEmail" placeholder="Enter E-mail"></div>
                                             <div class="u-s-m-b-30">
 
                                                 <label class="gl-label" for="reg-password">PASSWORD *</label>
 
-                                                <input class="input-text input-text--primary-style" type="text" id="reg-password" placeholder="Enter Password"></div>
+                                                <input class="input-text input-text--primary-style" type="password" name="txtNewPassword" id="reg-password" placeholder="Enter Password"></div>
+                                                <div class="u-s-m-b-30">
+
+                                                <label class="gl-label" for="reg-password">CONFIRM PASSWORD *</label>
+
+                                                <input class="input-text input-text--primary-style" type="password" name="txtReNewPassword" id="reg-password" placeholder="Confirm Password"></div>
                                             <div class="u-s-m-b-15">
 
-                                                <button class="btn btn--e-transparent-brand-b-2" type="submit">CREATE</button></div>
+                                                <button class="btn btn--e-transparent-brand-b-2" type="submit" name="btAction" value="create">CREATE</button></div>
 
-                                            <a class="gl-link" href="index.html">Return to Store</a>
+                                            <a class="gl-link" href="home">Return to Store</a>
                                         </form>
                                     </div>
                                 </div>

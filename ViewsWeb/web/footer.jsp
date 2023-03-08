@@ -10,13 +10,13 @@
                                     <span class="outer-footer__content-title">Contact Us</span>
                                     <div class="outer-footer__text-wrap"><i class="fas fa-home"></i>
 
-                                        <span>4247 Ashford Drive Virginia VA-20006 USA</span></div>
+                                        <span>Lô E2a-7, Đường D1, Đ. D1, Long Thạnh Mỹ, Thành Phố Thủ Đức, Thành phố Hồ Chí Minh</span></div>
                                     <div class="outer-footer__text-wrap"><i class="fas fa-phone-volume"></i>
 
-                                        <span>(+0) 900 901 904</span></div>
+                                        <span>(+84) 28 7300 5588</span></div>
                                     <div class="outer-footer__text-wrap"><i class="far fa-envelope"></i>
 
-                                        <span>contact@domain.com</span></div>
+                                        <span>hcmuni.fpt.edu.vn</span></div>
                                     <div class="outer-footer__social">
                                         <ul>
                                             <li>

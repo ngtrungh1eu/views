@@ -104,6 +104,12 @@
 
     };
 
+
+//date
+//$('.dateselect').datepicker({
+//    format: 'mm/dd/yyyy'
+//    // startDate: '-3d'
+//});
     // Default Billing Address
     RESHOP.defaultAddressCheckbox = function() {
         if ($defaultAddressCheckbox.length) {
