@@ -6414,6 +6414,12 @@ input::-ms-clear {
 .pt-next {
     right: 20px; }
 
+
+/*----------------------Candelar---------------------------*/
+
+
+/*------------end---------------*/
+
 #pd-o-thumbnail:hover .pt-prev, #pd-o-thumbnail:hover .pt-next {
     opacity: .8; }
 
