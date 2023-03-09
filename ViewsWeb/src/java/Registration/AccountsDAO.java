@@ -65,7 +65,8 @@ public class AccountsDAO implements Serializable {
                                              rs.getString(7),
                                              rs.getString(8),
                                              rs.getString(9),
-                                             rs.getString(10)
+                                             rs.getString(10),
+                                             rs.getString(11)
                     );
                 }
             }
@@ -83,6 +84,15 @@ public class AccountsDAO implements Serializable {
         return result;
     }
     
+<<<<<<< HEAD
+    public boolean addAccount(int id, String email, String password, String firstname, String lastname,String Dob, String country, String city, String phone, String gender, String role){
+        boolean r = false;
+        try {
+            Connection con = DBHelper.getConnection();
+            String sql = "insert into users (email, [password], first_name, last_name, DoB, gender, [role] ) \n"
+                    + "values ("
+                    + "?, ?, ?, ?, ?, ?, ?)";
+=======
     public boolean addAccount(int id, String email, String password, String firstname, String lastname, String country, String city, String phone, String gender, String role){
         boolean r = false;
         try {
@@ -90,11 +100,20 @@ public class AccountsDAO implements Serializable {
             String sql = "insert into users (email, [password], first_name, last_name, country, city, phone, gender, [role] ) \n"
                     + "values ("
                     + "?, ?, ?, ?, ?, ?, ?, ?, ? )";
+>>>>>>> main
             PreparedStatement stm = con.prepareStatement(sql);
             stm.setString(1, email);
             stm.setString(2, password);
             stm.setString(3, firstname);
             stm.setString(4, lastname);
+<<<<<<< HEAD
+            stm.setString(5, Dob);
+            stm.setString(6, gender);
+            stm.setString(7, role);
+            System.out.println(email);
+            int rs = stm.executeUpdate();
+            if (rs > 0 ){
+=======
             stm.setString(5, country);
             stm.setString(6, city);
             stm.setString(7, phone);
@@ -104,6 +123,7 @@ public class AccountsDAO implements Serializable {
             int rs = stm.executeUpdate();
             System.out.println(rs);
             if(rs!= 0 ){
+>>>>>>> main
                 r =true;
             } else {
                 r =false;
