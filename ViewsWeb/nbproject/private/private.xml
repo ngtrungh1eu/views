@@ -12,30 +12,11 @@
     </editor-bookmarks>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/ROG/Documents/NetBeansProjects/ViewsWeb/src/java/Registration/ProductsDTO.java</file>
-            <file>file:/C:/Users/ROG/Documents/NetBeansProjects/ViewsWeb/src/java/Registration/AccountsDAO.java</file>
-            <file>file:/C:/Users/ROG/Documents/NetBeansProjects/ViewsWeb/web/css/utility.css</file>
-            <file>file:/C:/Users/ROG/Documents/NetBeansProjects/ViewsWeb/web/productdetail.jsp</file>
-            <file>file:/C:/Users/ROG/Documents/NetBeansProjects/ViewsWeb/web/home.jsp</file>
-            <file>file:/C:/Users/ROG/Documents/NetBeansProjects/ViewsWeb/web/account.jsp</file>
-            <file>file:/C:/Users/ROG/Documents/NetBeansProjects/ViewsWeb/web/js/app.js</file>
-            <file>file:/C:/Users/ROG/Documents/NetBeansProjects/ViewsWeb/web/WEB-INF/web.xml</file>
-            <file>file:/C:/Users/ROG/Documents/NetBeansProjects/ViewsWeb/web/cart.jsp</file>
-            <file>file:/C:/Users/ROG/Documents/NetBeansProjects/ViewsWeb/src/java/Mylib/DBHelper.java</file>
-            <file>file:/C:/Users/ROG/Documents/NetBeansProjects/ViewsWeb/web/signin.jsp</file>
-            <file>file:/C:/Users/ROG/Documents/NetBeansProjects/ViewsWeb/web/checkout.jsp</file>
-            <file>file:/C:/Users/ROG/Documents/NetBeansProjects/ViewsWeb/src/java/Controller/SigninServlet.java</file>
-            <file>file:/C:/Users/ROG/Documents/NetBeansProjects/ViewsWeb/src/java/Controller/DispatchController.java</file>
-            <file>file:/C:/Users/ROG/Documents/NetBeansProjects/ViewsWeb/src/java/Registration/ProductsDAO.java</file>
-            <file>file:/C:/Users/ROG/Documents/NetBeansProjects/ViewsWeb/src/java/Controller/AccountServlet.java</file>
-            <file>file:/C:/Users/ROG/Documents/NetBeansProjects/ViewsWeb/src/java/Controller/ListProductServlet.java</file>
-            <file>file:/C:/Users/ROG/Documents/NetBeansProjects/ViewsWeb/web/list-products.jsp</file>
-            <file>file:/C:/Users/ROG/Documents/NetBeansProjects/ViewsWeb/web/header.jsp</file>
-            <file>file:/C:/Users/ROG/Documents/NetBeansProjects/ViewsWeb/web/css/app.css</file>
-            <file>file:/C:/Users/ROG/Documents/NetBeansProjects/ViewsWeb/src/java/Controller/HomeServlet.java</file>
-            <file>file:/C:/Users/ROG/Documents/NetBeansProjects/ViewsWeb/src/java/Registration/AccountsDTO.java</file>
-            <file>file:/C:/Users/ROG/Documents/NetBeansProjects/ViewsWeb/web/signup.jsp</file>
-            <file>file:/C:/Users/ROG/Documents/NetBeansProjects/ViewsWeb/src/java/Controller/CreatAccountServlet.java</file>
+            <file>file:/D:/Learning_Material_FPT/FPT_SPRING2023/PRJ301/Vie/ViewsWeb/src/java/Registration/ProductsDAO.java</file>
+            <file>file:/D:/Learning_Material_FPT/FPT_SPRING2023/PRJ301/Vie/ViewsWeb/src/java/Registration/ProductsDTO.java</file>
+            <file>file:/D:/Learning_Material_FPT/FPT_SPRING2023/PRJ301/Vie/ViewsWeb/src/java/Controller/ProductDetailServlet.java</file>
+            <file>file:/D:/Learning_Material_FPT/FPT_SPRING2023/PRJ301/Vie/ViewsWeb/web/list-products.jsp</file>
+            <file>file:/D:/Learning_Material_FPT/FPT_SPRING2023/PRJ301/Vie/ViewsWeb/web/productdetail.jsp</file>
         </group>
     </open-files>
 </project-private>
