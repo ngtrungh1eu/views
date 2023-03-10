@@ -24,8 +24,7 @@ import javax.servlet.http.HttpSession;
 public class SigninServlet extends HttpServlet {
 
     /**
-     * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
-     * methods.
+     * Processes requests for both HTTP <code>GET</code> and <code>POST</code> methods.
      *
      * @param request servlet request
      * @param response servlet response
@@ -36,24 +35,24 @@ public class SigninServlet extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         PrintWriter out = response.getWriter();
-        String url  = "";
+        String url = "";
         String email = request.getParameter("txtEmail");
         String password = request.getParameter("txtPassword");
         String id = null;
         try {
-            AccountsDAO dao  = new AccountsDAO();
-            AccountsDTO result = dao.checklogin(email, password,id);
-            if(result !=  null){
+            AccountsDAO dao = new AccountsDAO();
+            AccountsDTO result = dao.checklogin(email, password, id);
+            if (result != null) {
                 url = "home.jsp";
-                HttpSession session =  request.getSession();
-                session.setAttribute("Account", result); 
+                HttpSession session = request.getSession();
+                session.setAttribute("Account", result);
                 System.out.println(result);
-            }else{
+            } else {
                 request.setAttribute("mess", "Wrong Email or Password");
                 url = "signin.jsp";
             }
         } catch (SQLException ex) {
-        }finally{
+        } finally {
             RequestDispatcher rd = request.getRequestDispatcher(url);
             rd.forward(request, response);
             out.close();

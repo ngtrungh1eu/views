@@ -1022,7 +1022,7 @@
                                             <div class="product-m">
                                                 <div class="product-m__thumb">
 
-                                                    <a class="aspect aspect--bg-grey aspect--square u-d-block" href="product-detail.html">
+                                                    <a class="aspect aspect--bg-grey aspect--square u-d-block" href="/ViewsWeb/productdetail?pId=${dto.product_id}">
 
                                                         <img class="aspect__img" src="${dto.image}" alt=""></a>
                                                     <div class="product-m__quick-look">
@@ -1038,7 +1038,7 @@
                                                         <a href="shop-side-version-2.html">${dto.type} Watchs</a></div>
                                                     <div class="product-m__name">
 
-                                                        <a href="product-detail.html">${dto.product_name}</a></div>
+                                                        <a href="/ViewsWeb/productdetail?pId=${dto.product_id}">${dto.product_name}</a></div>
                                                     <div class="product-m__rating gl-rating-style"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i><i class="far fa-star"></i><i class="far fa-star"></i>
 
                                                         <span class="product-m__review">(23)</span></div>
@@ -1054,7 +1054,7 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        </c:forEach>
+                                    </c:forEach>
 <!--                                        <div class="col-lg-4 col-md-6 col-sm-6">
                                             <div class="product-m">
                                                 <div class="product-m__thumb">
