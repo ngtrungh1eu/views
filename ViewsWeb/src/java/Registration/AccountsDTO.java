@@ -15,6 +15,7 @@ public class AccountsDTO {
     private String password;
     private String first_name;
     private String last_name;
+    private String Dob;
     private String country;
     private String city;
     private String phone;
@@ -29,20 +30,21 @@ public class AccountsDTO {
         this.password = password;
         this.first_name = first_name;
     }
-    
 
-    public AccountsDTO(int user_id, String email, String password, String first_name, String last_name, String country, String city, String phone, String gender, String role) {
+    public AccountsDTO(int user_id, String email, String password, String first_name, String last_name, String Dob, String country, String city, String phone, String gender, String role) {
         this.user_id = user_id;
         this.email = email;
         this.password = password;
         this.first_name = first_name;
         this.last_name = last_name;
+        this.Dob = Dob;
         this.country = country;
         this.city = city;
         this.phone = phone;
         this.gender = gender;
         this.role = role;
     }
+   
 
     
     public int getUser_id() {
@@ -84,6 +86,15 @@ public class AccountsDTO {
     public void setLast_name(String last_name) {
         this.last_name = last_name;
     }
+
+    public String getDob() {
+        return Dob;
+    }
+
+    public void setDob(String Dob) {
+        this.Dob = Dob;
+    }
+
 
     public String getCountry() {
         return country;
