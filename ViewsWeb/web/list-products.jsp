@@ -4,6 +4,7 @@
     Author     : ROG
 --%>
 
+<%@page import="Registration.ProductsDTO"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page import="java.util.List"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
@@ -1015,6 +1016,7 @@
                                         </form>
                                     </div>
                                 </div>
+                                
                                 <div class="shop-p__collection">
                                     <div class="row is-grid-active">
                                     <c:forEach var="dto" items="${ListP}">
@@ -1030,7 +1032,9 @@
                                                         <a class="fas fa-search" data-modal="modal" data-modal-id="#quick-look" data-tooltip="tooltip" data-placement="top" title="Quick Look"></a></div>
                                                     <div class="product-m__add-cart">
 
-                                                        <a class="btn--e-brand" data-modal="modal" data-modal-id="#add-to-cart">Add to Cart</a></div>
+<!--                                                        <a class="btn--e-brand" data-modal="modal" data-modal-id="#add-to-cart">Add to Cart</a></div>-->
+                                                        <a class="btn--e-brand" data-modal="modal" ></a></div>
+          
                                                 </div>
                                                 <div class="product-m__content">
                                                     <div class="product-m__category">
@@ -1042,18 +1046,11 @@
                                                     <div class="product-m__rating gl-rating-style"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i><i class="far fa-star"></i><i class="far fa-star"></i>
 
                                                         <span class="product-m__review">(23)</span></div>
-                                                    <div class="product-m__price">$${dto.price}</div>
-                                                    <div class="product-m__hover">
-                                                        <div class="product-m__preview-description">
-
-                                                            <span>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</span></div>
-                                                        <div class="product-m__wishlist">
-
-                                                            <a class="far fa-heart" href="#" data-tooltip="tooltip" data-placement="top" title="Add to Wishlist"></a></div>
-                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
+                                                    
+                                       
                                         </c:forEach>
 <!--                                        <div class="col-lg-4 col-md-6 col-sm-6">
                                             <div class="product-m">
@@ -1519,7 +1516,7 @@
                                             <a href="home.jsp">Home</a></li>
                                         <li class="has-separator">
 
-                                            <a href="shop-side-version-2.html">Electronics</a></li>
+                                            <a href="">Electronics</a></li>
                                         <li class="has-separator">
 
                                             <a href="shop-side-version-2.html">DSLR Cameras</a></li>
@@ -1690,30 +1687,37 @@
 
 
         <!--====== Add to Cart Modal ======-->
-        <div class="modal fade" id="add-to-cart">
+<!--        <div class="modal fade" id="add-to-cart" >
             <div class="modal-dialog modal-dialog-centered">
                 <div class="modal-content modal-radius modal-shadow">
 
-                    <button class="btn dismiss-button fas fa-times" type="button" data-dismiss="modal"></button>
+                    <button class="btn dismiss-button fas fa-times" type="button" onclick="" data-dismiss="modal"></button>
                     <div class="modal-body">
-                        <div class="row">
-                            <div class="col-lg-6 col-md-12">
-                                <div class="success u-s-m-b-30">
-                                    <div class="success__text-wrap"><i class="fas fa-check"></i>
+                        <div class="row"> 
+                        <%-- List<ProductsDTO> list = (List<ProductsDTO>) request.getAttribute("ListP");
+                            for (int i=0; i <= list.size(); i++) {
+                            }
+                        --%>
+                        <div class="col-lg-6 col-md-12">
+                            <div class="success u-s-m-b-30">
+                               
+                                <div class="success__text-wrap"><i class="fas fa-check"></i>
 
-                                        <span>Item is added successfully!</span></div>
-                                    <div class="success__img-wrap">
+                                    <span>Item is added successfully!</span></div>
+                                <div class="success__img-wrap">
 
-                                        <img class="u-img-fluid" src="images/product/electronic/product1.jpg" alt=""></div>
-                                    <div class="success__info-wrap">
+                                    <img class="u-img-fluid" src="${img}" alt=""></div>
+                                <div class="success__info-wrap">
 
-                                        <span class="success__name">Beats Bomb Wireless Headphone</span>
+                                    <span class="success__name">Beats Bomb Wireless Headphone</span>
 
-                                        <span class="success__quantity">Quantity: 1</span>
+                                    <span class="success__quantity">Quantity: 1</span>
 
-                                        <span class="success__price">$170.00</span></div>
-                                </div>
+                                    <span class="success__price">$170.00</span></div>
                             </div>
+                        </div>
+ 
+
                             <div class="col-lg-6 col-md-12">
                                 <div class="s-option">
 
@@ -1731,7 +1735,8 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div>-->
+
         <!--====== End - Add to Cart Modal ======-->
         <!--====== End - Modal Section ======-->
     </div>
