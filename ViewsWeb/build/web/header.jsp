@@ -1240,7 +1240,7 @@
 
 
                                                     <!--====== Card for mini cart ======-->
-                                                    <div class="card-mini-product">
+<!--                                                    <div class="card-mini-product">
                                                         <div class="mini-product">
                                                             <div class="mini-product__image-wrapper">
 
@@ -1264,10 +1264,10 @@
 
                                                         <a class="mini-product__delete-link far fa-trash-alt"></a>
                                                     </div>
-                                                    <!--====== End - Card for mini cart ======-->
+                                                    ====== End - Card for mini cart ======
 
 
-                                                    <!--====== Card for mini cart ======-->
+                                                    ====== Card for mini cart ======
                                                     <div class="card-mini-product">
                                                         <div class="mini-product">
                                                             <div class="mini-product__image-wrapper">
@@ -1292,10 +1292,10 @@
 
                                                         <a class="mini-product__delete-link far fa-trash-alt"></a>
                                                     </div>
-                                                    <!--====== End - Card for mini cart ======-->
+                                                    ====== End - Card for mini cart ======
 
 
-                                                    <!--====== Card for mini cart ======-->
+                                                    ====== Card for mini cart ======
                                                     <div class="card-mini-product">
                                                         <div class="mini-product">
                                                             <div class="mini-product__image-wrapper">
@@ -1319,7 +1319,7 @@
                                                         </div>
 
                                                         <a class="mini-product__delete-link far fa-trash-alt"></a>
-                                                    </div>
+                                                    </div>-->
                                                     <!--====== End - Card for mini cart ======-->
                                                 </div>
                                                 <!--====== End - Mini Product Container ======-->
@@ -1333,10 +1333,18 @@
 
                                                         <span class="subtotal-value">$16</span></div>
                                                     <div class="mini-action">
+                                                        <c:if test="${sessionScope.Account != null}">
 
                                                         <a class="mini-link btn--e-brand-b-2" href="checkout.html">PROCEED TO CHECKOUT</a>
 
                                                         <a class="mini-link btn--e-transparent-secondary-b-2" href="cart.jsp">VIEW CART</a></div>
+                                                        </c:if>
+                                                    <c:if test="${sessionScope.Account == null}">
+
+                                                        <a class="mini-link btn--e-brand-b-2" href="signin.jsp">PROCEED TO CHECKOUT</a>
+
+                                                        <a class="mini-link btn--e-transparent-secondary-b-2" href="signin.jsp">VIEW CART</a></div>
+                                                        </c:if>
                                                 </div>
                                                 <!--====== End - Mini Product Statistics ======-->
                                             </div>
