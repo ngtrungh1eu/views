@@ -37,15 +37,15 @@ public class ProductDetailServlet extends HttpServlet {
         String pId = request.getParameter("pId");
         String typeValue = request.getParameter("type");
         String brandValue = request.getParameter("brand");
-        String searchValue =  request.getParameter("txtSearch");
-        
+        String searchValue = request.getParameter("txtSearch");
+
         try {
-            ProductsDAO dao =  new ProductsDAO();
+            ProductsDAO dao = new ProductsDAO();
             request.setAttribute("pDetail", dao.getProduct(pId));
         } catch (Exception e) {
         }
         try {
-            ProductsDAO dao1 =  new ProductsDAO();
+            ProductsDAO dao1 = new ProductsDAO();
             request.setAttribute("ListP", dao1.getList(brandValue, typeValue, searchValue));
             System.out.println(dao1.getList(brandValue, typeValue, searchValue).get(1).getImage());
         } catch (Exception e) {

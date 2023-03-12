@@ -22,8 +22,7 @@ import javax.servlet.http.HttpServletResponse;
 public class ListProductServlet extends HttpServlet {
 
     /**
-     * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
-     * methods.
+     * Processes requests for both HTTP <code>GET</code> and <code>POST</code> methods.
      *
      * @param request servlet request
      * @param response servlet response
@@ -36,13 +35,22 @@ public class ListProductServlet extends HttpServlet {
         String url = "list-products.jsp";
         String typeValue = request.getParameter("type");
         String brandValue = request.getParameter("brand");
-        String searchValue =  request.getParameter("txtSearch");
-        
+        String searchValue = request.getParameter("txtSearch");
+        String minPrice = request.getParameter("minPrice");
+        String maxPrice = request.getParameter("maxPrice");
+
         try {
-            ProductsDAO dao =  new ProductsDAO();
+            ProductsDAO dao = new ProductsDAO();
             request.setAttribute("ListP", dao.getList(brandValue, typeValue, searchValue));
         } catch (Exception e) {
         }
+        
+        try {
+            ProductsDAO dao = new ProductsDAO();
+            request.setAttribute("ListP", dao.getListByPrice(minPrice, maxPrice));
+        } catch (Exception e) {
+        }
+        
         RequestDispatcher rd = request.getRequestDispatcher(url);
         rd.forward(request, response);
     }

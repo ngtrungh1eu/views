@@ -133,4 +133,59 @@ public class ProductsDAO implements Serializable {
         return null;
 
     }
+
+    public List<ProductsDTO> getListByPrice(String min, String max) {
+        ArrayList<ProductsDTO> list;
+        list = new ArrayList<ProductsDTO>();
+        PreparedStatement stm = null;
+        ResultSet rs = null;
+        ProductsDTO result = null;
+        try {
+            Connection con = DBHelper.getConnection();
+            if (con != null) {
+                String sql = "select * from products  ";
+                String where = " where ";
+                if (min != null) {
+                    sql += where;
+                    sql += " Price > ? ";
+                    where = " and ";
+                }
+
+                if (max != null) {
+                    sql += where;
+                    sql += " Price < ? ";
+                    where = " and ";
+                }
+
+                stm = con.prepareStatement(sql);
+                int index = 1;
+                if (min != null) {
+                    stm.setString(index, min);
+                    index++;
+                }
+                if (max != null) {
+                    stm.setString(index, max);
+                    index++;
+                }
+
+                rs = stm.executeQuery();
+                while (rs.next()) {
+                    int product_id = rs.getInt("ID");
+                    String product_name = rs.getString("Name");
+                    double price = rs.getDouble("Price");
+                    String image = rs.getString("Image");
+                    int cateID = rs.getInt("CateID");
+                    String type = rs.getString("Type");
+                    int saleof = rs.getInt("SaleOff");
+                    result = new ProductsDTO(product_id, product_name, price, image, cateID, type, saleof);
+//                    System.out.println(rs.getString("Image"));
+                    list.add(result);
+//                    System.out.println(list.get(0));
+                }
+                return list;
+            }
+        } catch (SQLException e) {
+        }
+        return null;
+    }
 }
