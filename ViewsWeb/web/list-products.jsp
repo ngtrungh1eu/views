@@ -69,12 +69,12 @@
                                                 <ul class="shop-w__category-list gl-scroll">
                                                     <li class="has-list">
 
-                                                        <a href="#">Men's Watch</a>
+                                                        <a href="/ViewsWeb/listProduct?type=Men">Men's Watch</a>
 
                                                         <span class="category-list__text u-s-m-l-6">(23)</span>
 
-                                                        <span class="js-shop-category-span is-expanded fas fa-plus u-s-m-l-6"></span>
-                                                        <ul style="display:block">
+                                                        <!--<span class="js-shop-category-span is-expanded fas fa-plus u-s-m-l-6"></span>-->
+<!--                                                        <ul style="display:block">
                                                             <li class="has-list">
 
                                                                 <a href="#">3D Printer & Supplies</a>
@@ -272,16 +272,16 @@
                                                                         <a href="#">Compact Discs</a></li>
                                                                 </ul>
                                                             </li>
-                                                        </ul>
+                                                        </ul>-->
                                                     </li>
                                                     <li class="has-list">
 
-                                                        <a href="#">Women's Watch</a>
+                                                        <a href="/ViewsWeb/listProduct?type=Women">Women's Watch</a>
 
                                                         <span class="category-list__text u-s-m-l-6">(5)</span>
 
-                                                        <span class="js-shop-category-span fas fa-plus u-s-m-l-6"></span>
-                                                        <ul>
+                                                        <!--<span class="js-shop-category-span fas fa-plus u-s-m-l-6"></span>-->
+<!--                                                        <ul>
                                                             <li class="has-list">
 
                                                                 <a href="#">Hot Categories</a>
@@ -442,11 +442,11 @@
                                                                         <a href="#">Sunglasses</a></li>
                                                                 </ul>
                                                             </li>
-                                                        </ul>
+                                                        </ul>-->
                                                     </li>
                                                     <li class="has-list">
 
-                                                        <a href="#">Klasern</a>
+                                                        <a href="/ViewsWeb/listProduct?brand=Klasern">Klasern</a>
 
                                                         <span class="category-list__text u-s-m-l-6">(5)</span>
 
@@ -616,29 +616,29 @@
                                                     </li>
                                                     <li>
 
-                                                        <a href="#">VIWAT</a>
+                                                        <a href="/ViewsWeb/listProduct?brand=VIWAT">VIWAT</a>
 
                                                         <span class="category-list__text u-s-m-l-6">(0)</span></li>
                                                     <li>
 
-                                                        <a href="#">YORS</a>
+                                                        <a href="/ViewsWeb/listProduct?brand=Yors">YORS</a>
 
                                                         <span class="category-list__text u-s-m-l-6">(0)</span></li>
                                                     <li>
 
-                                                        <a href="#">CURNON</a>
+                                                        <a href="/ViewsWeb/listProduct?brand=CURNON">CURNON</a>
 
                                                         <span class="category-list__text u-s-m-l-6">(0)</span></li>
                                                     <li>
 
-                                                        <a href="#">ETERNOWATCH</a>
+                                                        <a href="/ViewsWeb/listProduct?brand=ETERNOWATCH">ETERNOWATCH</a>
 
                                                         <span class="category-list__text u-s-m-l-6">(0)</span></li>
                                                 </ul>
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="u-s-m-b-30">
+<!--                                    <div class="u-s-m-b-30">
                                         <div class="shop-w shop-w--style">
                                             <div class="shop-w__intro-wrap">
                                                 <h1 class="shop-w__h">RATING</h1>
@@ -715,7 +715,7 @@
                                                 <ul class="shop-w__list gl-scroll">
                                                     <li>
 
-                                                        <!--====== Check Box ======-->
+                                                        ====== Check Box ======
                                                         <div class="check-box">
 
                                                             <input type="checkbox" id="free-shipping">
@@ -723,12 +723,12 @@
 
                                                                 <label class="check-box__label" for="free-shipping">Free Shipping</label></div>
                                                         </div>
-                                                        <!--====== End - Check Box ======-->
+                                                        ====== End - Check Box ======
                                                     </li>
                                                 </ul>
                                             </div>
                                         </div>
-                                    </div>
+                                    </div>-->
                                     <div class="u-s-m-b-30">
                                         <div class="shop-w shop-w--style">
                                             <div class="shop-w__intro-wrap">
@@ -737,27 +737,26 @@
                                                 <span class="fas fa-minus shop-w__toggle" data-target="#s-price" data-toggle="collapse"></span>
                                             </div>
                                             <div class="shop-w__wrap collapse show" id="s-price">
-                                                <form class="shop-w__form-p">
+                                                <form class="shop-w__form-p" method="POST" action="listProduct">
                                                     <div class="shop-w__form-p-wrap">
                                                         <div>
 
                                                             <label for="price-min"></label>
 
-                                                            <input class="input-text input-text--primary-style" type="text" id="price-min" placeholder="Min"></div>
+                                                            <input class="input-text input-text--primary-style" type="text" id="price-min" name="minPrice" placeholder="Min"></div>
                                                         <div>
 
                                                             <label for="price-max"></label>
 
-                                                            <input class="input-text input-text--primary-style" type="text" id="price-max" placeholder="Max"></div>
+                                                            <input class="input-text input-text--primary-style" type="text" id="price-max" name="maxPrice" placeholder="Max"></div>
                                                         <div>
-
                                                             <button class="btn btn--icon fas fa-angle-right btn--e-transparent-platinum-b-2" type="submit"></button></div>
                                                     </div>
                                                 </form>
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="u-s-m-b-30">
+<!--                                    <div class="u-s-m-b-30">
                                         <div class="shop-w shop-w--style">
                                             <div class="shop-w__intro-wrap">
                                                 <h1 class="shop-w__h">MANUFACTURER</h1>
@@ -884,7 +883,7 @@
                                                 <ul class="shop-w__list gl-scroll">
                                                     <li>
 
-                                                        <!--====== Check Box ======-->
+                                                        ====== Check Box ======
                                                         <div class="check-box">
 
                                                             <input type="checkbox" id="xs">
@@ -892,13 +891,13 @@
 
                                                                 <label class="check-box__label" for="xs">XS</label></div>
                                                         </div>
-                                                        <!--====== End - Check Box ======-->
+                                                        ====== End - Check Box ======
 
                                                         <span class="shop-w__total-text">(2)</span>
                                                     </li>
                                                     <li>
 
-                                                        <!--====== Check Box ======-->
+                                                        ====== Check Box ======
                                                         <div class="check-box">
 
                                                             <input type="checkbox" id="small">
@@ -906,13 +905,13 @@
 
                                                                 <label class="check-box__label" for="small">Small</label></div>
                                                         </div>
-                                                        <!--====== End - Check Box ======-->
+                                                        ====== End - Check Box ======
 
                                                         <span class="shop-w__total-text">(4)</span>
                                                     </li>
                                                     <li>
 
-                                                        <!--====== Check Box ======-->
+                                                        ====== Check Box ======
                                                         <div class="check-box">
 
                                                             <input type="checkbox" id="medium">
@@ -920,13 +919,13 @@
 
                                                                 <label class="check-box__label" for="medium">Medium</label></div>
                                                         </div>
-                                                        <!--====== End - Check Box ======-->
+                                                        ====== End - Check Box ======
 
                                                         <span class="shop-w__total-text">(6)</span>
                                                     </li>
                                                     <li>
 
-                                                        <!--====== Check Box ======-->
+                                                        ====== Check Box ======
                                                         <div class="check-box">
 
                                                             <input type="checkbox" id="large">
@@ -934,13 +933,13 @@
 
                                                                 <label class="check-box__label" for="large">Large</label></div>
                                                         </div>
-                                                        <!--====== End - Check Box ======-->
+                                                        ====== End - Check Box ======
 
                                                         <span class="shop-w__total-text">(8)</span>
                                                     </li>
                                                     <li>
 
-                                                        <!--====== Check Box ======-->
+                                                        ====== Check Box ======
                                                         <div class="check-box">
 
                                                             <input type="checkbox" id="xl">
@@ -948,13 +947,13 @@
 
                                                                 <label class="check-box__label" for="xl">XL</label></div>
                                                         </div>
-                                                        <!--====== End - Check Box ======-->
+                                                        ====== End - Check Box ======
 
                                                         <span class="shop-w__total-text">(10)</span>
                                                     </li>
                                                     <li>
 
-                                                        <!--====== Check Box ======-->
+                                                        ====== Check Box ======
                                                         <div class="check-box">
 
                                                             <input type="checkbox" id="xxl">
@@ -962,14 +961,14 @@
 
                                                                 <label class="check-box__label" for="xxl">XXL</label></div>
                                                         </div>
-                                                        <!--====== End - Check Box ======-->
+                                                        ====== End - Check Box ======
 
                                                         <span class="shop-w__total-text">(12)</span>
                                                     </li>
                                                 </ul>
                                             </div>
                                         </div>
-                                    </div>
+                                    </div>-->
                                 </div>
                             </div>
                         </div>
@@ -1035,7 +1034,7 @@
                                                 <div class="product-m__content">
                                                     <div class="product-m__category">
 
-                                                        <a href="shop-side-version-2.html">${dto.type} Watchs</a></div>
+                                                        <a href="/ViewsWeb/listProduct?type=${dto.type}">${dto.type} Watchs</a></div>
                                                     <div class="product-m__name">
 
                                                         <a href="/ViewsWeb/productdetail?pId=${dto.product_id}">${dto.product_name}</a></div>

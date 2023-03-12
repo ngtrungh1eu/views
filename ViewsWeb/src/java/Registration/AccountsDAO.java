@@ -33,40 +33,40 @@ public class AccountsDAO implements Serializable {
             if (con != null) {
                 String sql = "select * from users ";
                 String where = " where ";
-                  if(email != null && password != null){
-                      sql += where; 
-                      sql += " email = ? and password = ?";
-                      where = " and ";
-                  }
-                  if(id != null){
-                      sql += where; 
-                      sql += " id = ? ";
-                      where = " and ";
-                  }
+                if (email != null && password != null) {
+                    sql += where;
+                    sql += " email = ? and password = ?";
+                    where = " and ";
+                }
+                if (id != null) {
+                    sql += where;
+                    sql += " id = ? ";
+                    where = " and ";
+                }
                 stm = con.prepareStatement(sql);
                 int index = 1;
-                if(email != null && password != null){
+                if (email != null && password != null) {
                     stm.setString(index, email);
                     index++;
                     stm.setString(index, password);
                     index++;
-                  }
-                 if(id != null){
+                }
+                if (id != null) {
                     stm.setString(index, id);
-                 }
+                }
                 rs = stm.executeQuery();
                 if (rs.next()) {
                     result = new AccountsDTO(rs.getInt(1),
-                                             rs.getString(2),
-                                             rs.getString(3),
-                                             rs.getString(4),
-                                             rs.getString(5),
-                                             rs.getString(6),
-                                             rs.getString(7),
-                                             rs.getString(8),
-                                             rs.getString(9),
-                                             rs.getString(10),
-                                             rs.getString(11)
+                            rs.getString(2),
+                            rs.getString(3),
+                            rs.getString(4),
+                            rs.getString(5),
+                            rs.getString(6),
+                            rs.getString(7),
+                            rs.getString(8),
+                            rs.getString(9),
+                            rs.getString(10),
+                            rs.getString(11)
                     );
                 }
             }
@@ -83,8 +83,8 @@ public class AccountsDAO implements Serializable {
         }
         return result;
     }
-    
-    public boolean addAccount(int id, String email, String password, String firstname, String lastname,String Dob, String country, String city, String phone, String gender, String role){
+
+    public boolean addAccount(int id, String email, String password, String firstname, String lastname, String Dob, String country, String city, String phone, String gender, String role) {
         boolean r = false;
         try {
             Connection con = DBHelper.getConnection();
@@ -101,16 +101,16 @@ public class AccountsDAO implements Serializable {
             stm.setString(7, role);
             System.out.println(email);
             int rs = stm.executeUpdate();
-            if (rs > 0 ){
-                r =true;
+            if (rs > 0) {
+                r = true;
             } else {
-                r =false;
+                r = false;
             }
         } catch (SQLException e) {
         }
         return r;
     }
-    
+
     public String checkEmail(String email) throws SQLException {
 //        ArrayList<AccountsDTO> list;
 //        list = new ArrayList<AccountsDTO>();
@@ -124,23 +124,23 @@ public class AccountsDAO implements Serializable {
             if (con != null) {
                 String sql = "select * from users ";
                 String where = " where ";
-                  if(email != null){
-                      sql += where; 
-                      sql += " email = ? ";
-                      where = " and ";
-                  }
-                  
+                if (email != null) {
+                    sql += where;
+                    sql += " email = ? ";
+                    where = " and ";
+                }
+
                 stm = con.prepareStatement(sql);
                 int index = 1;
-                if(email != null ){
+                if (email != null) {
                     stm.setString(index, email);
                     index++;
-                   
-                rs = stm.executeQuery();
-                if (rs.next()) {
-                   result =  rs.getString("email");
+
+                    rs = stm.executeQuery();
+                    if (rs.next()) {
+                        result = rs.getString("email");
+                    }
                 }
-            }
             }
         } finally {
             if (rs != null) {
@@ -155,8 +155,7 @@ public class AccountsDAO implements Serializable {
         }
         return result;
     }
-     
-     
+
 //     public List<ViewsDTO> getListByPara(String keyword){
 //        Connection con = null;
 //        PreparedStatement stm = null;
@@ -191,8 +190,7 @@ public class AccountsDAO implements Serializable {
 //         }
 //         return list;
 //     }
-     
-     // Test ham getList()//
+    // Test ham getList()//
 //     public static void main(String[] args) {
 //        AccountsDAO dao = new AccountsDAO();
 //        String brandValue = null;
@@ -205,6 +203,4 @@ public class AccountsDAO implements Serializable {
 //         }
 //         
 //    }
-     
-     
 }

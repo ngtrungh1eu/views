@@ -24,8 +24,7 @@ import javax.servlet.http.HttpServletResponse;
 public class HomeServlet extends HttpServlet {
 
     /**
-     * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
-     * methods.
+     * Processes requests for both HTTP <code>GET</code> and <code>POST</code> methods.
      *
      * @param request servlet request
      * @param response servlet response
@@ -38,10 +37,10 @@ public class HomeServlet extends HttpServlet {
         String url = "home.jsp";
         String typeValue = request.getParameter("type");
         String brandValue = request.getParameter("brand");
-        String searchValue =  request.getParameter("txtSearch");
-        
+        String searchValue = request.getParameter("txtSearch");
+
         try {
-             ProductsDAO dao =  new ProductsDAO();
+            ProductsDAO dao = new ProductsDAO();
             request.setAttribute("ListP", dao.getList(brandValue, typeValue, searchValue));
         } catch (Exception e) {
         }
