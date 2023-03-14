@@ -45,7 +45,7 @@ public class DBHelper {
     
     
     
-//   /* kiem tra connect SQL */
+   /* kiem tra connect SQL */
 //    public static void main(String[] args) {
 //        try {
 //            System.out.println(new DBHelper().getConnection());
