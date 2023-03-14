@@ -178,13 +178,136 @@ public class ProductsDAO implements Serializable {
                     String type = rs.getString("Type");
                     int saleof = rs.getInt("SaleOff");
                     result = new ProductsDTO(product_id, product_name, price, image, cateID, type, saleof);
-//                    System.out.println(rs.getString("Image"));
                     list.add(result);
-//                    System.out.println(list.get(0));
                 }
                 return list;
             }
         } catch (SQLException e) {
+        }
+        return null;
+    }
+
+    public List<ProductsDTO> load() {
+        ArrayList<ProductsDTO> list;
+        list = new ArrayList<ProductsDTO>();
+        PreparedStatement stm = null;
+        ResultSet rs = null;
+        ProductsDTO result = null;
+        try {
+            Connection con = DBHelper.getConnection();
+            if (con != null) {
+                String sql = " select * FROM products ";
+                String where = " where ";
+                stm = con.prepareStatement(sql);
+                rs = stm.executeQuery();
+                while (rs.next()) {
+                    int id = rs.getInt("ID");
+                    String name = rs.getString("Name");
+                    double price = rs.getDouble("Price");
+                    String type = rs.getString("Type");
+                    int saleoff = rs.getInt("SaleOff");
+                    int cate = rs.getInt("CateID");
+                    result = new ProductsDTO(id, name, price, cate, type, saleoff);
+                    list.add(result);
+                }
+                return list;
+            }
+        } catch (Exception e) {
+            System.out.println("loi me roi");
+        }
+
+        return null;
+
+    }
+
+    public Long insert(ProductsDTO product) {
+        PreparedStatement stm;
+        ResultSet rs;
+        String sql = " INSERT INTO products( ID, Name, Price, Image, CateID, Type, SaleOff) VALUES (?, ?, ?, ?, ?, ?, ?) ";
+        try {
+            Connection con = DBHelper.getConnection();
+            stm = con.prepareStatement(sql);
+            stm.setInt(1, product.getProduct_id());
+            stm.setString(2, product.getProduct_name());
+            stm.setDouble(3, product.getPrice());
+            stm.setString(4, "abc");
+            stm.setInt(5, product.getCate_id());
+            stm.setString(6, product.getType());
+            stm.setFloat(7, product.getSaleoff());
+            stm.executeUpdate();
+        } catch (Exception e) {
+        }
+
+        return null;
+
+    }
+
+    public boolean delete(Long id) {
+        ProductsDTO product;
+        PreparedStatement stm = null;
+        ResultSet rs = null;
+        try {
+            Connection con = DBHelper.getConnection();
+            if (con != null) {
+                String sql = " DELETE FROM products WHERE id = ? ";
+                String where = " where ";
+                stm = con.prepareStatement(sql);
+                stm.setLong(1, id);
+                if (stm.executeUpdate() > 0) {
+                    return true;
+                }
+            }
+        } catch (Exception e) {
+        }
+        return false;
+    }
+
+    public ProductsDTO update(ProductsDTO product) {
+        PreparedStatement stm;
+        ResultSet rs;
+        String sql = " update products set ID = ?, Name = ? , Price = ?, Image = ?, CateID = ?, Type = ?, SaleOff = ? WHERE ID = ? ";
+        try {
+            Connection con = DBHelper.getConnection();
+            stm = con.prepareStatement(sql);
+            stm.setInt(1, product.getProduct_id());
+            stm.setString(2, product.getProduct_name());
+            stm.setDouble(3, product.getPrice());
+            stm.setString(4, "abc");
+            stm.setInt(5, product.getCate_id());
+            stm.setString(6, product.getType());
+            stm.setFloat(7, product.getSaleoff());
+            stm.setInt(8, product.getProduct_id());
+            if (stm.executeUpdate() > 0) {
+                System.out.println("update dung");
+            } else {
+                System.out.println("update loi me roi");
+            }
+        } catch (Exception e) {
+        }
+        return product;
+    }
+
+    public ProductsDTO load(Long id) {
+        String sql = "select * from products where id = ?";
+        try {
+            Connection con = DBHelper.getConnection();
+            PreparedStatement stm = con.prepareStatement(sql);
+            stm.setLong(1, id);
+            ProductsDTO result = null;
+            ResultSet rs = stm.executeQuery();
+            if (rs.next()) {
+                int pId = rs.getInt("ID");
+                String name = rs.getString("Name");
+                double price = rs.getDouble("Price");
+                String type = rs.getString("Type");
+                int saleoff = rs.getInt("SaleOff");
+                int cate = rs.getInt("CateID");
+                result = new ProductsDTO(pId, name, price, cate, type, saleoff);
+            }
+            System.out.println(result);
+            return result;
+        } catch (SQLException ex) {
+            System.out.println("Query Student error!" + ex.getMessage());
         }
         return null;
     }
