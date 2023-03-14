@@ -40,58 +40,59 @@
 
             <!--====== Main Header ======-->
             <jsp:include page="header.jsp"></jsp:include>
-            <!--====== End - Main Header ======-->
+                <!--====== End - Main Header ======-->
 
 
-            <!--====== App Content ======-->
-            <div class="app-content">
+                <!--====== App Content ======-->
+                <div class="app-content">
 
-                <!--====== Section 1 ======-->
-                <div class="u-s-p-y-60">
+                    <!--====== Section 1 ======-->
+                    <div class="u-s-p-y-60">
 
-                    <!--====== Section Content ======-->
-                    <div class="section__content">
-                        <div class="container">
-                            <div class="breadcrumb">
-                                <div class="breadcrumb__wrap">
-                                    <ul class="breadcrumb__list">
-                                        <li class="has-separator">
+                        <!--====== Section Content ======-->
+                        <div class="section__content">
+                            <div class="container">
+                                <div class="breadcrumb">
+                                    <div class="breadcrumb__wrap">
+                                        <ul class="breadcrumb__list">
+                                            <li class="has-separator">
 
-                                            <a href="index.html">Home</a></li>
-                                        <li class="is-marked">
+                                                <a href="index.html">Home</a></li>
+                                            <li class="is-marked">
 
-                                            <a href="dashboard.html">My Account</a></li>
-                                    </ul>
+                                                <a href="dashboard.html">My Account</a></li>
+                                        </ul>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
-                <!--====== End - Section 1 ======-->
+                    <!--====== End - Section 1 ======-->
 
 
-                <!--====== Section 2 ======-->
-                <div class="u-s-p-b-60">
+                    <!--====== Section 2 ======-->
+                    <div class="u-s-p-b-60">
 
-                    <!--====== Section Content ======-->
-                    <div class="section__content">
-                        <div class="dash">
-                            <div class="container">
-                                <div class="row">
-                                    <div class="col-lg-3 col-md-12">
+                        <!--====== Section Content ======-->
+                        <div class="section__content">
+                            <div class="dash">
+                                <div class="container">
+                                    <div class="row">
+                                        <div class="col-lg-3 col-md-12">
 
-                                        <!--====== Dashboard Features ======-->
-                                        <div class="dash__box dash__box--bg-white dash__box--shadow u-s-m-b-30">
-                                            <div class="dash__pad-1">
+                                            <!--====== Dashboard Features ======-->
+                                            <div class="dash__box dash__box--bg-white dash__box--shadow u-s-m-b-30">
+                                                <div class="dash__pad-1">
 
-                                                  <span class="dash__text u-s-m-b-16">Hello, ${sessionScope.Account.last_name} </span>
+                                                    <span class="dash__text u-s-m-b-16">Hello, ${sessionScope.Account.last_name} </span>
                                                 <ul class="dash__f-list">
                                                     <li>
 
                                                         <a class="dash-active" href="dashboard.html">Manage My Account</a></li>
                                                     <li>
 
-                                                        <a href="dash-my-profile.html">My Profile</a></li>
+                                                        <a href="dash.html">My Profile</a></li>
+
                                                     <li>
 
                                                         <a href="dash-address-book.html">Address Book</a></li>
@@ -158,46 +159,67 @@
                                                                 <h2 class="dash__h2 u-s-m-b-8">PERSONAL PROFILE</h2>
                                                                 <div class="dash__link dash__link--secondary u-s-m-b-8">
 
-                                                                    <a href="dash-edit-profile.html">Edit</a></div>
+                                                                    <a href="edit-profile.jsp">Edit</a></div>
 
-                                                                <span class="dash__text">John Doe</span>
-
-                                                                <span class="dash__text">johndoe@domain.com</span>
+                                                                <!--                                                                <span class="dash__text">John Doe</span>
+                                                                
+                                                                                                                                <span class="dash__text">johndoe@domain.com</span>-->
                                                                 <div class="dash__link dash__link--secondary u-s-m-t-8">
 
                                                                     <a data-modal="modal" data-modal-id="#dash-newsletter">Subscribe Newsletter</a></div>
                                                             </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-lg-4 u-s-m-b-30">
-                                                        <div class="dash__box dash__box--bg-grey dash__box--shadow-2 u-h-100">
                                                             <div class="dash__pad-3">
-                                                                <h2 class="dash__h2 u-s-m-b-8">ADDRESS BOOK</h2>
-
-                                                                <span class="dash__text-2 u-s-m-b-8">Default Shipping Address</span>
-                                                                <div class="dash__link dash__link--secondary u-s-m-b-8">
-
-                                                                    <a href="dash-address-book.html">Edit</a></div>
-
-                                                                <span class="dash__text">4247 Ashford Drive Virginia - VA-20006 - USA</span>
-
-                                                                <span class="dash__text">(+0) 900901904</span>
+                                                                <h1 class="dash__h2 u-s-m-b-8">User Profile</h1>
+                                                                <table class="dash__text">
+                                                                    <tr>
+                                                                        <td>First Name:</td>
+                                                                        <td>${sessionScope.AccountP.first_name}</td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td>Last Name:</td>
+                                                                        <td>${sessionScope.AccountP.last_name}</td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td>Phone:</td>
+                                                                        <td>${sessionScope.AccountP.phone}</td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td>Gender:</td>
+                                                                        <td>${sessionScope.AccountP.gender}</td>
+                                                                    </tr>
+                                                                </table>
                                                             </div>
                                                         </div>
                                                     </div>
-                                                    <div class="col-lg-4 u-s-m-b-30">
-                                                        <div class="dash__box dash__box--bg-grey dash__box--shadow-2 u-h-100">
-                                                            <div class="dash__pad-3">
-                                                                <h2 class="dash__h2 u-s-m-b-8">BILLING ADDRESS</h2>
-
-                                                                <span class="dash__text-2 u-s-m-b-8">Default Billing Address</span>
-
-                                                                <span class="dash__text">4247 Ashford Drive Virginia - VA-20006 - USA</span>
-
-                                                                <span class="dash__text">(+0) 900901904</span>
-                                                            </div>
-                                                        </div>
-                                                    </div>
+                                                    <!--                                                    <div class="col-lg-4 u-s-m-b-30">
+                                                                                                            <div class="dash__box dash__box--bg-grey dash__box--shadow-2 u-h-100">
+                                                                                                                <div class="dash__pad-3">
+                                                                                                                    <h2 class="dash__h2 u-s-m-b-8">ADDRESS BOOK</h2>
+                                                    
+                                                                                                                    <span class="dash__text-2 u-s-m-b-8">Default Shipping Address</span>
+                                                                                                                    <div class="dash__link dash__link--secondary u-s-m-b-8">
+                                                    
+                                                                                                                        <a href="dash-address-book.html">Edit</a></div>
+                                                    
+                                                                                                                    <span class="dash__text">4247 Ashford Drive Virginia - VA-20006 - USA</span>
+                                                    
+                                                                                                                    <span class="dash__text">(+0) 900901904</span>
+                                                                                                                </div>
+                                                                                                            </div>
+                                                                                                        </div>-->
+                                                    <!--                                                    <div class="col-lg-4 u-s-m-b-30">
+                                                                                                            <div class="dash__box dash__box--bg-grey dash__box--shadow-2 u-h-100">
+                                                                                                                <div class="dash__pad-3">
+                                                                                                                    <h2 class="dash__h2 u-s-m-b-8">BILLING ADDRESS</h2>
+                                                    
+                                                                                                                    <span class="dash__text-2 u-s-m-b-8">Default Billing Address</span>
+                                                    
+                                                                                                                    <span class="dash__text">4247 Ashford Drive Virginia - VA-20006 - USA</span>
+                                                    
+                                                                                                                    <span class="dash__text">(+0) 900901904</span>
+                                                                                                                </div>
+                                                                                                            </div>
+                                                                                                        </div>-->
                                                 </div>
                                             </div>
                                         </div>
