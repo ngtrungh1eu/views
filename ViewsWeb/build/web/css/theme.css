@@ -4632,6 +4632,11 @@ section {
     margin-right: 5px;
 }
 
+.table-data-feature .item:hover {
+    background-color: #63c76a;
+    color: white;
+}
+
 .table-data-feature .item:last-child {
     margin-right: 0;
 }

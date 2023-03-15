@@ -106,6 +106,7 @@ public class ProductServlet extends HttpServlet {
             String name = request.getParameter("product_name");
             String type = request.getParameter("type");
             double price = Double.parseDouble(request.getParameter("price"));
+            String image = request.getParameter("image");
             int cate = Integer.parseInt(request.getParameter("product_categorie"));
             float saleoff = Float.parseFloat(request.getParameter("saleoff"));
             try {
@@ -117,6 +118,7 @@ public class ProductServlet extends HttpServlet {
             product.setProduct_id(pId);
             product.setProduct_name(name);
             product.setPrice(price);
+            product.setImage(image);
             product.setCate_id(cate);
             product.setType(type);
             product.setSaleoff((int) saleoff);
@@ -132,12 +134,14 @@ public class ProductServlet extends HttpServlet {
             double price = 0;
             int cate = 0;
             String type = null;
+            String image = null;
             float saleoff = 0;
             try {
                 pId = Integer.parseInt(request.getParameter("product_id"));
                 name = request.getParameter("product_name");
                 type = request.getParameter("type");
                 price = Double.parseDouble(request.getParameter("price"));
+                image = request.getParameter("image");
                 cate = Integer.parseInt(request.getParameter("product_categorie"));
                 saleoff = Float.parseFloat(request.getParameter("saleoff"));
             } catch (Exception e) {
@@ -152,6 +156,7 @@ public class ProductServlet extends HttpServlet {
             product.setProduct_id(pId);
             product.setProduct_name(name);
             product.setPrice(price);
+            product.setImage(image);
             product.setCate_id(cate);
             product.setType(type);
             product.setSaleoff((int) saleoff);
