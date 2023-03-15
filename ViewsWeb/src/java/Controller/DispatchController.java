@@ -50,6 +50,8 @@ public class DispatchController extends HttpServlet {
             }
             if(button.equals("buy")){
                 url  = "buy";
+            if(button.equals("save")){
+                url  = "ProfileAccount";
             }
         } catch (Exception e) {
         }

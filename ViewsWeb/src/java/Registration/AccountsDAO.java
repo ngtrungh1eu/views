@@ -8,6 +8,7 @@ package Registration;
 import Mylib.DBHelper;
 import java.io.Serializable;
 import java.sql.Connection;
+import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -19,6 +20,60 @@ import java.util.List;
  * @author ROG
  */
 public class AccountsDAO implements Serializable {
+    
+    public List<AccountsDTO> getList() throws SQLException {
+        ArrayList<AccountsDTO> list = new ArrayList<AccountsDTO>();
+        PreparedStatement stm = null;
+        Connection con = null;
+        ResultSet rs = null;
+        AccountsDTO result = null;
+        try {
+            con = DBHelper.getConnection();
+            if (con != null) {
+                String sql = "SELECT * from users";
+                stm = con.prepareStatement(sql);
+
+                rs = stm.executeQuery();
+                System.out.println("yyy");
+                while (rs.next()) {
+
+                    int User_id = rs.getInt("id");
+                    String Email = rs.getString("email");
+                    String Password = rs.getString("password");
+                    String setFirst_name = rs.getString("first_name");
+                    String setLast_name = rs.getString("last_name");
+                    Date Dob = rs.getDate("DoB");
+                    
+                    
+                    String Country = rs.getString("country");
+                    String City = rs.getString("city");
+                    String Phone = rs.getString("phone");
+                    String Gender = rs.getString("gender");
+                    String Role = rs.getString("role");
+                    result = new AccountsDTO(User_id, Email, Password, setFirst_name, setLast_name, Dob, Country, City, Phone, Gender, Role);
+                    list.add(result);
+//                    System.out.println(result.getDob());
+//                    System.out.println("yyy");
+
+                }
+                System.out.println(list);
+                return list;
+
+            }
+        } finally {
+            if (rs != null) {
+                rs.close();
+            }
+            if (stm != null) {
+                stm.close();
+            }
+            if (con != null) {
+                con.close();
+            }
+        }
+        return list;
+
+    }
 
     public AccountsDTO checklogin(String email, String password, String id) throws SQLException {
 //        ArrayList<AccountsDTO> list;
@@ -61,7 +116,7 @@ public class AccountsDAO implements Serializable {
                             rs.getString(3),
                             rs.getString(4),
                             rs.getString(5),
-                            rs.getString(6),
+                            rs.getDate(6),
                             rs.getString(7),
                             rs.getString(8),
                             rs.getString(9),
@@ -82,6 +137,57 @@ public class AccountsDAO implements Serializable {
             }
         }
         return result;
+    }
+    
+    public boolean updateAccount(String id, String email, String password, String firstname, String lastname, String Dob, String country, String city, String phone, String gender, String role) {
+        boolean r = false;
+        try {
+            Connection con = DBHelper.getConnection();
+
+            String sql2 = "UPDATE users SET first_name=?, last_name=?, phone=?, gender=? WHERE email =? AND password =?";
+
+            PreparedStatement stm2 = con.prepareStatement(sql2);
+
+            stm2.setString(1, firstname);
+            stm2.setString(2, lastname);
+
+            stm2.setString(3, phone);
+            stm2.setString(4, gender);
+            stm2.setString(5, email);
+            stm2.setString(6, password);
+
+            System.out.println(email);
+            int rs2 = stm2.executeUpdate();
+            if (rs2 > 0) {
+
+                r = true;
+            } else {
+                r = false;
+            }
+        } catch (SQLException e) {
+        }
+        return r;
+    }
+    
+    public boolean delete(int id){
+        String sql = "DELETE FROM users WHERE id = ?";   
+        try {
+            
+            Connection conn = DBHelper.getConnection();
+            PreparedStatement ps = conn.prepareStatement(sql);                      
+            ps.setInt(1, id);
+            
+            if (ps.executeUpdate() > 0)
+                return true;
+            else
+                return false;
+            
+	}
+        catch (SQLException ex) {
+            
+        }
+        
+        return false;
     }
 
     public boolean addAccount(int id, String email, String password, String firstname, String lastname, String Dob, String country, String city, String phone, String gender, String role) {

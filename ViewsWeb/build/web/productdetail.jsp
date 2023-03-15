@@ -676,9 +676,9 @@
 
                                             <span class="product-o__review">(20)</span></div>
 
-                                        <span class="product-o__price">${dto.newPrice}
+                                        <span class="product-o__price">$${dto.newPrice}
 
-                                            <span class="product-o__discount">${dto.price}</span></span>
+                                            <span class="product-o__discount">$${dto.price}</span></span>
                                     </div>
                                 </div>
                                 </c:forEach>

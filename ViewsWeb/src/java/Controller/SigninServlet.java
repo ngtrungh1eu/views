@@ -34,18 +34,62 @@ public class SigninServlet extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
+//        PrintWriter out = response.getWriter();
+//        String url = "";
+//        String email = request.getParameter("txtEmail");
+//        String password = request.getParameter("txtPassword");
+//        String id = null;
+//        try {
+//            AccountsDAO dao = new AccountsDAO();
+//            AccountsDTO result = dao.checklogin(email, password, id);
+//            if (result != null) {
+//                url = "home.jsp";
+//                HttpSession session = request.getSession();
+//                session.setAttribute("Account", result);
+//                System.out.println(result);
+//            } else {
+//                request.setAttribute("mess", "Wrong Email or Password");
+//                url = "signin.jsp";
+//            }
+//        } catch (SQLException ex) {
+//        } finally {
+//            RequestDispatcher rd = request.getRequestDispatcher(url);
+//            rd.forward(request, response);
+//            out.close();
+//        }
+//    }
+
         PrintWriter out = response.getWriter();
         String url = "";
         String email = request.getParameter("txtEmail");
         String password = request.getParameter("txtPassword");
+
         String id = null;
         try {
+
             AccountsDAO dao = new AccountsDAO();
+//                    
+//            if (dao.checkAccess(email, password).getRole() != null &&dao.checkAccess(email, password).getRole().equals("Admin")) {
+//                url = "productmanager.jsp";
+//
+//            }
             AccountsDTO result = dao.checklogin(email, password, id);
+
+            request.getSession().setAttribute("txtEmail", email);
+            request.getSession().setAttribute("txtPassword", password);
+            //Toan code
             if (result != null) {
-                url = "home.jsp";
-                HttpSession session = request.getSession();
-                session.setAttribute("Account", result);
+                if (result.getRole().equals("Admin")) {
+                    url = "UserManager";
+                    HttpSession session = request.getSession();
+                    session.setAttribute("Account", result);
+                    //Toan code
+                } else if (result.getRole().equals("user")) {
+                    url = "home.jsp";
+                    HttpSession session = request.getSession();
+                    session.setAttribute("Account", result);
+                    System.out.println(result);
+                }
             } else {
                 request.setAttribute("mess", "Wrong Email or Password");
                 url = "signin.jsp";
@@ -53,6 +97,7 @@ public class SigninServlet extends HttpServlet {
         } catch (SQLException ex) {
         } finally {
             RequestDispatcher rd = request.getRequestDispatcher(url);
+
             rd.forward(request, response);
             out.close();
         }

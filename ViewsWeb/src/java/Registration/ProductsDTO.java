@@ -10,7 +10,8 @@ package Registration;
  * @author ROG
  */
 public class ProductsDTO {
-     private int product_id;
+
+    private int product_id;
     private String product_name;
     private double price;
     private String image;
@@ -21,12 +22,35 @@ public class ProductsDTO {
     private String brand;
     private int cate_id;
     private String type;
-    private int saleoff;
+    private float saleoff;
     private String detail;
     private double newPrice;
     private int quantity;
 
     public ProductsDTO() {
+    }
+
+    public ProductsDTO(int product_id, String product_name, double price, String image, String brand, int cate_id, String type, float saleoff, double newPrice) {
+        this.product_id = product_id;
+        this.product_name = product_name;
+        this.price = price;
+        this.image = image;
+        this.brand = brand;
+        this.cate_id = cate_id;
+        this.type = type;
+        this.saleoff = saleoff;
+        this.newPrice = newPrice;
+    }
+
+    public ProductsDTO(int product_id, String product_name, double price, String image, int cate_id, String type, float saleoff, double newPrice) {
+        this.product_id = product_id;
+        this.product_name = product_name;
+        this.price = price;
+        this.image = image;
+        this.cate_id = cate_id;
+        this.type = type;
+        this.saleoff = saleoff;
+        this.newPrice = newPrice;
     }
 
     public ProductsDTO(int product_id, String product_name, double price, String image, String image1, String image2, String image3, String image4, String brand, int cate_id, String type, int saleoff, String detail, double newPrice) {
@@ -86,8 +110,6 @@ public class ProductsDTO {
         this.detail = detail;
     }
 
-     
-    
     public ProductsDTO(int product_id, String product_name, double price, String image, int cate_id, String type, int saleoff) {
         this.product_id = product_id;
         this.product_name = product_name;
@@ -109,7 +131,7 @@ public class ProductsDTO {
         this.saleoff = saleoff;
         this.quantity = quantity;
     }
-    
+
     public int getProduct_id() {
         return product_id;
     }
@@ -166,16 +188,20 @@ public class ProductsDTO {
         this.type = type;
     }
 
-    public int getSaleoff() {
+    public float getSaleoff() {
         return saleoff;
     }
 
     public void setSaleoff(int saleoff) {
         this.saleoff = saleoff;
     }
-    
+
     public double getNewPrice() {
-        return (price - (price * saleoff)/100);
+        return (price - (price * saleoff) / 100);
+    }
+
+    public double getNewPrice1() {
+        return newPrice;
     }
 
     public void setNewPrice(double newPrice) {
@@ -189,5 +215,5 @@ public class ProductsDTO {
     public void setQuantity(int quantity) {
         this.quantity = quantity;
     }
-    
+
 }
