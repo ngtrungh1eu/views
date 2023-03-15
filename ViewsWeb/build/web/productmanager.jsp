@@ -564,7 +564,7 @@
                             <div class="col-md-6 col-lg-3">
                                 <div class="statistic__item statistic__item--green">
                                     <h2 class="number">10,368</h2>
-                                    <span class="desc">members online</span>
+                                    <span class="desc">members</span>
                                     <div class="icon">
                                         <i class="zmdi zmdi-account-o"></i>
                                     </div>
@@ -748,6 +748,10 @@
                                                 <th>type</th>
                                                 <th>sale off</th>
                                                 <th>price</th>
+                                                <!--TEST-->
+                                                <th>new price</th>
+                                                <!--TEST-->
+
                                                 <th></th>
                                             </tr>
                                         </thead>
@@ -763,7 +767,7 @@
                                                     <td>${dto.product_id}</td>
                                                     <td>
 
-                                                        <span class="block-email">${dto.cate_id}
+                                                        <span class="block-email">${dto.brand}
                                                         </span>
                                                     </td>
                                                     <td class="desc">${dto.product_name}</td>
@@ -772,6 +776,11 @@
                                                         <span class="status--process">${dto.saleoff}</span>
                                                     </td>
                                                     <td>$${dto.price}</td>
+
+                                                    <!--TEST-->
+                                                    <td style="color: red">$${dto.newPrice}</td>
+                                                    <!--TEST-->
+
                                                     <td>
                                                         <div class="table-data-feature">
 
@@ -780,10 +789,10 @@
                                                                 <button class="item" data-toggle="tooltip" data-placement="top" name="action" value="edit" title="Edit">
                                                                     <i class="zmdi zmdi-edit"></i>
                                                                 </button>
-                                                                
+
 <!--                                                                <button class="item" data-toggle="tooltip" data-placement="top" name="action" value="${requestScope.action}" title="Edit">
-                                                                    <i class="zmdi zmdi-edit"></i>
-                                                                </button>-->
+    <i class="zmdi zmdi-edit"></i>
+</button>-->
                                                             </form>
 
                                                             <form class="item" action="product">

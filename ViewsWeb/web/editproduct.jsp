@@ -28,7 +28,7 @@
                     <label class="col-md-4 control-label" for="product_id">PRODUCT ID</label>  
                     <div class="col-md-4">
                         <input id="product_id" name="product_id" value="${requestScope.pDetails.product_id}" placeholder="PRODUCT ID" class="form-control input-md" required="" type="text">
- 
+
                     </div>
                 </div>
 
@@ -46,6 +46,15 @@
                     <label class="col-md-4 control-label" for="product_name_fr">PRICE</label>  
                     <div class="col-md-4">
                         <input id="product_name_fr" name="price" value="${pDetails.price}" placeholder="PRICE" class="form-control input-md" required="" type="text">
+
+                    </div>
+                </div>
+
+                <!-- Text input-->
+                <div class="form-group">
+                    <label class="col-md-4 control-label" for="available_quantity">IMAGE URL</label>  
+                    <div class="col-md-4">
+                        <input id="available_quantity" name="image" value="${pDetails.image}" placeholder="IMAGE URL" class="form-control input-md" required="" type="text">
 
                     </div>
                 </div>
@@ -79,14 +88,6 @@
                     </div>
                 </div>
 
-                <!-- Text input-->
-                <!--                <div class="form-group">
-                                    <label class="col-md-4 control-label" for="available_quantity">AVAILABLE QUANTITY</label>  
-                                    <div class="col-md-4">
-                                        <input id="available_quantity" name="available_quantity" placeholder="AVAILABLE QUANTITY" class="form-control input-md" required="" type="text">
-                
-                                    </div>
-                                </div>-->
 
                 <!-- Text input-->
                 <!--                <div class="form-group">

@@ -30,13 +30,37 @@ public class ProductsDTO {
     public ProductsDTO() {
     }
 
-    public ProductsDTO(int product_id, String product_name, double price, int cate_id, String type, int saleoff) {
+    public ProductsDTO(int product_id, String product_name, double price, String image, int cate_id, String type, float saleoff) {
         this.product_id = product_id;
         this.product_name = product_name;
         this.price = price;
+        this.image = image;
         this.cate_id = cate_id;
         this.type = type;
         this.saleoff = saleoff;
+    }
+
+    public ProductsDTO(int product_id, String product_name, double price, String image, String brand, int cate_id, String type, float saleoff, double newPrice) {
+        this.product_id = product_id;
+        this.product_name = product_name;
+        this.price = price;
+        this.image = image;
+        this.brand = brand;
+        this.cate_id = cate_id;
+        this.type = type;
+        this.saleoff = saleoff;
+        this.newPrice = newPrice;
+    }
+
+    public ProductsDTO(int product_id, String product_name, double price, String image, int cate_id, String type, float saleoff, double newPrice) {
+        this.product_id = product_id;
+        this.product_name = product_name;
+        this.price = price;
+        this.image = image;
+        this.cate_id = cate_id;
+        this.type = type;
+        this.saleoff = saleoff;
+        this.newPrice = newPrice;
     }
 
     public ProductsDTO(int product_id, String product_name, double price, String image, String image1, String image2, String image3, String image4, String brand, int cate_id, String type, int saleoff, String detail, double newPrice) {
@@ -117,7 +141,7 @@ public class ProductsDTO {
         this.saleoff = saleoff;
         this.quantity = quantity;
     }
-    
+
     public int getProduct_id() {
         return product_id;
     }
@@ -186,6 +210,10 @@ public class ProductsDTO {
         return (price - (price * saleoff) / 100);
     }
 
+    public double getNewPrice1() {
+        return newPrice;
+    }
+
     public void setNewPrice(double newPrice) {
         this.newPrice = newPrice;
     }
@@ -197,5 +225,5 @@ public class ProductsDTO {
     public void setQuantity(int quantity) {
         this.quantity = quantity;
     }
-    
+
 }
