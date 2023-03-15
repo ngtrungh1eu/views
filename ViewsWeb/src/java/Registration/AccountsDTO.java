@@ -5,6 +5,8 @@
  */
 package Registration;
 
+import java.sql.Date;
+
 /**
  *
  * @author ROG
@@ -15,7 +17,7 @@ public class AccountsDTO {
     private String password;
     private String first_name;
     private String last_name;
-    private String Dob;
+    private Date Dob;
     private String country;
     private String city;
     private String phone;
@@ -31,7 +33,7 @@ public class AccountsDTO {
         this.first_name = first_name;
     }
 
-    public AccountsDTO(int user_id, String email, String password, String first_name, String last_name, String Dob, String country, String city, String phone, String gender, String role) {
+    public AccountsDTO(int user_id, String email, String password, String first_name, String last_name, Date Dob, String country, String city, String phone, String gender, String role) {
         this.user_id = user_id;
         this.email = email;
         this.password = password;
@@ -87,11 +89,11 @@ public class AccountsDTO {
         this.last_name = last_name;
     }
 
-    public String getDob() {
+    public Date getDob() {
         return Dob;
     }
 
-    public void setDob(String Dob) {
+    public void setDob(Date Dob) {
         this.Dob = Dob;
     }
 

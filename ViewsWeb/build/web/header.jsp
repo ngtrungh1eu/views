@@ -52,7 +52,7 @@
                                             <ul style="width:120px">
                                                 <li>
 
-                                                    <a href="account.jsp"><i class="fas fa-user-circle u-s-m-r-6"></i>
+                                                    <a href="account?id=${sessionScope.Account.user_id}"><i class="fas fa-user-circle u-s-m-r-6"></i>
 
                                                         <span>Account</span></a></li>
                                                 <li>

@@ -5,25 +5,27 @@
  */
 package Controller;
 
+import Registration.AccountsDAO;
+import Registration.AccountsDTO;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
-import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
  *
- * @author ROG
+ * @author ACER
  */
-@WebServlet(name = "DispatchController", urlPatterns = {"/DispatchController"})
-public class DispatchController extends HttpServlet {
+public class UserManager extends HttpServlet {
 
     /**
-     * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
-     * methods.
+     * Processes requests for both HTTP <code>GET</code> and <code>POST</code> methods.
      *
      * @param request servlet request
      * @param response servlet response
@@ -33,20 +35,31 @@ public class DispatchController extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-        String button = request.getParameter("btAction");
-        String url = "";
-        try {
-            if(button.equals("login")){
-                url  = "signin";
+        String buttion = request.getParameter("btAction");
+        String url = "accountmanager.jsp";
+        AccountsDAO acc = new AccountsDAO();
+
+        if (buttion.equals("delete")) {
+            int id = Integer.parseInt(request.getParameter("id"));
+
+            acc.delete(id);
+            try {
+                request.setAttribute("UserList", acc.getList());
+            } catch (SQLException ex) {
+
             }
-            if(button.equals("create")){
-                url  = "creatAccount";
-            }
-            if(button.equals("save")){
-                url  = "ProfileAccount";
-            }
-        } catch (Exception e) {
         }
+
+        try {
+            request.setAttribute("UserList", acc.getList());
+        } catch (SQLException ex) {
+            Logger.getLogger(UserManager.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
+//        try {
+//            AccountsDAO acc = new AccountsDAO();
+//            request.setAttribute("UserList", acc.getList());
+//        } catch (Exception e) {
         RequestDispatcher rd = request.getRequestDispatcher(url);
         rd.forward(request, response);
     }

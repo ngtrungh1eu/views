@@ -30,16 +30,6 @@ public class ProductsDTO {
     public ProductsDTO() {
     }
 
-    public ProductsDTO(int product_id, String product_name, double price, String image, int cate_id, String type, float saleoff) {
-        this.product_id = product_id;
-        this.product_name = product_name;
-        this.price = price;
-        this.image = image;
-        this.cate_id = cate_id;
-        this.type = type;
-        this.saleoff = saleoff;
-    }
-
     public ProductsDTO(int product_id, String product_name, double price, String image, String brand, int cate_id, String type, float saleoff, double newPrice) {
         this.product_id = product_id;
         this.product_name = product_name;

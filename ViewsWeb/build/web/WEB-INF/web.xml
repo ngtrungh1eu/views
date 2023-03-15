@@ -28,6 +28,14 @@
         <servlet-name>CartsServlet</servlet-name>
         <servlet-class>Controller.CartsServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>UserManager</servlet-name>
+        <servlet-class>Controller.UserManager</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ProfileAccount</servlet-name>
+        <servlet-class>Controller.ProfileAccount</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>SigninServlet</servlet-name>
         <url-pattern>/signin</url-pattern>
@@ -55,6 +63,14 @@
     <servlet-mapping>
         <servlet-name>CartsServlet</servlet-name>
         <url-pattern>/cart</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>UserManager</servlet-name>
+        <url-pattern>/UserManager</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ProfileAccount</servlet-name>
+        <url-pattern>/ProfileAccount</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
