@@ -74,10 +74,13 @@ public class CartsDTO {
             String[] Cookie = txtCookie.split(",");
             for (String i : Cookie) {
                 String[] eachCookie = i.split(":");
-                int id = Integer.parseInt(eachCookie[0]);
-                int quantity = Integer.parseInt(eachCookie[1]);
+                int user_id = Integer.parseInt(eachCookie[0]);
+                String eachCookie1 = eachCookie[1];
+                String[] eachDetail = eachCookie1.split("-");
+                int id = Integer.parseInt(eachDetail[0]);
+                int quantity = Integer.parseInt(eachDetail[1]);
                 ProductsDTO p = getProductById(id, list);
-                ItemsDTO t = new ItemsDTO(p, quantity, p.getPrice());
+                ItemsDTO t = new ItemsDTO(p, quantity, p.getNewPrice(), user_id);
                 addItems(t);
             }
         }

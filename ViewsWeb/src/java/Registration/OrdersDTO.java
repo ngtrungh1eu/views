@@ -9,6 +9,6 @@ package Registration;
  *
  * @author ROG
  */
-public class OdersDTO {
+public class OrdersDTO {
     
 }
