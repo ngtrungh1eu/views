@@ -1223,7 +1223,7 @@
 
                                                                 <a class="mini-product__link" href="product-detail.html">
 
-                                                                    <img class="u-img-fluid" src="" alt="${i.product.image}"></a></div>
+                                                                    <img class="u-img-fluid" src="" alt="${i.product.brand}"></a></div>
                                                             <div class="mini-product__info-wrapper">
 
                                                                 <span class="mini-product__category">
