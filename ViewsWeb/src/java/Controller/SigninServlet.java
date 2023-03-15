@@ -46,7 +46,6 @@ public class SigninServlet extends HttpServlet {
                 url = "home.jsp";
                 HttpSession session = request.getSession();
                 session.setAttribute("Account", result);
-                System.out.println(result);
             } else {
                 request.setAttribute("mess", "Wrong Email or Password");
                 url = "signin.jsp";

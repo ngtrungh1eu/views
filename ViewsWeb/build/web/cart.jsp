@@ -4,6 +4,7 @@
     Author     : ROG
 --%>
 
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html class="no-js" lang="en">
@@ -98,60 +99,71 @@
                                                 <tbody>
 
                                                     <!--====== Row ======-->
-                                                    <tr>
-                                                        <td>
+                                                <c:set var="userID" value="${sessionScope.Account.user_id}"></c:set>
+                                                <c:set var="o" value="${requestScope.cart}"></c:set>
+                                                <c:forEach items="${o.items}" var="i">
+                                                    <c:set var="user_id" value="${i.user_id}"></c:set>
+                                                    <c:if test="${userID == user_id}">
+                                                        <tr>
+                                                            <td>
                                                             <div class="table-p__box">
                                                                 <div class="table-p__img-wrap">
 
-                                                                    <img class="u-img-fluid" src="images/product/electronic/product3.jpg" alt=""></div>
+                                                                    <img class="u-img-fluid" src="${i.product.image}" alt=""></div>
                                                                 <div class="table-p__info">
 
                                                                     <span class="table-p__name">
 
-                                                                        <a href="product-detail.html">Yellow Wireless Headphone</a></span>
+                                                                        <a href="product-detail.html">${i.product.product_name}</a></span>
 
                                                                     <span class="table-p__category">
 
-                                                                        <a href="shop-side-version-2.html">Electronics</a></span>
+                                                                        <a href="shop-side-version-2.html">${i.product.brand}</a></span>
                                                                     <ul class="table-p__variant-list">
                                                                         <li>
 
                                                                             <span>Size: 22</span></li>
                                                                         <li>
 
-                                                                            <span>Color: Red</span></li>
+                                                                            <span>Price: $${i.product.newPrice}</span></li>
                                                                     </ul>
                                                                 </div>
                                                             </div>
                                                         </td>
                                                         <td>
 
-                                                            <span class="table-p__price">$125.00</span></td>
+                                                            <span class="table-p__price">$${(i.price*i.quantity)}</span></td>
                                                         <td>
                                                             <div class="table-p__input-counter-wrap">
 
                                                                 <!--====== Input Counter ======-->
                                                                 <div class="input-counter">
 
-                                                                    <span class="input-counter__minus fas fa-minus"></span>
+                                                                        <a href="process?quantity=-1&id=${i.product.product_id}&user_id=${i.user_id}" class="input-counter__minus fas fa-minus" ></a> 
 
-                                                                    <input class="input-counter__text input-counter--text-primary-style" type="text" value="1" data-min="1" data-max="1000">
-
-                                                                    <span class="input-counter__plus fas fa-plus"></span></div>
+                                                                    <input class="input-counter__text input-counter--text-primary-style" type="text" value="${i.quantity}" data-min="1" data-max="1000">
+                                                                    
+                                                                    <a href="process?quantity=1&id=${i.product.product_id}&user_id=${i.user_id}" class="input-counter__plus fas fa-plus" ></a>
+                                                                    <!--<span class="input-counter__plus fas fa-plus"></span>--> 
+                   
+                                                                
+                                                                </div>
                                                                 <!--====== End - Input Counter ======-->
                                                             </div>
                                                         </td>
                                                         <td>
                                                             <div class="table-p__del-wrap">
 
-                                                                <a class="far fa-trash-alt table-p__delete-link" href="#"></a></div>
+                                                                <a class="far fa-trash-alt table-p__delete-link" href="process?id=${i.product.product_id}&user_id=${i.user_id}&quantity=0"></a></div>
                                                         </td>
                                                     </tr>
+                                                    </c:if>
+                                                    </c:forEach>
                                                     <!--====== End - Row ======-->
 
 
                                                     <!--====== Row ======-->
-                                                    <tr>
+<!--                                                    <tr>
                                                         <td>
                                                             <div class="table-p__box">
                                                                 <div class="table-p__img-wrap">
@@ -183,7 +195,7 @@
                                                         <td>
                                                             <div class="table-p__input-counter-wrap">
 
-                                                                <!--====== Input Counter ======-->
+                                                                ====== Input Counter ======
                                                                 <div class="input-counter">
 
                                                                     <span class="input-counter__minus fas fa-minus"></span>
@@ -191,7 +203,7 @@
                                                                     <input class="input-counter__text input-counter--text-primary-style" type="text" value="1" data-min="1" data-max="1000">
 
                                                                     <span class="input-counter__plus fas fa-plus"></span></div>
-                                                                <!--====== End - Input Counter ======-->
+                                                                ====== End - Input Counter ======
                                                             </div>
                                                         </td>
                                                         <td>
@@ -200,10 +212,10 @@
                                                                 <a class="far fa-trash-alt table-p__delete-link" href="#"></a></div>
                                                         </td>
                                                     </tr>
-                                                    <!--====== End - Row ======-->
+                                                    ====== End - Row ======
 
 
-                                                    <!--====== Row ======-->
+                                                    ====== Row ======
                                                     <tr>
                                                         <td>
                                                             <div class="table-p__box">
@@ -236,7 +248,7 @@
                                                         <td>
                                                             <div class="table-p__input-counter-wrap">
 
-                                                                <!--====== Input Counter ======-->
+                                                                ====== Input Counter ======
                                                                 <div class="input-counter">
 
                                                                     <span class="input-counter__minus fas fa-minus"></span>
@@ -244,7 +256,7 @@
                                                                     <input class="input-counter__text input-counter--text-primary-style" type="text" value="1" data-min="1" data-max="1000">
 
                                                                     <span class="input-counter__plus fas fa-plus"></span></div>
-                                                                <!--====== End - Input Counter ======-->
+                                                                ====== End - Input Counter ======
                                                             </div>
                                                         </td>
                                                         <td>
@@ -252,7 +264,7 @@
 
                                                                 <a class="far fa-trash-alt table-p__delete-link" href="#"></a></div>
                                                         </td>
-                                                    </tr>
+                                                    </tr>-->
                                                     <!--====== End - Row ======-->
                                                 </tbody>
                                             </table>
@@ -262,7 +274,7 @@
                                         <div class="route-box">
                                             <div class="route-box__g1">
 
-                                                <a class="route-box__link" href="shop-side-version-2.html"><i class="fas fa-long-arrow-alt-left"></i>
+                                                <a class="route-box__link" href="home"><i class="fas fa-long-arrow-alt-left"></i>
 
                                                     <span>CONTINUE SHOPPING</span></a></div>
                                             <div class="route-box__g2">
@@ -292,16 +304,16 @@
                             <div class="container">
                                 <div class="row">
                                     <div class="col-lg-12 col-md-12 col-sm-12 u-s-m-b-30">
-                                        <form class="f-cart">
+                                        <form class="f-cart" action="DispatchController" >
                                             <div class="row">
-                                                <div class="col-lg-4 col-md-6 u-s-m-b-30">
+<!--                                                <div class="col-lg-4 col-md-6 u-s-m-b-30">
                                                     <div class="f-cart__pad-box">
                                                         <h1 class="gl-h1">ESTIMATE SHIPPING AND TAXES</h1>
 
                                                         <span class="gl-text u-s-m-b-30">Enter your destination to get a shipping estimate.</span>
                                                         <div class="u-s-m-b-30">
 
-                                                            <!--====== Select Box ======-->
+                                                            ====== Select Box ======
 
                                                             <label class="gl-label" for="shipping-country">COUNTRY *</label><select class="select-box select-box--primary-style" id="shipping-country">
                                                                 <option selected value="">Choose Country</option>
@@ -309,11 +321,11 @@
                                                                 <option value="uk">United Kingdom (UK)</option>
                                                                 <option value="us">United States (US)</option>
                                                             </select>
-                                                            <!--====== End - Select Box ======-->
+                                                            ====== End - Select Box ======
                                                         </div>
                                                         <div class="u-s-m-b-30">
 
-                                                            <!--====== Select Box ======-->
+                                                            ====== Select Box ======
 
                                                             <label class="gl-label" for="shipping-state">STATE/PROVINCE *</label><select class="select-box select-box--primary-style" id="shipping-state">
                                                                 <option selected value="">Choose State/Province</option>
@@ -321,7 +333,7 @@
                                                                 <option value="al">Alaska</option>
                                                                 <option value="ny">New York</option>
                                                             </select>
-                                                            <!--====== End - Select Box ======-->
+                                                            ====== End - Select Box ======
                                                         </div>
                                                         <div class="u-s-m-b-30">
 
@@ -334,8 +346,8 @@
 
                                                         <span class="gl-text">Note: There are some countries where free shipping is available otherwise our flat rate charges or country delivery charges will be apply.</span>
                                                     </div>
-                                                </div>
-                                                <div class="col-lg-4 col-md-6 u-s-m-b-30">
+                                                </div>-->
+                                                <div class="col-lg-6 col-md-6 u-s-m-b-30">
                                                     <div class="f-cart__pad-box">
                                                         <h1 class="gl-h1">NOTE</h1>
 
@@ -345,33 +357,31 @@
                                                             <label for="f-cart-note"></label><textarea class="text-area text-area--primary-style" id="f-cart-note"></textarea></div>
                                             </div>
                                         </div>
-                                        <div class="col-lg-4 col-md-6 u-s-m-b-30">
+                                        <div class="col-lg-6 col-md-6 u-s-m-b-30">
                                             <div class="f-cart__pad-box">
                                                 <div class="u-s-m-b-30">
                                                     <table class="f-cart__table">
                                                         <tbody>
-                                                            <tr>
-                                                                <td>SHIPPING</td>
-                                                                <td>$4.00</td>
-                                                            </tr>
-                                                            <tr>
-                                                                <td>TAX</td>
-                                                                <td>$0.00</td>
-                                                            </tr>
-                                                            <tr>
-                                                                <td>SUBTOTAL</td>
-                                                                <td>$379.00</td>
-                                                            </tr>
-                                                            <tr>
-                                                                <td>GRAND TOTAL</td>
-                                                                <td>$379.00</td>
-                                                            </tr>
-                                                        </tbody>
+
+                                                        <tr>
+                                                            <td>TAX</td>
+                                                            <c:set var="tax" value="${o.totalMoney*0.05}" ></c:set>
+                                                            <td>$ ${tax}</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>SUBTOTAL</td>
+                                                            <td>$ ${o.totalMoney}</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>GRAND TOTAL</td>
+                                                            <td>$ ${o.totalMoney + tax}</td>
+                                                        </tr>
+                                                    </tbody>
                                                     </table>
                                                 </div>
                                                 <div>
 
-                                                    <button class="btn btn--e-brand-b-2" type="submit"> PROCEED TO CHECKOUT</button></div>
+                                                    <button class="btn btn--e-brand-b-2" type="submit" name="btAction" value="checkout" > PROCEED TO CHECKOUT</button></div>
                                             </div>
                                         </div>
                                     </div>

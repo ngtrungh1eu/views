@@ -42,6 +42,15 @@ public class DispatchController extends HttpServlet {
             if(button.equals("create")){
                 url  = "creatAccount";
             }
+            if(button.equals("addcart")){
+                url  = "addcart";
+            }
+            if(button.equals("checkout")){
+                url  = "checkout";
+            }
+            if(button.equals("buy")){
+                url  = "buy";
+            }
         } catch (Exception e) {
         }
         RequestDispatcher rd = request.getRequestDispatcher(url);

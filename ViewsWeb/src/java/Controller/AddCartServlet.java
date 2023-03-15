@@ -5,30 +5,28 @@
  */
 package Controller;
 
-import Registration.CartsDTO;
-import Registration.ItemsDTO;
+import Registration.AccountsDTO;
 import Registration.ProductsDAO;
 import Registration.ProductsDTO;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.List;
-import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
-import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 /**
  *
- * @author khong
+ * @author ROG
  */
-@WebServlet(name = "ProductDetailServlet", urlPatterns = {"/productdetail"})
-public class ProductDetailServlet extends HttpServlet {
+public class AddCartServlet extends HttpServlet {
 
     /**
-     * Processes requests for both HTTP <code>GET</code> and <code>POST</code> methods.
+     * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
+     * methods.
      *
      * @param request servlet request
      * @param response servlet response
@@ -38,40 +36,43 @@ public class ProductDetailServlet extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-        String url = "productdetail.jsp";
-        String pId = request.getParameter("pId");
-        String typeValue = request.getParameter("type");
-        String brandValue = request.getParameter("brand");
-        String searchValue = request.getParameter("txtSearch"); 
-
+        String url = "signin.jsp";
         try {
+            
+        
         ProductsDAO dao = new ProductsDAO();
-        List<ProductsDTO> list = dao.getList(brandValue, typeValue, searchValue);
+//       List<ProductsDTO> list = dao.getList(null, null, null);
         Cookie[] arr = request.getCookies();
-        String txtCookie = "";
+        String txt = "";
         if (arr != null) {
             for (Cookie o : arr) {
                 if (o.getName().equals("cart")) {
-                    txtCookie += o.getValue();
+                    txt += o.getValue();
+                    o.setMaxAge(0);
+                    response.addCookie(o);
                 }
             }
         }
-        CartsDTO cart = new CartsDTO(txtCookie, list);
-        List<ItemsDTO> listItem = cart.getItems();
-        int n;
-        if (listItem != null) {
-            n = listItem.size();
-        } else {
-            n = 0;
+        String quantity = request.getParameter("quantity");
+        String id = request.getParameter("pId");
+        HttpSession session = request.getSession();
+        AccountsDTO result = (AccountsDTO) session.getAttribute("Account");
+        int user_id = result.getUser_id();
+        System.out.println(result);
+        if (result != null) {
+            if (txt.isEmpty()) {
+                txt = user_id + ":" + id + "-" + quantity;
+            } else {
+                txt = txt + "," + user_id + ":" + id + "-" + quantity;
+            }
+            Cookie cookie = new Cookie("cart", txt);
+            cookie.setMaxAge(2*24*60*60);
+            response.addCookie(cookie);
+            url = "listProduct";
         }
-            request.setAttribute("pDetail", dao.getProduct(pId));
-            request.setAttribute("size", n);
-            request.setAttribute("ListP", list);
-        } catch (Exception e) {
+        } catch (NullPointerException e) {
         }
-           
-        RequestDispatcher rd = request.getRequestDispatcher(url);
-        rd.forward(request, response);
+        request.getRequestDispatcher(url).forward(request, response);
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
