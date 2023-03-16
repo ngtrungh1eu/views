@@ -13,7 +13,7 @@
 
                             <!--====== Main Logo ======-->
 
-                            <a class="main-logo" href="home.jsp">
+                            <a class="main-logo" href="home">
 
                                 <img style="justify-content: flex-start" width="200px" src="images/logo/logo.png" alt=""></a>
                             <!--====== End - Main Logo ======-->
@@ -1179,7 +1179,6 @@
 
                                 <button class="btn btn--icon toggle-button toggle-button--secondary fas fa-shopping-bag toggle-button-shop" type="button"></button>
 
-                                <span class="total-item-round">2</span>
 
                                 <!--====== Menu ======-->
                                 <div class="ah-lg-mode">
@@ -1223,7 +1222,7 @@
 
                                                                 <a class="mini-product__link" href="product-detail.html">
 
-                                                                    <img class="u-img-fluid" src="" alt="${i.product.brand}"></a></div>
+                                                                    <img class="u-img-fluid" src="${i.product.image}" alt=""></a></div>
                                                             <div class="mini-product__info-wrapper">
 
                                                                 <span class="mini-product__category">

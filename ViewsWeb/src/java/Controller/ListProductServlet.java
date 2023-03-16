@@ -54,6 +54,7 @@ public class ListProductServlet extends HttpServlet {
             }
         }
         CartsDTO cart = new CartsDTO(txtCookie, list);
+        request.setAttribute("cart", cart);
         List<ItemsDTO> listItem = cart.getItems();
         int n;
         if (listItem != null) {

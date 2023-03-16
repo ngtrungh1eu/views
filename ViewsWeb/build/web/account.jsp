@@ -94,19 +94,7 @@
                                                         <a href="edit-profile.jsp">My Profile</a></li>
                                                     <li>
 
-                                                        <a href="dash-address-book.html">Address Book</a></li>
-                                                    <li>
-
-                                                        <a href="dash-track-order.html">Track Order</a></li>
-                                                    <li>
-
-                                                        <a href="dash-my-order.html">My Orders</a></li>
-                                                    <li>
-
-                                                        <a href="dash-payment-option.html">My Payment Options</a></li>
-                                                    <li>
-
-                                                        <a href="dash-cancellation.html">My Returns & Cancellations</a></li>
+                                                        
                                                 </ul>
                                             </div>
                                         </div>

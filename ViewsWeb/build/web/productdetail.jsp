@@ -1,3 +1,4 @@
+
 <%-- 
     Document   : productdetail
     Created on : Feb 26, 2023, 7:43:29 PM
@@ -64,7 +65,7 @@
                                         <a href="shop-side-version-2.html">Rolex</a></li>
                                     <li class="has-separator">
 
-                                        <a href="shop-side-version-2.html">Men</a></li>
+                                        <a href="shop-side-version-2.html">${pDetail.type}</a></li>
                                     <li class="is-marked">
 
                                         <a href="shop-side-version-2.html">${pDetail.brand}</a></li>

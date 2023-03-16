@@ -68,9 +68,10 @@ public class ProductsDAO implements Serializable {
                      String image = rs.getString("Image");
                      int cateID = rs.getInt("CateID");
                      String type = rs.getString("Type");
+                     String brand = rs.getString("brandName");
                      int saleof = rs.getInt("SaleOff");
                      int quantity = rs.getInt("Quantity");
-                     result = new ProductsDTO(product_id, product_name, price, image, image, cateID, type, saleof, quantity);
+                     result = new ProductsDTO(product_id, product_name, price, image, brand, cateID, type, saleof, quantity);
                      list.add(result);
                     
                  }
@@ -124,7 +125,7 @@ public class ProductsDAO implements Serializable {
             Connection con = DBHelper.getConnection();
             if (con != null) {
 //                String sql = "select * FROM products ";
-                String sql = "select * FROM products join ProductDetails on products.ID = ProductDetails.pID ";
+                String sql = "select * FROM products join ProductDetails on products.ID = ProductDetails.pID join Categories on products.CateID = Categories.CateID";
                 String where = " where ";
 
                 if (pId != null) {
@@ -150,6 +151,7 @@ public class ProductsDAO implements Serializable {
                     double price = rs.getDouble("Price");
                     String image = rs.getString("Image");
                     int cateID = rs.getInt("CateID");
+                    String brand = rs.getString("brandName");
                     String type = rs.getString("Type");
                     int saleoff = rs.getInt("SaleOff");
                     String image1 = rs.getString("Image1");
@@ -157,7 +159,7 @@ public class ProductsDAO implements Serializable {
                     String image3 = rs.getString("Image3");
                     String image4 = rs.getString("Image4");
                     String detail = rs.getString("Details");
-                    p = new ProductsDTO(product_id, product_name, price, image, image1, image2, image3, image4, image, cateID, type, saleoff, detail, price);
+                    p = new ProductsDTO(product_id, product_name, price, image, image1, image2, image3, image4, brand, cateID, type, saleoff, detail, price);
 
                 }
                 return p;
