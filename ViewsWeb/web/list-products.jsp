@@ -1026,13 +1026,6 @@
                                                                 <a class="aspect aspect--bg-grey aspect--square u-d-block" href="/ViewsWeb/productdetail?pId=${dto.product_id}">
 
                                                                     <img class="aspect__img" src="${dto.image}" alt=""></a>
-                                                                <!--                                                    <div class="product-m__quick-look">
-                                                                
-                                                                                                                        <a class="fas fa-search" data-modal="modal" data-modal-id="#quick-look" data-tooltip="tooltip" data-placement="top" title="Quick Look"></a></div>-->
-                                                                <!--                                                    <div class="product-m__add-cart">
-                                                                
-                                                                                                                        <a class="btn--e-brand" data-modal="modal" data-modal-id="#add-to-cart">Add to Cart</a></div>
-                                                                                                                        <a class="btn--e-brand" data-modal="modal" ></a></div>-->
 
                                                             </div>
                                                             <div class="product-m__content">

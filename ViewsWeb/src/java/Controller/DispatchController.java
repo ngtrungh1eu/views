@@ -5,11 +5,16 @@
  */
 package Controller;
 
+import Registration.CartsDTO;
+import Registration.ProductsDAO;
+import Registration.ProductsDTO;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.List;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -35,6 +40,19 @@ public class DispatchController extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         String button = request.getParameter("btAction");
         String url = "";
+        ProductsDAO dao = new ProductsDAO();
+        List<ProductsDTO> list = dao.getList(null, null, null);
+        Cookie[] arr = request.getCookies();
+        String txtCookie = "";
+        if (arr != null) {
+            for (Cookie o : arr) {
+                if (o.getName().equals("cart")) {
+                    txtCookie += o.getValue();
+                }
+            }
+        }
+        CartsDTO cart = new CartsDTO(txtCookie, list);
+        request.setAttribute("cart", cart);
         try {
             if (button.equals("login")) {
                 url = "signin";
