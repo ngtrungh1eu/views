@@ -62,7 +62,7 @@
                                         <i class="fas fa-tachometer-alt"></i>Dashboard
                                         <span class="bot-line"></span>
                                     </a>
-                                    <ul class="header3-sub-list list-unstyled">
+<!--                                    <ul class="header3-sub-list list-unstyled">
                                         <li>
                                             <a href="index.html">Dashboard 1</a>
                                         </li>
@@ -75,15 +75,15 @@
                                         <li>
                                             <a href="index4.html">Dashboard 4</a>
                                         </li>
-                                    </ul>
+                                    </ul>-->
                                 </li>
                                 <li>
-                                    <a href="#">
+                                    <a href="/ViewsWeb/product">
                                         <i class="fas fa-shopping-basket"></i>
                                         <span class="bot-line"></span>eCommerce</a>
                                 </li>
                                 <li>
-                                    <a href="table.html">
+                                    <a href="#">
                                         <i class="fas fa-trophy"></i>
                                         <span class="bot-line"></span>Features</a>
                                 </li>

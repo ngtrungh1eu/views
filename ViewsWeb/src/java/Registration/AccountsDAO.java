@@ -42,9 +42,7 @@ public class AccountsDAO implements Serializable {
                     String Password = rs.getString("password");
                     String setFirst_name = rs.getString("first_name");
                     String setLast_name = rs.getString("last_name");
-                    Date Dob = rs.getDate("DoB");
-                    
-                    
+                    Date Dob = rs.getDate("DoB");                  
                     String Country = rs.getString("country");
                     String City = rs.getString("city");
                     String Phone = rs.getString("phone");
