@@ -52,6 +52,10 @@
         <servlet-name>ProfileAccount</servlet-name>
         <servlet-class>Controller.ProfileAccount</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>OrderManagerSevlet</servlet-name>
+        <servlet-class>Controller.OrderManagerSevlet</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>SigninServlet</servlet-name>
         <url-pattern>/signin</url-pattern>
@@ -103,6 +107,10 @@
     <servlet-mapping>
         <servlet-name>ProfileAccount</servlet-name>
         <url-pattern>/ProfileAccount</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>OrderManagerSevlet</servlet-name>
+        <url-pattern>/ordermanager</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
