@@ -25,8 +25,24 @@
         <servlet-class>Controller.CreatAccountServlet</servlet-class>
     </servlet>
     <servlet>
-        <servlet-name>CartsServlet</servlet-name>
-        <servlet-class>Controller.CartsServlet</servlet-class>
+        <servlet-name>BuyServlet</servlet-name>
+        <servlet-class>Controller.BuyServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>CartServlet</servlet-name>
+        <servlet-class>Controller.CartServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>AddCartServlet</servlet-name>
+        <servlet-class>Controller.AddCartServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ProcessServlet</servlet-name>
+        <servlet-class>Controller.ProcessServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>CheckoutServlet</servlet-name>
+        <servlet-class>Controller.CheckoutServlet</servlet-class>
     </servlet>
     <servlet>
         <servlet-name>UserManager</servlet-name>
@@ -65,8 +81,24 @@
         <url-pattern>/creatAccount</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
-        <servlet-name>CartsServlet</servlet-name>
-        <url-pattern>/cart</url-pattern>
+        <servlet-name>BuyServlet</servlet-name>
+        <url-pattern>/buy</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>CartServlet</servlet-name>
+        <url-pattern>/shoppingcart</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>AddCartServlet</servlet-name>
+        <url-pattern>/addcart</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ProcessServlet</servlet-name>
+        <url-pattern>/process</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>CheckoutServlet</servlet-name>
+        <url-pattern>/checkout</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>UserManager</servlet-name>

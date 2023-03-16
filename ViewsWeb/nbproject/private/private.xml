@@ -3,10 +3,34 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/D:/Learning_Material_FPT/FPT_SPRING2023/PRJ301/Vie/ViewsWeb/src/java/Registration/OrdersDAO.java</file>
-            <file>file:/D:/Learning_Material_FPT/FPT_SPRING2023/PRJ301/Vie/ViewsWeb/src/java/Registration/OrdersDTO.java</file>
-            <file>file:/D:/Learning_Material_FPT/FPT_SPRING2023/PRJ301/Vie/ViewsWeb/src/java/Controller/OrderManagerSevlet.java</file>
-            <file>file:/D:/Learning_Material_FPT/FPT_SPRING2023/PRJ301/Vie/ViewsWeb/web/ordermanager.jsp</file>
+            <file>file:/C:/Users/ROG/Documents/FPT%20University/Spring2023%20-%20PRJ301/Views/ViewsWeb/src/java/Mylib/DBHelper.java</file>
+            <file>file:/C:/Users/ROG/Documents/FPT%20University/Spring2023%20-%20PRJ301/Views/ViewsWeb/web/WEB-INF/web.xml</file>
+            <file>file:/C:/Users/ROG/Documents/FPT%20University/Spring2023%20-%20PRJ301/Views/ViewsWeb/src/java/Controller/DispatchController.java</file>
+            <file>file:/C:/Users/ROG/Documents/FPT%20University/Spring2023%20-%20PRJ301/Views/ViewsWeb/src/java/Registration/ProductsDTO.java</file>
+            <file>file:/C:/Users/ROG/Documents/FPT%20University/Spring2023%20-%20PRJ301/Views/ViewsWeb/src/java/Registration/OdersDAO.java</file>
+            <file>file:/C:/Users/ROG/Documents/FPT%20University/Spring2023%20-%20PRJ301/Views/ViewsWeb/src/java/Controller/CreatAccountServlet.java</file>
+            <file>file:/C:/Users/ROG/Documents/FPT%20University/Spring2023%20-%20PRJ301/Views/ViewsWeb/src/java/Registration/CartsDTO.java</file>
+            <file>file:/C:/Users/ROG/Documents/FPT%20University/Spring2023%20-%20PRJ301/Views/ViewsWeb/src/java/Controller/SigninServlet.java</file>
+            <file>file:/C:/Users/ROG/Documents/FPT%20University/Spring2023%20-%20PRJ301/Views/ViewsWeb/web/header.jsp</file>
+            <file>file:/C:/Users/ROG/Documents/FPT%20University/Spring2023%20-%20PRJ301/Views/ViewsWeb/src/java/Controller/ProcessServlet.java</file>
+            <file>file:/C:/Users/ROG/Documents/FPT%20University/Spring2023%20-%20PRJ301/Views/ViewsWeb/src/java/Controller/AccountServlet.java</file>
+            <file>file:/C:/Users/ROG/Documents/FPT%20University/Spring2023%20-%20PRJ301/Views/ViewsWeb/web/signin.jsp</file>
+            <file>file:/C:/Users/ROG/Documents/FPT%20University/Spring2023%20-%20PRJ301/Views/ViewsWeb/src/java/Controller/ProductDetailServlet.java</file>
+            <file>file:/C:/Users/ROG/Documents/FPT%20University/Spring2023%20-%20PRJ301/Views/ViewsWeb/src/java/Registration/AccountsDTO.java</file>
+            <file>file:/C:/Users/ROG/Documents/FPT%20University/Spring2023%20-%20PRJ301/Views/ViewsWeb/src/java/Controller/BuyServlet.java</file>
+            <file>file:/C:/Users/ROG/Documents/FPT%20University/Spring2023%20-%20PRJ301/Views/ViewsWeb/web/list-products.jsp</file>
+            <file>file:/C:/Users/ROG/Documents/FPT%20University/Spring2023%20-%20PRJ301/Views/ViewsWeb/src/java/Controller/AddCartServlet.java</file>
+            <file>file:/C:/Users/ROG/Documents/FPT%20University/Spring2023%20-%20PRJ301/Views/ViewsWeb/web/checkout.jsp</file>
+            <file>file:/C:/Users/ROG/Documents/FPT%20University/Spring2023%20-%20PRJ301/Views/ViewsWeb/src/java/Registration/AccountsDAO.java</file>
+            <file>file:/C:/Users/ROG/Documents/FPT%20University/Spring2023%20-%20PRJ301/Views/ViewsWeb/src/java/Registration/ItemsDTO.java</file>
+            <file>file:/C:/Users/ROG/Documents/FPT%20University/Spring2023%20-%20PRJ301/Views/ViewsWeb/src/java/Registration/OdersDTO.java</file>
+            <file>file:/C:/Users/ROG/Documents/FPT%20University/Spring2023%20-%20PRJ301/Views/ViewsWeb/src/java/Registration/ProductsDAO.java</file>
+            <file>file:/C:/Users/ROG/Documents/FPT%20University/Spring2023%20-%20PRJ301/Views/ViewsWeb/src/java/Controller/CartServlet.java</file>
+            <file>file:/C:/Users/ROG/Documents/FPT%20University/Spring2023%20-%20PRJ301/Views/ViewsWeb/src/java/Controller/CheckoutServlet.java</file>
+            <file>file:/C:/Users/ROG/Documents/FPT%20University/Spring2023%20-%20PRJ301/Views/ViewsWeb/src/java/Controller/HomeServlet.java</file>
+            <file>file:/C:/Users/ROG/Documents/FPT%20University/Spring2023%20-%20PRJ301/Views/ViewsWeb/web/productdetail.jsp</file>
+            <file>file:/C:/Users/ROG/Documents/FPT%20University/Spring2023%20-%20PRJ301/Views/ViewsWeb/web/cart.jsp</file>
+            <file>file:/C:/Users/ROG/Documents/FPT%20University/Spring2023%20-%20PRJ301/Views/ViewsWeb/src/java/Controller/ListProductServlet.java</file>
         </group>
     </open-files>
 </project-private>

@@ -203,7 +203,6 @@ public class AccountsDAO implements Serializable {
             stm.setString(5, Dob);
             stm.setString(6, gender);
             stm.setString(7, role);
-            System.out.println(email);
             int rs = stm.executeUpdate();
             if (rs > 0) {
                 r = true;

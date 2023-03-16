@@ -5,12 +5,14 @@
  */
 package Controller;
 
+import Registration.CartsDTO;
 import Registration.ProductsDAO;
 import Registration.ProductsDTO;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.List;
 import javax.servlet.ServletException;
+import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -19,7 +21,7 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author ROG
  */
-public class CartsServlet extends HttpServlet {
+public class CheckoutServlet extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -33,7 +35,21 @@ public class CartsServlet extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
+        response.setContentType("text/html;charset=UTF-8");
         ProductsDAO dao = new ProductsDAO();
+        List<ProductsDTO> list = dao.getList(null, null, null);
+        Cookie[] arr = request.getCookies();
+        String txtCookie = "";
+        if (arr != null) {
+            for (Cookie o : arr) {
+                if (o.getName().equals("cart")) {
+                    txtCookie += o.getValue();
+                }
+            }
+        }
+        CartsDTO cart = new CartsDTO(txtCookie, list);
+        request.setAttribute("cart", cart);
+        request.getRequestDispatcher("checkout.jsp").forward(request, response);
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

@@ -53,7 +53,6 @@ public class CreatAccountServlet extends HttpServlet {
             } else {
                 AccountsDAO dao = new AccountsDAO();
                 String MailChecked = dao.checkEmail(email);
-                System.out.println(MailChecked);
                 if (MailChecked == null) {
                     boolean rs = dao.addAccount(id, email, password, firstname, lastname, dob, country, city, phone, gender, role);
                     if (rs == true) {

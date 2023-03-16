@@ -36,14 +36,23 @@ public class DispatchController extends HttpServlet {
         String button = request.getParameter("btAction");
         String url = "";
         try {
-            if(button.equals("login")){
-                url  = "signin";
+            if (button.equals("login")) {
+                url = "signin";
             }
-            if(button.equals("create")){
-                url  = "creatAccount";
+            if (button.equals("create")) {
+                url = "creatAccount";
             }
-            if(button.equals("save")){
-                url  = "ProfileAccount";
+            if (button.equals("addcart")) {
+                url = "addcart";
+            }
+            if (button.equals("checkout")) {
+                url = "checkout";
+            }
+            if (button.equals("buy")) {
+                url = "buy";
+                if (button.equals("save")) {
+                    url = "ProfileAccount";
+                }
             }
         } catch (Exception e) {
         }

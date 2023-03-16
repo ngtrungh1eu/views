@@ -67,7 +67,7 @@
                                         <a href="shop-side-version-2.html">Men</a></li>
                                     <li class="is-marked">
 
-                                        <a href="shop-side-version-2.html">KASHIR SHARP</a></li>
+                                        <a href="shop-side-version-2.html">${pDetail.brand}</a></li>
                                 </ul>
                             </div>
                             <!--====== End - Product Breadcrumb ======-->
@@ -189,7 +189,7 @@
                                     </ul>
                                 </div>
                                 <div class="u-s-m-b-15">
-                                    <form class="pd-detail__form">
+                                    <form class="pd-detail__form" action="DispatchController" >
                                         <div class="pd-detail-inline-2">
                                             <div class="u-s-m-b-15">
 
@@ -197,8 +197,7 @@
                                                 <div class="input-counter">
 
                                                     <span class="input-counter__minus fas fa-minus"></span>
-
-                                                    <input class="input-counter__text input-counter--text-primary-style" type="text" value="1" data-min="1" data-max="1000">
+                                                    <input class="input-counter__text input-counter--text-primary-style" name="quantity" type="text" value="1" data-min="1" data-max="1000">
 
                                                     <span class="input-counter__plus fas fa-plus"></span></div>
                                                 <!--====== End - Input Counter ======-->
@@ -206,6 +205,8 @@
                                             <div class="u-s-m-b-15">
 
                                                 <button class="btn btn--e-brand-b-2" type="submit">Add to Cart</button></div>
+                                                <input type="hidden" name="pId" value="${pDetail.product_id}" />
+                                                <input type="hidden" name="btAction" value="addcart" />
                                         </div>
                                     </form>
                                 </div>
