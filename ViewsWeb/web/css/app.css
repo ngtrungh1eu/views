@@ -518,7 +518,7 @@ body {
 
 .gl-text {
     display: block;
-    color: #a0a0a0;
+    color: #242424;
     font-size: 13px; }
 
 .gl-label {
@@ -697,19 +697,18 @@ body {
 .btn--e-brand {
     color: #ffffff;
     border: 1px solid transparent;
-    background-color: #ff4500;
     transition: background-color .5s ease-in; }
 .btn--e-brand:hover {
     background-color: #fa4400; }
 
 .btn--e-brand-b-2 {
     color: #ffffff;
-    background-color: #ff4500;
-    border: 2px solid #ff4500;
+    background-color: #000000;
+    border: 2px solid #000000;
     transition: background-color 0.5s ease-in, border-color 0.5s ease-in; }
 .btn--e-brand-b-2:hover {
-    background-color: #fa4400;
-    border-color: #fa4400; }
+    background-color: #4267b2;
+    border-color: #4267b2; }
 
 .btn--e-grey-b-2 {
     color: #333333;
@@ -2979,7 +2978,7 @@ input::-ms-clear {
 .f-cart__table tr:last-child td {
     font-size: 16px;
     font-weight: 700;
-    color: #ff4500; }
+    color: #ff1500; }
 
 .f-cart__ship-link {
     font-size: 13px;
@@ -3215,7 +3214,7 @@ input::-ms-clear {
     display: block; }
 .o-card__price {
     display: block;
-    color: #ff4500;
+    color: #ee1a3d;
     font-size: 13px;
     font-weight: 600; }
 .o-card__del {
@@ -5240,7 +5239,7 @@ input::-ms-clear {
     color: #7f7f7f; }
 
 .is-grid-active .product-m:hover {
-    box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.2); }
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.5); }
 .is-grid-active .product-m:hover .product-m__add-cart {
     opacity: 1;
     visibility: visible; }

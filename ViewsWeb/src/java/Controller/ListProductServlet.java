@@ -5,12 +5,16 @@
  */
 package Controller;
 
+import Registration.CartsDTO;
+import Registration.ItemsDTO;
 import Registration.ProductsDAO;
 import Registration.ProductsDTO;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.List;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
+import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -22,8 +26,7 @@ import javax.servlet.http.HttpServletResponse;
 public class ListProductServlet extends HttpServlet {
 
     /**
-     * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
-     * methods.
+     * Processes requests for both HTTP <code>GET</code> and <code>POST</code> methods.
      *
      * @param request servlet request
      * @param response servlet response
@@ -36,13 +39,49 @@ public class ListProductServlet extends HttpServlet {
         String url = "list-products.jsp";
         String typeValue = request.getParameter("type");
         String brandValue = request.getParameter("brand");
-        String searchValue =  request.getParameter("txtSearch");
-        
+        String searchValue = request.getParameter("txtSearch");
+        String minPrice = request.getParameter("minPrice");
+        String maxPrice = request.getParameter("maxPrice");
+        ProductsDAO dao = new ProductsDAO();
+        List<ProductsDTO> list = dao.getList(brandValue, typeValue, searchValue);
+        Cookie[] arr = request.getCookies();
+        String txtCookie = "";
+        if (arr != null) {
+            for (Cookie o : arr) {
+                if (o.getName().equals("cart")) {
+                    txtCookie += o.getValue();
+                }
+            }
+        }
+        CartsDTO cart = new CartsDTO(txtCookie, list);
+        request.setAttribute("cart", cart);
+        List<ItemsDTO> listItem = cart.getItems();
+        int n;
+        if (listItem != null) {
+            n = listItem.size();
+        } else {
+            n = 0;
+        }
         try {
-            ProductsDAO dao =  new ProductsDAO();
-            request.setAttribute("ListP", dao.getList(brandValue, typeValue, searchValue));
+            request.setAttribute("ListP", list);
+            request.setAttribute("size", n);
         } catch (Exception e) {
         }
+
+//        try {
+//            dao = new ProductsDAO();
+//            request.setAttribute("ListP", dao.getList(brandValue, typeValue, searchValue));
+//        } catch (Exception e) {
+//        }
+        
+        if (minPrice != null || maxPrice != null) {
+            try {
+                dao = new ProductsDAO();
+                request.setAttribute("ListP", dao.getListByPrice(minPrice, maxPrice));
+            } catch (Exception e) {
+            }
+        }
+
         RequestDispatcher rd = request.getRequestDispatcher(url);
         rd.forward(request, response);
     }

@@ -1,9 +1,11 @@
+
 <%-- 
     Document   : productdetail
     Created on : Feb 26, 2023, 7:43:29 PM
     Author     : ROG
 --%>
 
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html class="no-js" lang="en">
@@ -63,10 +65,10 @@
                                         <a href="shop-side-version-2.html">Rolex</a></li>
                                     <li class="has-separator">
 
-                                        <a href="shop-side-version-2.html">Men</a></li>
+                                        <a href="shop-side-version-2.html">${pDetail.type}</a></li>
                                     <li class="is-marked">
 
-                                        <a href="shop-side-version-2.html">KASHIR SHARP</a></li>
+                                        <a href="shop-side-version-2.html">${pDetail.brand}</a></li>
                                 </ul>
                             </div>
                             <!--====== End - Product Breadcrumb ======-->
@@ -78,19 +80,19 @@
                                     <div id="pd-o-initiate">
                                         <div class="pd-o-img-wrap" data-src="images/product/ROLEX/111/111-1.jpg">
 
-                                            <img class="u-img-fluid" src="images/product/ROLEX/111/111-1.jpg" data-zoom-image="images/product/ROLEX/111/111-1.jpg" alt=""></div>
-                                        <div class="pd-o-img-wrap" data-src="images/product/ROLEX/111/111-2.jpg">
+                                            <img class="u-img-fluid" src="${pDetail.image}" data-zoom-image="${pDetail.image}" alt=""></div>
+                                        <div class="pd-o-img-wrap" data-src="${pDetail.image}">
 
-                                            <img class="u-img-fluid" src="images/product/ROLEX/111/111-2.jpg" data-zoom-image="images/product/ROLEX/111/111-2.jpg" alt=""></div>
-                                        <div class="pd-o-img-wrap" data-src="images/product/ROLEX/111/111-3.jpg">
+                                            <img class="u-img-fluid" src="${pDetail.image1}" data-zoom-image="${pDetail.image1}" alt=""></div>
+                                        <div class="pd-o-img-wrap" data-src="${pDetail.image1}">
 
-                                            <img class="u-img-fluid" src="images/product/ROLEX/111/111-3.jpg" data-zoom-image="images/product/ROLEX/111/111-3.jpg" alt=""></div>
-                                        <div class="pd-o-img-wrap" data-src="images/product/ROLEX/111/111-4.jpg">
+                                            <img class="u-img-fluid" src="${pDetail.image2}" data-zoom-image="${pDetail.image2}" alt=""></div>
+                                        <div class="pd-o-img-wrap" data-src="${pDetail.image2}">
 
-                                            <img class="u-img-fluid" src="images/product/ROLEX/111/111-4.jpg" data-zoom-image="images/product/ROLEX/111/111-4.jpg" alt=""></div>
-                                        <div class="pd-o-img-wrap" data-src="images/product/ROLEX/111/111-5.jpg">
+                                            <img class="u-img-fluid" src="${pDetail.image3}" data-zoom-image="${pDetail.image3}" alt=""></div>
+                                        <div class="pd-o-img-wrap" data-src="${pDetail.image3}">
 
-                                            <img class="u-img-fluid" src="images/product/ROLEX/111/111-5.jpg" data-zoom-image="images/product/ROLEX/111/111-5.jpg" alt=""></div>
+                                            <img class="u-img-fluid" src="${pDetail.image4}" data-zoom-image="${pDetail.image4}" alt=""></div>
                                     </div>
 
                                     <span class="pd-text">Click for larger zoom</span>
@@ -100,19 +102,19 @@
                                         <div id="pd-o-thumbnail">
                                             <div>
 
-                                                <img class="u-img-fluid" src="images/product/ROLEX/111/111-1.jpg" alt=""></div>
+                                                <img class="u-img-fluid" src="${pDetail.image}" alt=""></div>
                                             <div>
 
-                                                <img class="u-img-fluid" src="images/product/ROLEX/111/111-2.jpg" alt=""></div>
+                                                <img class="u-img-fluid" src="${pDetail.image1}" alt=""></div>
                                             <div>
 
-                                                <img class="u-img-fluid" src="images/product/ROLEX/111/111-3.jpg" alt=""></div>
+                                                <img class="u-img-fluid" src="${pDetail.image2}" alt=""></div>
                                             <div>
 
-                                                <img class="u-img-fluid" src="images/product/ROLEX/111/111-4.jpg" alt=""></div>
+                                                <img class="u-img-fluid" src="${pDetail.image3}" alt=""></div>
                                             <div>
 
-                                                <img class="u-img-fluid" src="images/product/ROLEX/111/111-5.jpg" alt=""></div>
+                                                <img class="u-img-fluid" src="${pDetail.image4}" alt=""></div>
                                         </div>
                                     </div>
                                 </div>
@@ -125,13 +127,13 @@
                             <div class="pd-detail">
                                 <div>
 
-                                    <span class="pd-detail__name">KASHIR SHARP</span></div>
+                                    <span class="pd-detail__name">${pDetail.product_name}</span></div>
                                 <div>
                                     <div class="pd-detail__inline">
 
-                                        <span class="pd-detail__price">$6.99</span>
+                                        <span class="pd-detail__price">${pDetail.newPrice}</span>
 
-                                        <span class="pd-detail__discount">(76% OFF)</span><del class="pd-detail__del">$28.97</del></div>
+                                        <span class="pd-detail__discount">(${pDetail.saleoff}% OFF)</span><del class="pd-detail__del">${pDetail.price}</del></div>
                                 </div>
                                 <div class="u-s-m-b-15">
                                     <div class="pd-detail__rating gl-rating-style"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
@@ -149,7 +151,7 @@
                                 </div>
                                 <div class="u-s-m-b-15">
 
-                                    <span class="pd-detail__preview-desc">Curnon Kashmir Sharp men's watch has a sharp, impressive beauty, bold personality of men; Metal Band, Scratch Resistant Sapphire Glass, 3ATM Water Resistant.</span></div>
+                                    <span class="pd-detail__preview-desc">${pDetail.detail}</span></div>
                                 <div class="u-s-m-b-15">
                                     <div class="pd-detail__inline">
 
@@ -188,7 +190,7 @@
                                     </ul>
                                 </div>
                                 <div class="u-s-m-b-15">
-                                    <form class="pd-detail__form">
+                                    <form class="pd-detail__form" action="DispatchController" >
                                         <div class="pd-detail-inline-2">
                                             <div class="u-s-m-b-15">
 
@@ -196,8 +198,7 @@
                                                 <div class="input-counter">
 
                                                     <span class="input-counter__minus fas fa-minus"></span>
-
-                                                    <input class="input-counter__text input-counter--text-primary-style" type="text" value="1" data-min="1" data-max="1000">
+                                                    <input class="input-counter__text input-counter--text-primary-style" name="quantity" type="text" value="1" data-min="1" data-max="1000">
 
                                                     <span class="input-counter__plus fas fa-plus"></span></div>
                                                 <!--====== End - Input Counter ======-->
@@ -205,6 +206,8 @@
                                             <div class="u-s-m-b-15">
 
                                                 <button class="btn btn--e-brand-b-2" type="submit">Add to Cart</button></div>
+                                                <input type="hidden" name="pId" value="${pDetail.product_id}" />
+                                                <input type="hidden" name="btAction" value="addcart" />
                                         </div>
                                     </form>
                                 </div>
@@ -637,13 +640,14 @@
                     <div class="container">
                         <div class="slider-fouc">
                             <div class="owl-carousel product-slider" data-item="4">
+                                <c:forEach begin="1" end="4" var="dto" items="${ListP}">
                                 <div class="u-s-m-b-30">
                                     <div class="product-o product-o--hover-on">
                                         <div class="product-o__wrap">
 
-                                            <a class="aspect aspect--bg-grey aspect--square u-d-block" href="product-detail.html">
+                                            <a class="aspect aspect--bg-grey aspect--square u-d-block" href="/ViewsWeb/productdetail?pId=${dto.product_id}">
 
-                                                <img class="aspect__img" src="images/product/electronic/product1.jpg" alt=""></a>
+                                                <img class="aspect__img" src="${dto.image}" alt=""></a>
                                             <div class="product-o__action-wrap">
                                                 <ul class="product-o__action-list">
                                                     <li>
@@ -664,21 +668,22 @@
 
                                         <span class="product-o__category">
 
-                                            <a href="shop-side-version-2.html">Electronics</a></span>
+                                            <a href="shop-side-version-2.html">${dto.type}</a></span>
 
                                         <span class="product-o__name">
 
-                                            <a href="product-detail.html">Beats Bomb Wireless Headphone</a></span>
+                                            <a href="/ViewsWeb/productdetail?pId=${dto.product_id}">${dto.product_name}</a></span>
                                         <div class="product-o__rating gl-rating-style"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
 
                                             <span class="product-o__review">(20)</span></div>
 
-                                        <span class="product-o__price">$125.00
+                                        <span class="product-o__price">$${dto.newPrice}
 
-                                            <span class="product-o__discount">$160.00</span></span>
+                                            <span class="product-o__discount">$${dto.price}</span></span>
                                     </div>
                                 </div>
-                                <div class="u-s-m-b-30">
+                                </c:forEach>
+<!--                                <div class="u-s-m-b-30">
                                     <div class="product-o product-o--hover-on">
                                         <div class="product-o__wrap">
 
@@ -882,7 +887,7 @@
 
                                             <span class="product-o__discount">$160.00</span></span>
                                     </div>
-                                </div>
+                                </div>-->
                             </div>
                         </div>
                     </div>

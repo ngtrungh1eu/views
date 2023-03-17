@@ -1,9 +1,17 @@
 <%-- 
     Document   : edit-profile
+<<<<<<< HEAD
     Created on : Mar 9, 2023, 10:39:55 PM
     Author     : ACER
 --%>
 
+=======
+    Created on : Mar 15, 2023, 10:11:21 PM
+    Author     : khong
+--%>
+
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
+>>>>>>> ea1a47ad0ceb09795d2d5db45e6750f63f971343
 <!DOCTYPE html>
 <html class="no-js" lang="en">
     <head>
@@ -38,6 +46,7 @@
         <div id="app">
 
             <!--====== Main Header ======-->
+<<<<<<< HEAD
             <header class="header--style-1 header--box-shadow">
 
                 <!--====== Nav 1 ======-->
@@ -1378,6 +1387,9 @@
                 </nav>
                 <!--====== End - Nav 2 ======-->
             </header>
+=======
+            <jsp:include page="header.jsp" ></jsp:include>
+>>>>>>> ea1a47ad0ceb09795d2d5db45e6750f63f971343
             <!--====== End - Main Header ======-->
 
 
@@ -1430,6 +1442,7 @@
                                                     <li>
 
                                                         <a href="dash-my-profile.html">My Profile</a></li>
+<<<<<<< HEAD
                                                     <li>
 
                                                         <a href="dash-address-book.html">Address Book</a></li>
@@ -1445,6 +1458,9 @@
                                                     <li>
 
                                                         <a href="dash-cancellation.html">My Returns & Cancellations</a></li>
+=======
+                                                    
+>>>>>>> ea1a47ad0ceb09795d2d5db45e6750f63f971343
                                                 </ul>
                                             </div>
                                         </div>
@@ -1483,6 +1499,10 @@
                                         </div>
                                         <!--====== End - Dashboard Features ======-->
                                     </div>
+<<<<<<< HEAD
+=======
+                                    <!-- Toan code -->
+>>>>>>> ea1a47ad0ceb09795d2d5db45e6750f63f971343
                                     <div class="col-lg-9 col-md-12">
                                         <div class="dash__box dash__box--shadow dash__box--radius dash__box--bg-white">
                                             <div class="dash__pad-2">
@@ -1532,6 +1552,17 @@
                                                                             <option value="1992">1992</option>
                                                                             <option value="1993">1993</option>
                                                                             <option value="1994">1994</option>
+<<<<<<< HEAD
+=======
+                                                                            <option value="1995">1995</option>
+                                                                            <option value="1996">1996</option>
+                                                                            <option value="1997">1997</option>
+                                                                            <option value="1998">1998</option>
+                                                                            <option value="1999">1999</option>
+                                                                            <option value="2000">2000</option>
+                                                                            <option value="2001">2001</option>
+                                                                            <option value="2002">2002</option>
+>>>>>>> ea1a47ad0ceb09795d2d5db45e6750f63f971343
                                                                         </select></div>
                                                                     <!--====== End - Date of Birth Select-Box ======-->
                                                                 </div>
@@ -1539,8 +1570,13 @@
 
                                                                     <label class="gl-label" for="gender">GENDER</label><select class="select-box select-box--primary-style u-w-100" id="gender" name="gender">
                                                                         <option selected>Select</option>
+<<<<<<< HEAD
                                                                         <option value="male">Male</option>
                                                                         <option value="male">Female</option>
+=======
+                                                                        <option value="Male">Male</option>
+                                                                        <option value="Female">Female</option>
+>>>>>>> ea1a47ad0ceb09795d2d5db45e6750f63f971343
                                                                     </select></div>
                                                             </div>
                                                             <div class="gl-inline">
@@ -1574,6 +1610,10 @@
                                             </div>
                                         </div>
                                     </div>
+<<<<<<< HEAD
+=======
+                                    <!-- Toan code -->
+>>>>>>> ea1a47ad0ceb09795d2d5db45e6750f63f971343
                                 </div>
                             </div>
                         </div>
@@ -1584,6 +1624,7 @@
             </div>
 
             <!--====== Main Footer ======-->
+<<<<<<< HEAD
             <footer>
                 <div class="outer-footer">
                     <div class="container">
@@ -1740,6 +1781,9 @@
                     </div>
                 </div>
             </footer>
+=======
+            <jsp:include page="footer.jsp"></jsp:include>
+>>>>>>> ea1a47ad0ceb09795d2d5db45e6750f63f971343
 
             <!--====== Modal Section ======-->
 
@@ -1812,4 +1856,8 @@
         </div>
         </noscript>
     </body>
+<<<<<<< HEAD
 </html>
+=======
+</html>
+>>>>>>> ea1a47ad0ceb09795d2d5db45e6750f63f971343

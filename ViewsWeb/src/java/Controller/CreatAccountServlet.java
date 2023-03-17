@@ -22,8 +22,7 @@ import javax.servlet.http.HttpServletResponse;
 public class CreatAccountServlet extends HttpServlet {
 
     /**
-     * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
-     * methods.
+     * Processes requests for both HTTP <code>GET</code> and <code>POST</code> methods.
      *
      * @param request servlet request
      * @param response servlet response
@@ -54,13 +53,19 @@ public class CreatAccountServlet extends HttpServlet {
             } else {
                 AccountsDAO dao = new AccountsDAO();
                 String MailChecked = dao.checkEmail(email);
+<<<<<<< HEAD
 
                 System.out.println(MailChecked);
+=======
+>>>>>>> ea1a47ad0ceb09795d2d5db45e6750f63f971343
                 if (MailChecked == null) {
                     boolean rs = dao.addAccount(id, email, password, firstname, lastname, dob, country, city, phone, gender, role);
                     if (rs == true) {
                         url = "home.jsp";
+<<<<<<< HEAD
 
+=======
+>>>>>>> ea1a47ad0ceb09795d2d5db45e6750f63f971343
                     } else {
                         url = "signup.jsp";
                     }

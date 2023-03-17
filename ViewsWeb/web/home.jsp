@@ -1073,11 +1073,12 @@
                     <div class="section__content">
                         <div class="container">
                             <div class="row">
-                                <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6 u-s-m-b-30">
+                            <%--<c:forEach begin="1" end="4" var="dto" items="${ListP}">--%>
+                                <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6 u-s-m-b-30">                       
                                     <div class="product-o product-o--hover-on u-h-100">
                                         <div class="product-o__wrap">
 
-                                            <a class="aspect aspect--bg-grey aspect--square u-d-block" href="product-detail.html">
+                                            <a class="aspect aspect--bg-grey aspect--square u-d-block" href="/ViewsWeb/productdetail?pId=313">
 
                                                 <img class="aspect__img" src="images/product/electronic/313.jpg" alt=""></a>
                                             <div class="product-o__action-wrap">
@@ -1100,11 +1101,11 @@
 
                                         <span class="product-o__category">
 
-                                            <a href="shop-side-version-2.html">Klasern</a></span>
+                                            <a href="/ViewsWeb/listProduct?brand=Klasern">Klasern</a></span>
 
                                         <span class="product-o__name">
 
-                                            <a href="product-detail.html">MOT3</a></span>
+                                            <a href="/ViewsWeb/productdetail?pId=313">MOT3</a></span>
                                         <div class="product-o__rating gl-rating-style"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
 
                                             <span class="product-o__review">(23)</span></div>
@@ -1114,11 +1115,12 @@
                                             <span class="product-o__discount">$89.00</span></span>
                                     </div>
                                 </div>
+                                <%--</c:forEach>--%>
                                 <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6 u-s-m-b-30">
                                     <div class="product-o product-o--hover-on u-h-100">
                                         <div class="product-o__wrap">
 
-                                            <a class="aspect aspect--bg-grey aspect--square u-d-block" href="product-detail.html">
+                                            <a class="aspect aspect--bg-grey aspect--square u-d-block" href="/ViewsWeb/productdetail?pId=413">
 
                                                 <img class="aspect__img" src="images/product/electronic/413.jpg" alt=""></a>
                                             <div class="product-o__action-wrap">
@@ -1141,11 +1143,11 @@
 
                                         <span class="product-o__category">
 
-                                            <a href="shop-side-version-2.html">VIWAT</a></span>
+                                            <a href="/ViewsWeb/listProduct?brand=VIWAT">VIWAT</a></span>
 
                                         <span class="product-o__name">
 
-                                            <a href="product-detail.html">Viwat Tinh Hoa X9.W1049ASC</a></span>
+                                            <a href="/ViewsWeb/productdetail?pId=413">Viwat Tinh Hoa X9.W1049ASC</a></span>
                                         <div class="product-o__rating gl-rating-style"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
 
                                             <span class="product-o__review">(23)</span></div>
@@ -1159,7 +1161,7 @@
                                     <div class="product-o product-o--hover-on u-h-100">
                                         <div class="product-o__wrap">
 
-                                            <a class="aspect aspect--bg-grey aspect--square u-d-block" href="product-detail.html">
+                                            <a class="aspect aspect--bg-grey aspect--square u-d-block" href="/ViewsWeb/productdetail?pId=514">
 
                                                 <img class="aspect__img" src="images/product/electronic/514.jpg" alt=""></a>
                                             <div class="product-o__action-wrap">
@@ -1182,11 +1184,11 @@
 
                                         <span class="product-o__category">
 
-                                            <a href="shop-side-version-2.html">Yors</a></span>
+                                            <a href="/ViewsWeb/listProduct?brand=Yors">Yors</a></span>
 
                                         <span class="product-o__name">
 
-                                            <a href="product-detail.html">NightFallGray</a></span>
+                                            <a href="/ViewsWeb/productdetail?pId=514">NightFallGray</a></span>
                                         <div class="product-o__rating gl-rating-style"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
 
                                             <span class="product-o__review">(23)</span></div>
@@ -1200,7 +1202,7 @@
                                     <div class="product-o product-o--hover-on u-h-100">
                                         <div class="product-o__wrap">
 
-                                            <a class="aspect aspect--bg-grey aspect--square u-d-block" href="product-detail.html">
+                                            <a class="aspect aspect--bg-grey aspect--square u-d-block" href="/ViewsWeb/productdetail?pId=517">
 
                                                 <img class="aspect__img" src="images/product/electronic/517.jpg" alt=""></a>
                                             <div class="product-o__action-wrap">
@@ -1223,11 +1225,11 @@
 
                                         <span class="product-o__category">
 
-                                            <a href="shop-side-version-2.html">Yors</a></span>
+                                            <a href="/ViewsWeb/listProduct?brand=Yors">Yors</a></span>
 
                                         <span class="product-o__name">
 
-                                            <a href="product-detail.html">OPK_8612</a></span>
+                                            <a href="/ViewsWeb/productdetail?pId=517">OPK_8612</a></span>
                                         <div class="product-o__rating gl-rating-style"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
 
                                             <span class="product-o__review">(23)</span></div>

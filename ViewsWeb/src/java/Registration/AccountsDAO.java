@@ -20,6 +20,58 @@ import java.util.List;
  * @author ROG
  */
 public class AccountsDAO implements Serializable {
+    
+    public List<AccountsDTO> getList() throws SQLException {
+        ArrayList<AccountsDTO> list = new ArrayList<AccountsDTO>();
+        PreparedStatement stm = null;
+        Connection con = null;
+        ResultSet rs = null;
+        AccountsDTO result = null;
+        try {
+            con = DBHelper.getConnection();
+            if (con != null) {
+                String sql = "SELECT * from users";
+                stm = con.prepareStatement(sql);
+
+                rs = stm.executeQuery();
+                System.out.println("yyy");
+                while (rs.next()) {
+
+                    int User_id = rs.getInt("id");
+                    String Email = rs.getString("email");
+                    String Password = rs.getString("password");
+                    String setFirst_name = rs.getString("first_name");
+                    String setLast_name = rs.getString("last_name");
+                    Date Dob = rs.getDate("DoB");                  
+                    String Country = rs.getString("country");
+                    String City = rs.getString("city");
+                    String Phone = rs.getString("phone");
+                    String Gender = rs.getString("gender");
+                    String Role = rs.getString("role");
+                    result = new AccountsDTO(User_id, Email, Password, setFirst_name, setLast_name, Dob, Country, City, Phone, Gender, Role);
+                    list.add(result);
+//                    System.out.println(result.getDob());
+//                    System.out.println("yyy");
+
+                }
+                System.out.println(list);
+                return list;
+
+            }
+        } finally {
+            if (rs != null) {
+                rs.close();
+            }
+            if (stm != null) {
+                stm.close();
+            }
+            if (con != null) {
+                con.close();
+            }
+        }
+        return list;
+
+    }
 
     public List<AccountsDTO> getList() throws SQLException {
         ArrayList<AccountsDTO> list = new ArrayList<AccountsDTO>();
@@ -138,6 +190,7 @@ public class AccountsDAO implements Serializable {
         }
         return result;
     }
+<<<<<<< HEAD
 
     public boolean addAccount(int id, String email, String password, String firstname, String lastname, String Dob, String country, String city, String phone, String gender, String role) {
         boolean r = false;
@@ -159,6 +212,29 @@ public class AccountsDAO implements Serializable {
             System.out.println(email);
             int rs = stm.executeUpdate();
             if (rs > 0) {
+=======
+    
+    public boolean updateAccount(String id, String email, String password, String firstname, String lastname, String Dob, String country, String city, String phone, String gender, String role) {
+        boolean r = false;
+        try {
+            Connection con = DBHelper.getConnection();
+
+            String sql2 = "UPDATE users SET first_name=?, last_name=?, phone=?, gender=? WHERE email =? AND password =?";
+
+            PreparedStatement stm2 = con.prepareStatement(sql2);
+
+            stm2.setString(1, firstname);
+            stm2.setString(2, lastname);
+
+            stm2.setString(3, phone);
+            stm2.setString(4, gender);
+            stm2.setString(5, email);
+            stm2.setString(6, password);
+
+            System.out.println(email);
+            int rs2 = stm2.executeUpdate();
+            if (rs2 > 0) {
+>>>>>>> ea1a47ad0ceb09795d2d5db45e6750f63f971343
 
                 r = true;
             } else {
@@ -168,6 +244,7 @@ public class AccountsDAO implements Serializable {
         }
         return r;
     }
+<<<<<<< HEAD
 
     public boolean updateAccount(String id, String email, String password, String firstname, String lastname, String Dob, String country, String city, String phone, String gender, String role) {
         boolean r = false;
@@ -190,6 +267,47 @@ public class AccountsDAO implements Serializable {
             int rs2 = stm2.executeUpdate();
             if (rs2 > 0) {
 
+=======
+    
+    public boolean delete(int id){
+        String sql = "DELETE FROM users WHERE id = ?";   
+        try {
+            
+            Connection conn = DBHelper.getConnection();
+            PreparedStatement ps = conn.prepareStatement(sql);                      
+            ps.setInt(1, id);
+            
+            if (ps.executeUpdate() > 0)
+                return true;
+            else
+                return false;
+            
+	}
+        catch (SQLException ex) {
+            
+        }
+        
+        return false;
+    }
+
+    public boolean addAccount(int id, String email, String password, String firstname, String lastname, String Dob, String country, String city, String phone, String gender, String role) {
+        boolean r = false;
+        try {
+            Connection con = DBHelper.getConnection();
+            String sql = "insert into users (email, [password], first_name, last_name, DoB, gender, [role] ) \n"
+                    + "values ("
+                    + "?, ?, ?, ?, ?, ?, ?)";
+            PreparedStatement stm = con.prepareStatement(sql);
+            stm.setString(1, email);
+            stm.setString(2, password);
+            stm.setString(3, firstname);
+            stm.setString(4, lastname);
+            stm.setString(5, Dob);
+            stm.setString(6, gender);
+            stm.setString(7, role);
+            int rs = stm.executeUpdate();
+            if (rs > 0) {
+>>>>>>> ea1a47ad0ceb09795d2d5db45e6750f63f971343
                 r = true;
             } else {
                 r = false;
@@ -198,6 +316,7 @@ public class AccountsDAO implements Serializable {
         }
         return r;
     }
+<<<<<<< HEAD
 //    public boolean getInforUser(String email){
 //        boolean r = false;
 //        try {
@@ -205,6 +324,8 @@ public class AccountsDAO implements Serializable {
 //        } catch (Exception e) {
 //        }
 //    }
+=======
+>>>>>>> ea1a47ad0ceb09795d2d5db45e6750f63f971343
 
     public String checkEmail(String email) throws SQLException {
 //        ArrayList<AccountsDTO> list;
@@ -251,6 +372,7 @@ public class AccountsDAO implements Serializable {
         return result;
     }
 
+<<<<<<< HEAD
      public boolean delete(int id){
         String sql = "DELETE FROM users WHERE id = ?";   
         try {
@@ -310,6 +432,8 @@ public class AccountsDAO implements Serializable {
 //    }
 //}
 
+=======
+>>>>>>> ea1a47ad0ceb09795d2d5db45e6750f63f971343
 //     public List<ViewsDTO> getListByPara(String keyword){
 //        Connection con = null;
 //        PreparedStatement stm = null;
@@ -344,7 +468,11 @@ public class AccountsDAO implements Serializable {
 //         }
 //         return list;
 //     }
+<<<<<<< HEAD
 // Test ham getList()//
+=======
+    // Test ham getList()//
+>>>>>>> ea1a47ad0ceb09795d2d5db45e6750f63f971343
 //     public static void main(String[] args) {
 //        AccountsDAO dao = new AccountsDAO();
 //        String brandValue = null;
@@ -357,4 +485,8 @@ public class AccountsDAO implements Serializable {
 //         }
 //         
 //    }
+<<<<<<< HEAD
 
+=======
+}
+>>>>>>> ea1a47ad0ceb09795d2d5db45e6750f63f971343

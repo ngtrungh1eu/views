@@ -6,11 +6,16 @@
 package Controller;
 
 import Registration.AccountsDAO;
+import Registration.CartsDTO;
+import Registration.ProductsDAO;
+import Registration.ProductsDTO;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.SQLException;
+import java.util.List;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
+import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -40,9 +45,22 @@ public class AccountServlet extends HttpServlet {
         String password = null;
         String url = "account.jsp";
         try {
-            AccountsDAO dao =  new AccountsDAO();
+            ProductsDAO dao = new ProductsDAO();
+            List<ProductsDTO> list = dao.getList(null, null, null);
+            Cookie[] arr = request.getCookies();
+            String txtCookie = "";
+            if (arr != null) {
+                for (Cookie o : arr) {
+                    if (o.getName().equals("cart")) {
+                        txtCookie += o.getValue();
+                    }
+                }
+            }
+            CartsDTO cart = new CartsDTO(txtCookie, list);
+            request.setAttribute("cart", cart);
+            AccountsDAO Adao = new AccountsDAO();
             HttpSession session = request.getSession();
-            session.setAttribute("AccountP", dao.checklogin(email, password, id));
+            session.setAttribute("AccountP", Adao.checklogin(email, password, id));
         } catch (SQLException e) {
         }
         RequestDispatcher rd = request.getRequestDispatcher(url);

@@ -4,6 +4,7 @@
     Author     : ROG
 --%>
 
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <!DOCTYPE html>
@@ -168,7 +169,7 @@
                             <div class="row">
                                 <div class="col-lg-6">
                                     <h1 class="checkout-f__h1">DELIVERY INFORMATION</h1>
-                                    <form class="checkout-f__delivery">
+                                    <form class="checkout-f__delivery" action="process">
                                         <div class="u-s-m-b-30">
                                             <div class="u-s-m-b-15">
 
@@ -189,12 +190,12 @@
 
                                                     <label class="gl-label" for="billing-fname">FIRST NAME *</label>
 
-                                                    <input class="input-text input-text--primary-style" type="text" id="billing-fname" data-bill=""></div>
+                                                    <input class="input-text input-text--primary-style" type="text" name="Cfirstname" value="${Cfirstname}" id="billing-fname" data-bill=""></div>
                                                 <div class="u-s-m-b-15">
 
                                                     <label class="gl-label" for="billing-lname">LAST NAME *</label>
 
-                                                    <input class="input-text input-text--primary-style" type="text" id="billing-lname" data-bill=""></div>
+                                                    <input class="input-text input-text--primary-style" type="text" name="Clastname" value="${Clastname}" id="billing-lname" data-bill=""></div>
                                             </div>
                                             <!--====== End - First Name, Last Name ======-->
 
@@ -204,7 +205,7 @@
 
                                                 <label class="gl-label" for="billing-email">E-MAIL *</label>
 
-                                                <input class="input-text input-text--primary-style" type="text" id="billing-email" data-bill=""></div>
+                                                <input class="input-text input-text--primary-style" type="text" name="Cemail" value="${Cemail}" id="billing-email" data-bill=""></div>
                                             <!--====== End - E-MAIL ======-->
 
 
@@ -213,7 +214,7 @@
 
                                                 <label class="gl-label" for="billing-phone">PHONE *</label>
 
-                                                <input class="input-text input-text--primary-style" type="text" id="billing-phone" data-bill=""></div>
+                                                <input class="input-text input-text--primary-style" type="text" name="Cphone" value="${Cphone}" id="billing-phone" data-bill=""></div>
                                             <!--====== End - PHONE ======-->
 
 
@@ -222,19 +223,15 @@
 
                                                 <label class="gl-label" for="billing-street">STREET ADDRESS *</label>
 
-                                                <input class="input-text input-text--primary-style" type="text" id="billing-street" placeholder="House name and street name" data-bill=""></div>
-                                            <div class="u-s-m-b-15">
-
-                                                <label for="billing-street-optional"></label>
-
-                                                <input class="input-text input-text--primary-style" type="text" id="billing-street-optional" placeholder="Apartment, suite unit etc. (optional)" data-bill=""></div>
+                                                <input class="input-text input-text--primary-style" type="text" name="Caddress" value="${Caddress}" id="billing-street" placeholder="House name and street name" data-bill=""></div>
+                                           
                                             <!--====== End - Street Address ======-->
 
 
                                             <!--====== Country ======-->
-                                            <div class="u-s-m-b-15">
+<!--                                            <div class="u-s-m-b-15">
 
-                                                <!--====== Select Box ======-->
+                                                ====== Select Box ======
 
                                                 <label class="gl-label" for="billing-country">COUNTRY *</label><select class="select-box select-box--primary-style" id="billing-country" data-bill="">
                                                     <option selected value="">Choose Country</option>
@@ -242,8 +239,8 @@
                                                     <option value="uk">United Kingdom (UK)</option>
                                                     <option value="us">United States (US)</option>
                                                 </select>
-                                                <!--====== End - Select Box ======-->
-                                            </div>
+                                                ====== End - Select Box ======
+                                            </div>-->
                                             <!--====== End - Country ======-->
 
 
@@ -252,32 +249,21 @@
 
                                                 <label class="gl-label" for="billing-town-city">TOWN/CITY *</label>
 
-                                                <input class="input-text input-text--primary-style" type="text" id="billing-town-city" data-bill=""></div>
+                                                <input class="input-text input-text--primary-style" type="text" name="Ccity" value="${Ccity}" id="billing-town-city" data-bill=""></div>
                                             <!--====== End - Town / City ======-->
 
 
                                             <!--====== STATE/PROVINCE ======-->
-                                            <div class="u-s-m-b-15">
-
-                                                <!--====== Select Box ======-->
-
-                                                <label class="gl-label" for="billing-state">STATE/PROVINCE *</label><select class="select-box select-box--primary-style" id="billing-state" data-bill="">
-                                                    <option selected value="">Choose State/Province</option>
-                                                    <option value="al">Alabama</option>
-                                                    <option value="al">Alaska</option>
-                                                    <option value="ny">New York</option>
-                                                </select>
-                                                <!--====== End - Select Box ======-->
-                                            </div>
+                                           
                                             <!--====== End - STATE/PROVINCE ======-->
 
 
                                             <!--====== ZIP/POSTAL ======-->
-                                            <div class="u-s-m-b-15">
+<!--                                            <div class="u-s-m-b-15">
 
                                                 <label class="gl-label" for="billing-zip">ZIP/POSTAL CODE *</label>
 
-                                                <input class="input-text input-text--primary-style" type="text" id="billing-zip" placeholder="Zip/Postal Code" data-bill=""></div>
+                                                <input class="input-text input-text--primary-style" type="text" id="billing-zip" placeholder="Zip/Postal Code" data-bill=""></div>-->
                                             <!--====== End - ZIP/POSTAL ======-->
                                             <div class="u-s-m-b-10">
 
@@ -308,7 +294,7 @@
                                                 <label class="gl-label" for="order-note">ORDER NOTE</label><textarea class="text-area text-area--primary-style" id="order-note"></textarea></div>
                                             <div>
 
-                                                <button class="btn btn--e-transparent-brand-b-2" type="submit">SAVE</button></div>
+                                                <button class="btn btn--e-transparent-brand-b-2" name="btAction" value="saveinfoOder" type="submit">SAVE</button></div>
                                         </div>
                                     </form>
                                 </div>
@@ -316,28 +302,36 @@
                                     <h1 class="checkout-f__h1">ORDER SUMMARY</h1>
 
                                     <!--====== Order Summary ======-->
+                                <c:set var="userID" value="${sessionScope.Account.user_id}"></c:set>
+                                <c:set var="o" value="${requestScope.cart}"></c:set>
                                     <div class="o-summary">
                                         <div class="o-summary__section u-s-m-b-30">
                                             <div class="o-summary__item-wrap gl-scroll">
-                                                <div class="o-card">
-                                                    <div class="o-card__flex">
-                                                        <div class="o-card__img-wrap">
+                                            <c:forEach items="${o.items}" var="i">
+                                                <c:set var="user_id" value="${i.user_id}"></c:set>
+                                                <c:if test="${userID == user_id}">
+                                                    <div class="o-card">
+                                                        <div class="o-card__flex">
+                                                            <div class="o-card__img-wrap">
 
-                                                            <img class="u-img-fluid" src="images/product/electronic/product3.jpg" alt=""></div>
-                                                        <div class="o-card__info-wrap">
+                                                                <img class="u-img-fluid" src="${i.product.image}" alt=""></div>
+                                                            <div class="o-card__info-wrap">
 
-                                                            <span class="o-card__name">
+                                                                <span class="o-card__name">
 
-                                                                <a href="product-detail.html">Yellow Wireless Headphone</a></span>
+                                                                    <a href="product-detail.html">${i.product.product_name}</a></span>
 
-                                                            <span class="o-card__quantity">Quantity x 1</span>
+                                                                <span class="o-card__quantity">Quantity x ${i.quantity}</span>
 
-                                                            <span class="o-card__price">$150.00</span></div>
+                                                                <span class="o-card__price">$${(i.price*i.quantity)}</span></div>
+                                                        </div>
+
+                                                        <a class="o-card__del far fa-trash-alt"></a>
                                                     </div>
-
-                                                    <a class="o-card__del far fa-trash-alt"></a>
-                                                </div>
-                                                <div class="o-card">
+                                                </c:if>
+                                            </c:forEach>
+                                                
+<!--                                                <div class="o-card">
                                                     <div class="o-card__flex">
                                                         <div class="o-card__img-wrap">
 
@@ -387,7 +381,7 @@
                                                             <span class="o-card__quantity">Quantity x 1</span>
 
                                                             <span class="o-card__price">$150.00</span></div>
-                                                    </div>
+                                                    </div>-->
 
                                                     <a class="o-card__del far fa-trash-alt"></a>
                                                 </div>
@@ -417,20 +411,17 @@
                                                 <table class="o-summary__table">
                                                     <tbody>
                                                         <tr>
-                                                            <td>SHIPPING</td>
-                                                            <td>$4.00</td>
-                                                        </tr>
-                                                        <tr>
                                                             <td>TAX</td>
-                                                            <td>$0.00</td>
+                                                            <c:set var="tax" value="${o.totalMoney*0.05}" ></c:set>
+                                                            <td>$ ${tax}</td>
                                                         </tr>
                                                         <tr>
                                                             <td>SUBTOTAL</td>
-                                                            <td>$379.00</td>
+                                                            <td>$ ${o.totalMoney}</td>
                                                         </tr>
                                                         <tr>
                                                             <td>GRAND TOTAL</td>
-                                                            <td>$379.00</td>
+                                                            <td>$ ${o.totalMoney + tax}</td>
                                                         </tr>
                                                     </tbody>
                                                 </table>
@@ -439,7 +430,7 @@
                                         <div class="o-summary__section u-s-m-b-30">
                                             <div class="o-summary__box">
                                                 <h1 class="checkout-f__h1">PAYMENT INFORMATION</h1>
-                                                <form class="checkout-f__payment">
+                                                <form class="checkout-f__payment" action="DispatchController" >
                                                     <div class="u-s-m-b-10">
 
                                                         <!--====== Radio Box ======-->
@@ -471,43 +462,7 @@
                                                     <div class="u-s-m-b-10">
 
                                                         <!--====== Radio Box ======-->
-                                                        <div class="radio-box">
-
-                                                            <input type="radio" id="pay-with-check" name="payment">
-                                                            <div class="radio-box__state radio-box__state--primary">
-
-                                                                <label class="radio-box__label" for="pay-with-check">Pay With Check</label></div>
-                                                        </div>
-                                                        <!--====== End - Radio Box ======-->
-
-                                                        <span class="gl-text u-s-m-t-6">Please send a check to Store Name, Store Street, Store Town, Store State / County, Store Postcode.</span>
-                                                    </div>
-                                                    <div class="u-s-m-b-10">
-
-                                                        <!--====== Radio Box ======-->
-                                                        <div class="radio-box">
-
-                                                            <input type="radio" id="pay-with-card" name="payment">
-                                                            <div class="radio-box__state radio-box__state--primary">
-
-                                                                <label class="radio-box__label" for="pay-with-card">Pay With Credit / Debit Card</label></div>
-                                                        </div>
-                                                        <!--====== End - Radio Box ======-->
-
-                                                        <span class="gl-text u-s-m-t-6">International Credit Cards must be eligible for use within the United States.</span>
-                                                    </div>
-                                                    <div class="u-s-m-b-10">
-
-                                                        <!--====== Radio Box ======-->
-                                                        <div class="radio-box">
-
-                                                            <input type="radio" id="pay-pal" name="payment">
-                                                            <div class="radio-box__state radio-box__state--primary">
-
-                                                                <label class="radio-box__label" for="pay-pal">Pay Pal</label></div>
-                                                        </div>
-                                                        <!--====== End - Radio Box ======-->
-
+                                                       
                                                         <span class="gl-text u-s-m-t-6">When you click "Place Order" below we'll take you to Paypal's site to set up your billing information.</span>
                                                     </div>
                                                     <div class="u-s-m-b-15">
@@ -526,7 +481,7 @@
                                                     </div>
                                                     <div>
 
-                                                        <button class="btn btn--e-brand-b-2" type="submit">PLACE ORDER</button></div>
+                                                        <button class="btn btn--e-brand-b-2" name="btAction" value="buy" type="submit">PLACE ORDER</button></div>
                                                 </form>
                                             </div>
                                         </div>

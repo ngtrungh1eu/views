@@ -25,8 +25,12 @@ import javax.servlet.http.HttpServletResponse;
 public class UserManager extends HttpServlet {
 
     /**
+<<<<<<< HEAD
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
      * methods.
+=======
+     * Processes requests for both HTTP <code>GET</code> and <code>POST</code> methods.
+>>>>>>> ea1a47ad0ceb09795d2d5db45e6750f63f971343
      *
      * @param request servlet request
      * @param response servlet response
@@ -37,13 +41,18 @@ public class UserManager extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         String buttion = request.getParameter("btAction");
+<<<<<<< HEAD
         String url = "productmanager.jsp";
+=======
+        String url = "accountmanager.jsp";
+>>>>>>> ea1a47ad0ceb09795d2d5db45e6750f63f971343
         AccountsDAO acc = new AccountsDAO();
 
         if (buttion.equals("delete")) {
             int id = Integer.parseInt(request.getParameter("id"));
 
             acc.delete(id);
+<<<<<<< HEAD
                 try {
                     request.setAttribute("UserList", acc.getList());
                 } catch (SQLException ex) {
@@ -59,6 +68,20 @@ public class UserManager extends HttpServlet {
                 Logger.getLogger(UserManager.class.getName()).log(Level.SEVERE, null, ex);
             }
         
+=======
+            try {
+                request.setAttribute("UserList", acc.getList());
+            } catch (SQLException ex) {
+
+            }
+        }
+
+        try {
+            request.setAttribute("UserList", acc.getList());
+        } catch (SQLException ex) {
+            Logger.getLogger(UserManager.class.getName()).log(Level.SEVERE, null, ex);
+        }
+>>>>>>> ea1a47ad0ceb09795d2d5db45e6750f63f971343
 
 //        try {
 //            AccountsDAO acc = new AccountsDAO();
