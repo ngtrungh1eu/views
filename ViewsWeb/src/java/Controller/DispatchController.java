@@ -72,6 +72,9 @@ public class DispatchController extends HttpServlet {
                     url = "ProfileAccount";
                 }
             }
+            if(button.equals("save")){
+                url = "ProfileAccount";
+            }
         } catch (Exception e) {
         }
         RequestDispatcher rd = request.getRequestDispatcher(url);

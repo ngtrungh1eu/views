@@ -25,6 +25,10 @@
         <servlet-class>Controller.CreatAccountServlet</servlet-class>
     </servlet>
     <servlet>
+<<<<<<< HEAD
+        <servlet-name>SignoutServlet</servlet-name>
+        <servlet-class>Controller.SignoutServlet</servlet-class>
+=======
         <servlet-name>BuyServlet</servlet-name>
         <servlet-class>Controller.BuyServlet</servlet-class>
     </servlet>
@@ -47,18 +51,28 @@
     <servlet>
         <servlet-name>UserManager</servlet-name>
         <servlet-class>Controller.UserManager</servlet-class>
+>>>>>>> ea1a47ad0ceb09795d2d5db45e6750f63f971343
     </servlet>
     <servlet>
         <servlet-name>ProfileAccount</servlet-name>
         <servlet-class>Controller.ProfileAccount</servlet-class>
     </servlet>
     <servlet>
+<<<<<<< HEAD
+        <servlet-name>UserManager</servlet-name>
+        <servlet-class>Controller.UserManager</servlet-class>
+=======
         <servlet-name>OrderManagerSevlet</servlet-name>
         <servlet-class>Controller.OrderManagerSevlet</servlet-class>
+>>>>>>> ea1a47ad0ceb09795d2d5db45e6750f63f971343
     </servlet>
     <servlet-mapping>
         <servlet-name>SigninServlet</servlet-name>
         <url-pattern>/signin</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>SignoutServlet</servlet-name>
+        <url-pattern>/signout</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>ListProductServlet</servlet-name>
@@ -81,6 +95,10 @@
         <url-pattern>/creatAccount</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
+<<<<<<< HEAD
+        <servlet-name>ProfileAccount</servlet-name>
+        <url-pattern>/ProfileAccount</url-pattern>
+=======
         <servlet-name>BuyServlet</servlet-name>
         <url-pattern>/buy</url-pattern>
     </servlet-mapping>
@@ -99,11 +117,14 @@
     <servlet-mapping>
         <servlet-name>CheckoutServlet</servlet-name>
         <url-pattern>/checkout</url-pattern>
+>>>>>>> ea1a47ad0ceb09795d2d5db45e6750f63f971343
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>UserManager</servlet-name>
         <url-pattern>/UserManager</url-pattern>
     </servlet-mapping>
+<<<<<<< HEAD
+=======
     <servlet-mapping>
         <servlet-name>ProfileAccount</servlet-name>
         <url-pattern>/ProfileAccount</url-pattern>
@@ -112,6 +133,7 @@
         <servlet-name>OrderManagerSevlet</servlet-name>
         <url-pattern>/ordermanager</url-pattern>
     </servlet-mapping>
+>>>>>>> ea1a47ad0ceb09795d2d5db45e6750f63f971343
     <session-config>
         <session-timeout>
             30

@@ -1,3 +1,13 @@
+<<<<<<< HEAD
+<%@taglib prefix="sql" uri="http://java.sun.com/jsp/jstl/sql"%>
+<%-- 
+    Document   : productmanager
+    Created on : Mar 12, 2023, 2:29:52 PM
+    Author     : ACER
+--%>
+
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+=======
 <%-- 
     Document   : productmanager
     Created on : Mar 12, 2023, 10:55:37 AM
@@ -6,6 +16,7 @@
 
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page import="java.util.List"%>
+>>>>>>> ea1a47ad0ceb09795d2d5db45e6750f63f971343
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="en">
@@ -51,7 +62,11 @@
                 <div class="section__content section__content--p35">
                     <div class="header3-wrap">
                         <div class="header__logo">
+<<<<<<< HEAD
+                            <a href="#">
+=======
                             <a href="product">
+>>>>>>> ea1a47ad0ceb09795d2d5db45e6750f63f971343
                                 <img src="images/icon/logo-white.png" alt="CoolAdmin" />
                             </a>
                         </div>
@@ -564,7 +579,11 @@
                             <div class="col-md-6 col-lg-3">
                                 <div class="statistic__item statistic__item--green">
                                     <h2 class="number">10,368</h2>
+<<<<<<< HEAD
+                                    <span class="desc">members online</span>
+=======
                                     <span class="desc">members</span>
+>>>>>>> ea1a47ad0ceb09795d2d5db45e6750f63f971343
                                     <div class="icon">
                                         <i class="zmdi zmdi-account-o"></i>
                                     </div>
@@ -692,6 +711,42 @@
                         <div class="row">
                             <div class="col-md-12">
                                 <h3 class="title-5 m-b-35">data table</h3>
+<<<<<<< HEAD
+                                <!--                                                            <div class="table-data__tool">
+                                                                                                <div class="table-data__tool-left">
+                                                                                                    <div class="rs-select2--light rs-select2--md">
+                                                                                                        <select class="js-select2" name="property">
+                                                                                                            <option selected="selected">All Properties</option>
+                                                                                                            <option value="">Option 1</option>
+                                                                                                            <option value="">Option 2</option>
+                                                                                                        </select>
+                                                                                                        <div class="dropDownSelect2"></div>
+                                                                                                    </div>
+                                                                                                    <div class="rs-select2--light rs-select2--sm">
+                                                                                                        <select class="js-select2" name="time">
+                                                                                                            <option selected="selected">Today</option>
+                                                                                                            <option value="">3 Days</option>
+                                                                                                            <option value="">1 Week</option>
+                                                                                                        </select>
+                                                                                                        <div class="dropDownSelect2"></div>
+                                                                                                    </div>
+                                                                                                    <button class="au-btn-filter">
+                                                                                                        <i class="zmdi zmdi-filter-list"></i>filters</button>
+                                                                                                </div>
+                                                                                                <div class="table-data__tool-right">
+                                                                                                    <button class="au-btn au-btn-icon au-btn--green au-btn--small">
+                                                                                                        <i class="zmdi zmdi-plus"></i>add item</button>
+                                                                                                    <div class="rs-select2--dark rs-select2--sm rs-select2--dark2">
+                                                                                                        <select class="js-select2" name="type">
+                                                                                                            <option selected="selected">Export</option>
+                                                                                                            <option value="">Option 1</option>
+                                                                                                            <option value="">Option 2</option>
+                                                                                                        </select>
+                                                                                                        <div class="dropDownSelect2"></div>
+                                                                                                    </div>
+                                                                                                </div>
+                                                                                            </div>-->
+=======
                                 <div class="table-data__tool">
                                     <div class="table-data__tool-left">
                                         <div class="rs-select2--light rs-select2--md">
@@ -732,10 +787,213 @@
                                                                                 </div>-->
                                     </div>
                                 </div>
+>>>>>>> ea1a47ad0ceb09795d2d5db45e6750f63f971343
                                 <div class="table-responsive table-responsive-data2">
                                     <table class="table table-data2">
                                         <thead>
                                             <tr>
+<<<<<<< HEAD
+
+                                                <th>id</th>
+                                                <th>First name</th>
+                                                <th>Last name</th>
+                                                <th>Email</th>
+                                                <th>Password</th>
+                                                <th>DoB</th>  
+                                                <th>Country</th>
+                                                <th>City</th>
+                                                <th>Phone</th>
+                                                <th>Gender</th>
+                                                <th>Role</th>
+
+
+
+
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+
+                                            <c:forEach items="${UserList}" var="user">
+
+
+                                                <tr>
+                                                    <td>${user.user_id}</td>
+                                                    <td>${user.first_name}</td>
+                                                    <td>${user.last_name}</td>
+                                                    <td>${user.email}</td>
+                                                    <td>${user.password}</td>
+                                                    <td>${user.Dob}</td>
+                                                    <td>${user.country}</td>
+                                                    <td>${user.city}</td>
+                                                    <td>${user.phone}</td>
+                                                    <td>${user.gender}</td>
+                                                    <td>${user.role} </td
+                                            <br>
+                                            <td>
+                                                <form action="UserManager" method="GET">
+                                                    <input type="hidden" name="id" value="${user.user_id}">
+                                                    <button class="item" data-toggle="tooltip" data-placement="top" title="Delete" type="submit" value="delete" name ="btAction">
+                                                        <i class="zmdi zmdi-delete"></i>
+                                                    </button>
+                                                </form>
+                                            </td>
+
+
+                                            </tr>
+                                        </c:forEach>
+
+
+
+
+
+
+
+
+
+
+
+                                        <!--                                        <tr class="tr-shadow">
+                                                                                    <td>
+                                                                                        <label class="au-checkbox">
+                                                                                            <input type="checkbox">
+                                                                                            <span class="au-checkmark"></span>
+                                                                                        </label>
+                                                                                    </td>
+                                                                                    <td>Lori Lynch</td>
+                                                                                    <td>
+                                                                                        <span class="block-email">lori@example.com</span>
+                                                                                    </td>
+                                                                                    <td class="desc">Samsung S8 Black</td>
+                                                                                    <td>2018-09-27 02:12</td>
+                                                                                    <td>
+                                                                                        <span class="status--process">Processed</span>
+                                                                                    </td>
+                                                                                    <td>$679.00</td>
+                                                                                    <td><form action="UserManager" method="GET">
+                                                                                             <div class="table-data-feature">
+                                                                                            
+                                                                                            <button class="item" data-toggle="tooltip" data-placement="top" title="Edit" type="submit" value="edit" name = "btAction">
+                                                                                                
+                                                                                                <i class="zmdi zmdi-edit"></i>
+                                                                                            </button>
+                                                                                            <button class="item" data-toggle="tooltip" data-placement="top" title="Delete" type="submit" value="delete" action ="btAction">
+                                                                                                <i class="zmdi zmdi-delete"></i>
+                                                                                            </button>
+                                                                                            <button class="item" data-toggle="tooltip" data-placement="top" title="More" type="submit" value="details" action ="btAction">
+                                                                                                <i class="zmdi zmdi-more"></i>
+                                                                                            </button>
+                                                                                        </div>
+                                                                                        </form>
+                                                                                       
+                                                                                    </td>
+                                                                                </tr>-->
+                                        <!--                                        <tr class="spacer"></tr>
+                                                                                <tr class="tr-shadow">
+                                                                                    <td>
+                                                                                        <label class="au-checkbox">
+                                                                                            <input type="checkbox">
+                                                                                            <span class="au-checkmark"></span>
+                                                                                        </label>
+                                                                                    </td>
+                                                                                    <td>Lori Lynch</td>
+                                                                                    <td>
+                                                                                        <span class="block-email">john@example.com</span>
+                                                                                    </td>
+                                                                                    <td class="desc">iPhone X 64Gb Grey</td>
+                                                                                    <td>2018-09-29 05:57</td>
+                                                                                    <td>
+                                                                                        <span class="status--process">Processed</span>
+                                                                                    </td>
+                                                                                    <td>$999.00</td>
+                                                                                    <td>
+                                                                                        <div class="table-data-feature">
+                                                                                            <button class="item" data-toggle="tooltip" data-placement="top" title="Send">
+                                                                                                <i class="zmdi zmdi-mail-send"></i>
+                                                                                            </button>
+                                                                                            <button class="item" data-toggle="tooltip" data-placement="top" title="Edit">
+                                                                                                <i class="zmdi zmdi-edit"></i>
+                                                                                            </button>
+                                                                                            <button class="item" data-toggle="tooltip" data-placement="top" title="Delete">
+                                                                                                <i class="zmdi zmdi-delete"></i>
+                                                                                            </button>
+                                                                                            <button class="item" data-toggle="tooltip" data-placement="top" title="More">
+                                                                                                <i class="zmdi zmdi-more"></i>
+                                                                                            </button>
+                                                                                        </div>
+                                                                                    </td>
+                                                                                </tr>
+                                                                                <tr class="spacer"></tr>
+                                                                                <tr class="tr-shadow">
+                                                                                    <td>
+                                                                                        <label class="au-checkbox">
+                                                                                            <input type="checkbox">
+                                                                                            <span class="au-checkmark"></span>
+                                                                                        </label>
+                                                                                    </td>
+                                                                                    <td>Lori Lynch</td>
+                                                                                    <td>
+                                                                                        <span class="block-email">lyn@example.com</span>
+                                                                                    </td>
+                                                                                    <td class="desc">iPhone X 256Gb Black</td>
+                                                                                    <td>2018-09-25 19:03</td>
+                                                                                    <td>
+                                                                                        <span class="status--denied">Denied</span>
+                                                                                    </td>
+                                                                                    <td>$1199.00</td>
+                                                                                    <td>
+                                                                                        <div class="table-data-feature">
+                                                                                            <button class="item" data-toggle="tooltip" data-placement="top" title="Send">
+                                                                                                <i class="zmdi zmdi-mail-send"></i>
+                                                                                            </button>
+                                                                                            <button class="item" data-toggle="tooltip" data-placement="top" title="Edit">
+                                                                                                <i class="zmdi zmdi-edit"></i>
+                                                                                            </button>
+                                                                                            <button class="item" data-toggle="tooltip" data-placement="top" title="Delete">
+                                                                                                <i class="zmdi zmdi-delete"></i>
+                                                                                            </button>
+                                                                                            <button class="item" data-toggle="tooltip" data-placement="top" title="More">
+                                                                                                <i class="zmdi zmdi-more"></i>
+                                                                                            </button>
+                                                                                        </div>
+                                                                                    </td>
+                                                                                </tr>
+                                                                                <tr class="spacer"></tr>
+                                                                                <tr class="tr-shadow">
+                                                                                    <td>
+                                                                                        <label class="au-checkbox">
+                                                                                            <input type="checkbox">
+                                                                                            <span class="au-checkmark"></span>
+                                                                                        </label>
+                                                                                    </td>
+                                                                                    <td>Lori Lynch</td>
+                                                                                    <td>
+                                                                                        <span class="block-email">doe@example.com</span>
+                                                                                    </td>
+                                                                                    <td class="desc">Camera C430W 4k</td>
+                                                                                    <td>2018-09-24 19:10</td>
+                                                                                    <td>
+                                                                                        <span class="status--process">Processed</span>
+                                                                                    </td>
+                                                                                    <td>$699.00</td>
+                                                                                    <td>
+                                        -->                                                                                                                                        <div class="table-data-feature">
+                                            <!--                                            <button class="item" data-toggle="tooltip" data-placement="top" title="Send">
+                                                                                            <i class="zmdi zmdi-mail-send"></i>
+                                                                                        </button>
+                                                                                        <button class="item" data-toggle="tooltip" data-placement="top" title="Edit">
+                                                                                            <i class="zmdi zmdi-edit"></i>
+                                                                                        </button>
+                                                                                        <button class="item" data-toggle="tooltip" data-placement="top" title="Delete">
+                                                                                            <i class="zmdi zmdi-delete"></i>
+                                                                                        </button>
+                                                                                        <button class="item" data-toggle="tooltip" data-placement="top" title="More">
+                                                                                            <i class="zmdi zmdi-more"></i>
+                                                                                        </button>
+                                                                                    </div>
+                                                                                </td>
+                                                                            </tr>-->
+                                            </tbody>
+=======
                                                 <th>
                                                     <!--                                                <label class="au-checkbox">
                                                                                                         <input type="checkbox">
@@ -926,6 +1184,7 @@
                                                                                         </td>
                                                                                     </tr>-->
                                         </tbody>
+>>>>>>> ea1a47ad0ceb09795d2d5db45e6750f63f971343
                                     </table>
                                 </div>
                             </div>

@@ -52,7 +52,11 @@
                                             <ul style="width:120px">
                                                 <li>
 
+<<<<<<< HEAD
+                                                    <a href="/ViewsWeb/account?id=${Account.user_id}"><i class="fas fa-user-circle u-s-m-r-6"></i>
+=======
                                                     <a href="account?id=${sessionScope.Account.user_id}"><i class="fas fa-user-circle u-s-m-r-6"></i>
+>>>>>>> ea1a47ad0ceb09795d2d5db45e6750f63f971343
 
                                                         <span>Account</span></a></li>
                                                 <li>

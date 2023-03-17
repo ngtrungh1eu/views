@@ -33,6 +33,7 @@ public class SignoutServlet extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         HttpSession session = request.getSession();
         session.removeAttribute("Account");
+         session.removeAttribute("AccountP");
         response.sendRedirect("home.jsp");
     }
 

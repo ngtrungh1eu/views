@@ -91,7 +91,12 @@
                                                         <a class="dash-active" href="dashboard.html">Manage My Account</a></li>
                                                     <li>
 
+<<<<<<< HEAD
+                                                        <a href="dash.html">My Profile</a></li>
+
+=======
                                                         <a href="edit-profile.jsp">My Profile</a></li>
+>>>>>>> ea1a47ad0ceb09795d2d5db45e6750f63f971343
                                                     <li>
 
                                                         
@@ -158,6 +163,40 @@
                                                                                                             </div>
                                                                                                         </div>-->
 
+<<<<<<< HEAD
+                                                                    <a href="edit-profile.jsp">Edit</a></div>
+
+                                                                <!--                                                                <span class="dash__text">John Doe</span>
+                                                                
+                                                                                                                                <span class="dash__text">johndoe@domain.com</span>-->
+                                                                <div class="dash__link dash__link--secondary u-s-m-t-8">
+
+                                                                    <a data-modal="modal" data-modal-id="#dash-newsletter">Subscribe Newsletter</a></div>
+                                                            </div>
+                                                            <div class="dash__pad-3">
+                                                                <h1 class="dash__h2 u-s-m-b-8">User Profile</h1>
+                                                                <table class="dash__text">
+                                                                    <tr>
+                                                                        <td>First Name:</td>
+                                                                        <td>${sessionScope.AccountP.first_name}</td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td>Last Name:</td>
+                                                                        <td>${sessionScope.AccountP.last_name}</td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td>Phone:</td>
+                                                                        <td>${sessionScope.AccountP.phone}</td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td>Gender:</td>
+                                                                        <td>${sessionScope.AccountP.gender}</td>
+                                                                    </tr>
+                                                                </table>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+=======
                                                     <!--Toan code-->
                                                     <div class="dash__pad-3">
                                                         <h1 class="dash__h2 u-s-m-b-8">User Profile</h1>
@@ -181,6 +220,7 @@
                                                         </table>
                                                     </div>
 
+>>>>>>> ea1a47ad0ceb09795d2d5db45e6750f63f971343
                                                     <!--                                                    <div class="col-lg-4 u-s-m-b-30">
                                                                                                             <div class="dash__box dash__box--bg-grey dash__box--shadow-2 u-h-100">
                                                                                                                 <div class="dash__pad-3">
@@ -196,8 +236,13 @@
                                                                                                                     <span class="dash__text">(+0) 900901904</span>
                                                                                                                 </div>
                                                                                                             </div>
+<<<<<<< HEAD
+                                                                                                        </div>-->
+                                                    <!--                                                    <div class="col-lg-4 u-s-m-b-30">
+=======
                                                                                                         </div>
                                                                                                         <div class="col-lg-4 u-s-m-b-30">
+>>>>>>> ea1a47ad0ceb09795d2d5db45e6750f63f971343
                                                                                                             <div class="dash__box dash__box--bg-grey dash__box--shadow-2 u-h-100">
                                                                                                                 <div class="dash__pad-3">
                                                                                                                     <h2 class="dash__h2 u-s-m-b-8">BILLING ADDRESS</h2>
