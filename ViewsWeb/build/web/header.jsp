@@ -19,15 +19,15 @@
                 <!--====== End - Main Logo ======-->
 
 
-                <!--====== Search Form ======-->
-                <form class="main-form" action="listProduct">
+                            <!--====== Search Form ======-->
+                            <form class="main-form" action="DispatchController">
 
                     <label for="main-search"></label>
 
                     <input class="input-text input-text--border-radius input-text--style-1" type="text" id="main-search" name="txtSearch" placeholder="Search">
 
-                    <button class="btn btn--icon fas fa-search main-search-button" type="submit"></button></form>
-                <!--====== End - Search Form ======-->
+                                <button class="btn btn--icon fas fa-search main-search-button" name="btAction" value="search" type="submit"></button></form>
+                            <!--====== End - Search Form ======-->
 
 
                 <!--====== Dropdown Main plugin ======-->
@@ -94,9 +94,14 @@
                                         <span class="js-menu-toggle"></span>
                                         <ul style="width:120px">
                                             <li>
+                                                <a href="account?id=${sessionScope.Account.user_id}"> Hello ${sessionScope.Account.last_name}<i ></i></a>
+                                            </li>
+                                        </c:if>
 
-                                                <a class="u-c-brand">ENGLISH</a></li>
-                                            <li>
+                                        <li>
+
+                                            <a href="404.html"><i class="far fa-heart"></i></a></li>
+                                        <li class="has-dropdown">
 
                                                 <a>ARABIC</a></li>
                                             <li>
@@ -136,9 +141,141 @@
                                 <a href="tel:+0900901904"><i class="fas fa-phone-volume"></i></a></li>
                             <li data-tooltip="tooltip" data-placement="left" title="Mail">
 
-                                <a href="mailto:contact@domain.com"><i class="far fa-envelope"></i></a></li>
-                        </ul>
-                        <!--====== End - List ======-->
+                                                                <span class="mini-product__name">
+
+                                                                    <a href="product-detail.html">${i.product.product_name}</a></span>
+
+                                                                <span class="mini-product__quantity">${i.quantity} x</span>
+
+                                                                <span class="mini-product__price">$${i.product.newPrice}</span></div>
+                                                        </div>
+
+                                                        <a class="mini-product__delete-link far fa-trash-alt"></a>
+                                                    </div>
+                                                    </c:if>
+                                                    </c:forEach>
+                                                    <!--====== End - Card for mini cart ======-->
+
+
+                                                    <!--====== Card for mini cart ======-->
+<!--                                                    <div class="card-mini-product">
+                                                        <div class="mini-product">
+                                                            <div class="mini-product__image-wrapper">
+
+                                                                <a class="mini-product__link" href="product-detail.html">
+
+                                                                    <img class="u-img-fluid" src="images/product/electronic/product18.jpg" alt=""></a></div>
+                                                            <div class="mini-product__info-wrapper">
+
+                                                                <span class="mini-product__category">
+
+                                                                    <a href="shop-side-version-2.html">Electronics</a></span>
+
+                                                                <span class="mini-product__name">
+
+                                                                    <a href="product-detail.html">Nikon DSLR Camera 4k</a></span>
+
+                                                                <span class="mini-product__quantity">1 x</span>
+
+                                                                <span class="mini-product__price">$8</span></div>
+                                                        </div>
+
+                                                        <a class="mini-product__delete-link far fa-trash-alt"></a>
+                                                    </div>
+                                                    ====== End - Card for mini cart ======
+
+
+                                                    ====== Card for mini cart ======
+                                                    <div class="card-mini-product">
+                                                        <div class="mini-product">
+                                                            <div class="mini-product__image-wrapper">
+
+                                                                <a class="mini-product__link" href="product-detail.html">
+
+                                                                    <img class="u-img-fluid" src="images/product/women/product8.jpg" alt=""></a></div>
+                                                            <div class="mini-product__info-wrapper">
+
+                                                                <span class="mini-product__category">
+
+                                                                    <a href="shop-side-version-2.html">Women Clothing</a></span>
+
+                                                                <span class="mini-product__name">
+
+                                                                    <a href="product-detail.html">New Dress D Nice Elegant</a></span>
+
+                                                                <span class="mini-product__quantity">1 x</span>
+
+                                                                <span class="mini-product__price">$8</span></div>
+                                                        </div>
+
+                                                        <a class="mini-product__delete-link far fa-trash-alt"></a>
+                                                    </div>
+                                                    ====== End - Card for mini cart ======
+
+
+                                                    ====== Card for mini cart ======
+                                                    <div class="card-mini-product">
+                                                        <div class="mini-product">
+                                                            <div class="mini-product__image-wrapper">
+
+                                                                <a class="mini-product__link" href="product-detail.html">
+
+                                                                    <img class="u-img-fluid" src="images/product/men/product8.jpg" alt=""></a></div>
+                                                            <div class="mini-product__info-wrapper">
+
+                                                                <span class="mini-product__category">
+
+                                                                    <a href="shop-side-version-2.html">Men Clothing</a></span>
+
+                                                                <span class="mini-product__name">
+
+                                                                    <a href="product-detail.html">New Fashion D Nice Elegant</a></span>
+
+                                                                <span class="mini-product__quantity">1 x</span>
+
+                                                                <span class="mini-product__price">$8</span></div>
+                                                        </div>
+
+                                                        <a class="mini-product__delete-link far fa-trash-alt"></a>
+                                                    </div>-->
+                                                    <!--====== End - Card for mini cart ======-->
+                                                </div>
+                                                <!--====== End - Mini Product Container ======-->
+
+
+                                                <!--====== Mini Product Statistics ======-->
+                                                <div class="mini-product-stat">
+                                                    <div class="mini-total">
+
+<!--                                                        <span class="subtotal-text">SUBTOTAL</span>
+
+                                                        <span class="subtotal-value">$16</span></div>-->
+                                                    <div class="mini-action">
+                                                        <c:if test="${sessionScope.Account != null}">
+
+                                                        <a class="mini-link btn--e-brand-b-2" href="checkout.html">PROCEED TO CHECKOUT</a>
+
+                                                        <a class="mini-link btn--e-transparent-secondary-b-2" href="shoppingcart">VIEW CART</a></div>
+                                                        </c:if>
+                                                    <c:if test="${sessionScope.Account == null}">
+
+                                                        <a class="mini-link btn--e-brand-b-2" href="signin.jsp">PROCEED TO CHECKOUT</a>
+
+                                                        <a class="mini-link btn--e-transparent-secondary-b-2" href="signin.jsp">VIEW CART</a></div>
+                                                        </c:if>
+                                                </div>
+                                                <!--====== End - Mini Product Statistics ======-->
+                                            </div>
+                                            <!--====== End - Dropdown ======-->
+                                        </li>
+                                    </ul>
+                                    <!--====== End - List ======-->
+                                </div>
+                                <!--====== End - Menu ======-->
+                            </div>
+                            <!--====== End - Dropdown Main plugin ======-->
+                        </div>
+                        <!--====== End - Secondary Nav ======-->
                     </div>
                     <!--====== End - Menu ======-->
                 </div>

@@ -781,9 +781,9 @@ body {
     color: #ffffff; }
 
 .btn--e-brand-shadow {
-    border: 1px solid #ff4500;
+    border: 1px solid #000000;
     box-shadow: 1px 2px 8px 0 rgba(36, 37, 38, 0.08);
-    background-color: #ff4500;
+    background-color: #000000 ;
     color: #ffffff;
     transition: background-color .3s linear, border-color .3s linear; }
 .btn--e-brand-shadow:hover {
@@ -5119,17 +5119,18 @@ input::-ms-clear {
     padding: 8px 18px;
     font-weight: 700;
     color: #333333; }
-.tool-style__group span:hover {
-    background-color: rgba(255, 69, 0, 0.12);
-    color: #ff4500;
-    border-color: #ff4500;
-    z-index: 2; }
+.tool-style__group span:hover{
+    background-color: rgba(0, 0 ,0 , 0.5);
+    color: #ffffff;
+    border-color: #000000;
+    z-index: 2;
+}
 .tool-style__group span:not(:last-child) {
     margin-right: -2px; }
 .tool-style__group span.is-active {
-    background-color: rgba(255, 69, 0, 0.12);
-    color: #ff4500;
-    border-color: #ff4500;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: #ffffff;
+    border-color: #000000;
     z-index: 2; }
 
 .tool-style__form-wrap {
@@ -5395,6 +5396,10 @@ input::-ms-clear {
     color: #333333; }
 .shop-p__pagination > li.is-active > a {
     background-color: #f7f7f7; }
+.shop-p__pagination > li.is-active > a.active{
+    background-color: #4267b2;
+    color: white;
+}
 .shop-p__pagination > li:not(.is-active) > a:hover {
     color: #ff4500;
     text-decoration: underline; }
@@ -6412,6 +6417,109 @@ input::-ms-clear {
 
 .pt-next {
     right: 20px; }
+
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  padding: 0;
+  margin: 0;
+}
+
+#notfound {
+  position: relative;
+  height: 100vh;
+}
+
+#notfound .notfound {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
+.notfound {
+  max-width: 520px;
+  width: 100%;
+  line-height: 1.4;
+  text-align: center;
+}
+
+.notfound .notfound-404 {
+  position: relative;
+  height: 240px;
+}
+
+.notfound .notfound-404 h1 {
+  font-family: 'Montserrat', sans-serif;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  font-size: 252px;
+  font-weight: 900;
+  margin: 0px;
+  color: #262626;
+  text-transform: uppercase;
+  letter-spacing: -40px;
+  margin-left: -20px;
+}
+
+.notfound .notfound-404 h1>span {
+  text-shadow: -8px 0px 0px #fff;
+}
+
+.notfound .notfound-404 h3 {
+  font-family: 'Cabin', sans-serif;
+  position: relative;
+  font-size: 16px;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #262626;
+  margin: 0px;
+  letter-spacing: 3px;
+  padding-left: 6px;
+}
+
+.notfound h2 {
+  font-family: 'Cabin', sans-serif;
+  font-size: 20px;
+  font-weight: 400;
+  text-transform: uppercase;
+  color: #000;
+  margin-top: 0px;
+  margin-bottom: 25px;
+}
+
+@media only screen and (max-width: 767px) {
+  .notfound .notfound-404 {
+    height: 200px;
+  }
+  .notfound .notfound-404 h1 {
+    font-size: 200px;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .notfound .notfound-404 {
+    height: 162px;
+  }
+  .notfound .notfound-404 h1 {
+    font-size: 162px;
+    height: 150px;
+    line-height: 162px;
+  }
+  .notfound h2 {
+    font-size: 16px;
+  }
+}
+
 
 
 /*----------------------Candelar---------------------------*/

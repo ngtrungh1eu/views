@@ -32,7 +32,11 @@
                             <i class="fas fa-trophy"></i>
                             <span class="bot-line"></span>Order Manager</a>
                     </li>
+<<<<<<< HEAD
+                   
+=======
                 </ul>
+>>>>>>> 6039cace0ec09ef45191ac0d52569d604451dfe5
 
                 <!--                            <ul class="list-unstyled">
                                                 <li>

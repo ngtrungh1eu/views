@@ -14,7 +14,7 @@
         <meta name="description" content="">
         <meta name="author" content="">
         <link href="images/favicon.png" rel="shortcut icon">
-        <title>Ludus - Electronics, Apparel, Computers, Books, DVDs & more</title>
+        <title>VieWS - VieWatchStore, Luxury</title>
 
         <!--====== Google Font ======-->
         <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800" rel="stylesheet">
@@ -57,10 +57,10 @@
                                     <ul class="breadcrumb__list">
                                         <li class="has-separator">
 
-                                            <a href="index.html">Home</a></li>
+                                            <a href="home">Home</a></li>
                                         <li class="is-marked">
 
-                                            <a href="dash-edit-profile.html">My Account</a></li>
+                                            <a href="account">My Account</a></li>
                                     </ul>
                                 </div>
                             </div>
@@ -88,29 +88,15 @@
                                                 <ul class="dash__f-list">
                                                     <li>
 
-                                                        <a class="dash-active" href="dashboard.html">Manage My Account</a></li>
+                                                        <a class="dash-active" href="account">Manage My Account</a></li>
                                                     <li>
 
-                                                        <a href="dash-my-profile.html">My Profile</a></li>
-                                                    <li>
-
-                                                        <!--                                                        <a href="dash-address-book.html">Address Book</a></li>-->
-                                                    <li>
-
-                                                        <!--                                                        <a href="dash-track-order.html">Track Order</a></li>-->
-                                                    <li>
-
-                                                        <a href="dash-my-order.html">My Orders</a></li>
-                                                    <li>
-
-                                                        <!--                                                        <a href="dash-payment-option.html">My Payment Options</a></li>-->
-                                                    <li>
-
-                                                        <a href="dash-cancellation.html">My Returns & Cancellations</a></li>
+                                                        <a href="#">My Profile</a></li>
+                                                    
                                                 </ul>
                                             </div>
                                         </div>
-                                        <div class="dash__box dash__box--bg-white dash__box--shadow dash__box--w">
+<!--                                        <div class="dash__box dash__box--bg-white dash__box--shadow dash__box--w">
                                             <div class="dash__pad-1">
                                                 <ul class="dash__w-list">
                                                     <li>
@@ -142,7 +128,7 @@
                                                     </li>
                                                 </ul>
                                             </div>
-                                        </div>
+                                        </div>-->
                                         <!--====== End - Dashboard Features ======-->
                                     </div>
                                     <!-- Toan code -->

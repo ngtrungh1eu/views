@@ -3,6 +3,16 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
+<<<<<<< HEAD
+            <file>file:/C:/Users/ROG/Documents/FPT%20University/Spring2023%20-%20PRJ301/Views/ViewsWeb/src/java/Controller/ProcessServlet.java</file>
+            <file>file:/C:/Users/ROG/Documents/FPT%20University/Spring2023%20-%20PRJ301/Views/ViewsWeb/src/java/Registration/ProductsDAO.java</file>
+            <file>file:/C:/Users/ROG/Documents/FPT%20University/Spring2023%20-%20PRJ301/Views/ViewsWeb/src/java/Controller/CartServlet.java</file>
+            <file>file:/C:/Users/ROG/Documents/FPT%20University/Spring2023%20-%20PRJ301/Views/ViewsWeb/src/java/Controller/AddCartServlet.java</file>
+            <file>file:/C:/Users/ROG/Documents/FPT%20University/Spring2023%20-%20PRJ301/Views/ViewsWeb/src/java/Registration/ItemsDTO.java</file>
+            <file>file:/C:/Users/ROG/Documents/FPT%20University/Spring2023%20-%20PRJ301/Views/ViewsWeb/web/cart.jsp</file>
+            <file>file:/C:/Users/ROG/Documents/FPT%20University/Spring2023%20-%20PRJ301/Views/ViewsWeb/src/java/Controller/ListProductServlet.java</file>
+            <file>file:/C:/Users/ROG/Documents/FPT%20University/Spring2023%20-%20PRJ301/Views/ViewsWeb/src/java/Registration/CartsDTO.java</file>
+=======
             <file>file:/C:/Users/ACER/Documents/NetBeansProjects/ViewsProject/views/ViewsWeb/web/images/logo/logo-1.png</file>
             <file>file:/C:/Users/ACER/Documents/NetBeansProjects/ViewsProject/views/ViewsWeb/web/productdetail.jsp</file>
             <file>file:/C:/Users/ACER/Documents/NetBeansProjects/ViewsProject/views/ViewsWeb/web/css/theme.css</file>
@@ -20,6 +30,7 @@
             <file>file:/C:/Users/ACER/Documents/NetBeansProjects/ViewsProject/views/ViewsWeb/web/headerad.jsp</file>
             <file>file:/C:/Users/ACER/Documents/NetBeansProjects/ViewsProject/views/ViewsWeb/web/css/app.css</file>
             <file>file:/C:/Users/ACER/Documents/NetBeansProjects/ViewsProject/views/ViewsWeb/web/css/font-face.css</file>
+>>>>>>> 6b60b410b0a9efaada69eda378b6a3ccfac5b61a
         </group>
     </open-files>
 </project-private>

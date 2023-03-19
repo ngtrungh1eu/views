@@ -7,10 +7,7 @@ package Controller;
 
 import Registration.AccountsDTO;
 import Registration.ProductsDAO;
-import Registration.ProductsDTO;
 import java.io.IOException;
-import java.io.PrintWriter;
-import java.util.List;
 import javax.servlet.ServletException;
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServlet;

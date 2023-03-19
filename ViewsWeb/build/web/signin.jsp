@@ -15,7 +15,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <link href="images/favicon.png" rel="shortcut icon">
-    <title>Views</title>
+    <title>VieWS - VieWatchStore, Luxury</title>
 
     <!--====== Google Font ======-->
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800" rel="stylesheet">
@@ -58,10 +58,10 @@
                                 <ul class="breadcrumb__list">
                                     <li class="has-separator">
 
-                                        <a href="index.html">Home</a></li>
+                                        <a href="home">Home</a></li>
                                     <li class="is-marked">
 
-                                        <a href="signin.html">Signin</a></li>
+                                        <a href="signin.jsp">Signin</a></li>
                                 </ul>
                             </div>
                         </div>
@@ -73,20 +73,6 @@
 
             <!--====== Section 2 ======-->
             <div class="u-s-p-b-60">
-
-                <!--====== Section Intro ======-->
-<!--                <div class="section__intro u-s-m-b-60">
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-lg-12">
-                                <div class="section__text-wrap">
-                                    <h1 class="section__heading u-c-secondary">ALREADY REGISTERED?</h1>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>-->
-                <!--====== End - Section Intro ======-->
 
 
                 <!--====== Section Content ======-->
@@ -101,23 +87,12 @@
                                         <span class="gl-text u-s-m-b-30">By creating an account with our store, you will be able to move through the checkout process faster, store shipping addresses, view and track your orders in your account and more.</span>
                                         <div class="u-s-m-b-15">
 
-                                            <a class="l-f-o__create-link btn--e-transparent-brand-b-2" href="signup.html">CREATE AN ACCOUNT</a></div>
+                                            <a class="l-f-o__create-link btn--e-transparent-brand-b-2" href="signup.jsp">CREATE AN ACCOUNT</a></div>
                                         <h1 class="gl-h1">SIGNIN</h1>
 
                                         <span class="gl-text u-s-m-b-30">If you have an account with us, please log in.</span>
                                         <form class="l-f-o__form" action="DispatchController" method="POST">
-<!--                                            <div class="gl-s-api">
-                                                <div class="u-s-m-b-15">
 
-                                                    <button class="gl-s-api__btn gl-s-api__btn--fb" type="button"><i class="fab fa-facebook-f"></i>
-
-                                                        <span>Signin with Facebook</span></button></div>
-                                                <div class="u-s-m-b-15">
-
-                                                    <button class="gl-s-api__btn gl-s-api__btn--gplus" type="button"><i class="fab fa-google"></i>
-
-                                                        <span>Signin with Google</span></button></div>
-                                            </div>-->
                                             <div class="u-s-m-b-30">
 
                                                 <label class="gl-label" for="login-email">E-MAIL *</label>
@@ -127,14 +102,12 @@
 
                                                 <label class="gl-label" for="login-password">PASSWORD *</label>
 
-                                                <input class="input-text input-text--primary-style" type="text" name="txtPassword" id="login-password" placeholder="Enter Password"></div>
+                                                <input class="input-text input-text--primary-style" type="password" name="txtPassword" id="login-password" placeholder="Enter Password"></div>
                                             <div class="gl-inline">
                                                 <div class="u-s-m-b-30">
 
                                                     <button class="btn btn--e-transparent-brand-b-2" type="submit" name="btAction" value="login">LOGIN</button></div>
                                                 <div class="u-s-m-b-30">
-
-                                                    <a class="gl-link" href="lost-password.html">Lost Your Password?</a></div>
                                             </div>
                                             <div class="u-s-m-b-30">
 

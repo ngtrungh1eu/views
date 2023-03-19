@@ -7,6 +7,8 @@ package Controller;
 
 import Registration.AccountsDAO;
 import Registration.CartsDTO;
+import Registration.HistoryOderDTO;
+import Registration.OrdersDAO;
 import Registration.ProductsDAO;
 import Registration.ProductsDTO;
 import java.io.IOException;
@@ -39,7 +41,6 @@ public class AccountServlet extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         String id = request.getParameter("id");
-        System.out.println(id);
         String email = null;
         String password = null;
         String url = "account.jsp";
@@ -58,6 +59,11 @@ public class AccountServlet extends HttpServlet {
             CartsDTO cart = new CartsDTO(txtCookie, list);
             request.setAttribute("cart", cart);
             AccountsDAO Adao = new AccountsDAO();
+            OrdersDAO oderdao = new OrdersDAO();
+            List<HistoryOderDTO> history = oderdao.historyoder(id);
+            int historysize = history.size();
+            request.setAttribute("history", history);
+            request.setAttribute("Hsize", historysize);
             HttpSession session = request.getSession();
             session.setAttribute("AccountP", Adao.checklogin(email, password, id));
         } catch (SQLException e) {

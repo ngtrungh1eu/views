@@ -26,6 +26,65 @@ public class ProductsDAO implements Serializable {
         PreparedStatement stm = null;
         ResultSet rs = null;
         ProductsDTO result = null;
+<<<<<<< HEAD
+         try {
+             Connection con =  DBHelper.getConnection();
+             if(con != null){
+                 String sql = "select * from products join Categories on products.CateID = Categories.CateID ";
+                 String where = " where ";
+                 if (brandValue != null){
+                     sql += where;
+                     sql += " BrandName = ? ";
+                     where = " and ";
+                     System.out.println("dmm");
+                 }
+                 if (searchValue != null){
+                     sql += where;
+                     sql += " [Name] like ? ";
+                     where = " and ";
+                 }
+                 if (typeValue != null){
+                     sql += where;
+                     sql += " Type  = ? ";
+                     where = " and ";
+                 }
+                 stm = con.prepareStatement(sql);
+                 int index = 1;
+                 if (brandValue != null){
+                     stm.setString(index, brandValue);
+                     index ++; 
+                 }
+                 if (searchValue != null){
+                     stm.setString(index, "%" + searchValue + "%");
+                     index ++; 
+                 }
+                 if (typeValue != null ){
+                     stm.setString(index, typeValue);
+                     index ++;
+                 }
+                 rs =stm.executeQuery();
+                 while (rs.next()){
+                     int product_id = rs.getInt("ID");
+                     String product_name = rs.getString("Name");
+                     double price = rs.getDouble("Price");
+                     String image = rs.getString("Image");
+                     int cateID = rs.getInt("CateID");
+                     String type = rs.getString("Type");
+                     String brand = rs.getString("brandName");
+                     int saleof = rs.getInt("SaleOff");
+                     int quantity = rs.getInt("Quantity");
+                     result = new ProductsDTO(product_id, product_name, price, image, brand, cateID, type, saleof, quantity);
+                     list.add(result);
+                    
+                 }
+                 return list;
+             }
+         } catch (SQLException e) {
+         }
+         return null;
+     }
+    
+=======
         try {
             Connection con = DBHelper.getConnection();
             if (con != null) {
@@ -82,6 +141,7 @@ public class ProductsDAO implements Serializable {
         return null;
     }
 
+>>>>>>> 6b60b410b0a9efaada69eda378b6a3ccfac5b61a
     public ProductsDTO getProductByid(int id) {
         ArrayList<ProductsDTO> list;
         list = new ArrayList<ProductsDTO>();
@@ -264,7 +324,6 @@ public class ProductsDAO implements Serializable {
                 return list;
             }
         } catch (Exception e) {
-            System.out.println("loi me roi");
         }
 
         return null;
@@ -362,5 +421,13 @@ public class ProductsDAO implements Serializable {
             System.out.println("Query Student error!" + ex.getMessage());
         }
         return null;
+    }
+    
+    public List<ProductsDTO> getListByPage(List<ProductsDTO> list, int start, int end){
+        ArrayList<ProductsDTO> arr = new ArrayList<>();
+        for(int i = start; i<end;i++){
+            arr.add(list.get(i));
+        }
+        return arr;
     }
 }

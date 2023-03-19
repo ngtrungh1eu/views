@@ -4,6 +4,7 @@
     Author     : ROG
 --%>
 
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html class="no-js" lang="en">
@@ -14,7 +15,7 @@
         <meta name="description" content="">
         <meta name="author" content="">
         <link href="images/favicon.png" rel="shortcut icon">
-        <title>Ludus - Electronics, Apparel, Computers, Books, DVDs & more</title>
+        <title>VieWS - VieWatchStore, Luxury</title>
 
         <!--====== Google Font ======-->
         <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800" rel="stylesheet">
@@ -106,7 +107,7 @@
 
                                                             <span class="dash__w-icon dash__w-icon-style-1"><i class="fas fa-cart-arrow-down"></i></span>
 
-                                                            <span class="dash__w-text">4</span>
+                                                            <span class="dash__w-text">${Hsize}</span>
 
                                                             <span class="dash__w-name">Orders Placed</span></div>
                                                     </li>
@@ -245,78 +246,26 @@
                                                         </tr>
                                                     </thead>
                                                     <tbody>
+                                                        <c:forEach var="dto" items="${requestScope.history}">
                                                         <tr>
-                                                            <td>3054231326</td>
-                                                            <td>26/13/2016</td>
+                                                            <td>${dto.OID}</td>
+                                                            <td>${dto.date}</td>
                                                             <td>
                                                                 <div class="dash__table-img-wrap">
 
-                                                                    <img class="u-img-fluid" src="images/product/electronic/product3.jpg" alt=""></div>
+                                                                    <img class="u-img-fluid" src="${dto.image}" alt=""></div>
                                                             </td>
                                                             <td>
                                                                 <div class="dash__table-total">
 
-                                                                    <span>$126.00</span>
+                                                                    <span>${dto.total}</span>
                                                                     <div class="dash__link dash__link--brand">
 
                                                                         <a href="dash-manage-order.html">MANAGE</a></div>
                                                                 </div>
                                                             </td>
                                                         </tr>
-                                                        <tr>
-                                                            <td>3054231326</td>
-                                                            <td>26/13/2016</td>
-                                                            <td>
-                                                                <div class="dash__table-img-wrap">
-
-                                                                    <img class="u-img-fluid" src="images/product/electronic/product14.jpg" alt=""></div>
-                                                            </td>
-                                                            <td>
-                                                                <div class="dash__table-total">
-
-                                                                    <span>$126.00</span>
-                                                                    <div class="dash__link dash__link--brand">
-
-                                                                        <a href="dash-manage-order.html">MANAGE</a></div>
-                                                                </div>
-                                                            </td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td>3054231326</td>
-                                                            <td>26/13/2016</td>
-                                                            <td>
-                                                                <div class="dash__table-img-wrap">
-
-                                                                    <img class="u-img-fluid" src="images/product/men/product8.jpg" alt=""></div>
-                                                            </td>
-                                                            <td>
-                                                                <div class="dash__table-total">
-
-                                                                    <span>$126.00</span>
-                                                                    <div class="dash__link dash__link--brand">
-
-                                                                        <a href="dash-manage-order.html">MANAGE</a></div>
-                                                                </div>
-                                                            </td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td>3054231326</td>
-                                                            <td>26/13/2016</td>
-                                                            <td>
-                                                                <div class="dash__table-img-wrap">
-
-                                                                    <img class="u-img-fluid" src="images/product/women/product10.jpg" alt=""></div>
-                                                            </td>
-                                                            <td>
-                                                                <div class="dash__table-total">
-
-                                                                    <span>$126.00</span>
-                                                                    <div class="dash__link dash__link--brand">
-
-                                                                        <a href="dash-manage-order.html">MANAGE</a></div>
-                                                                </div>
-                                                            </td>
-                                                        </tr>
+                                                         </c:forEach>
                                                     </tbody>
                                                 </table>
                                             </div>

@@ -9,7 +9,7 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
+        <title>VieWS - VieWatchStore, Luxury</title>
     </head>
     <body>
         <link href="//netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
@@ -222,6 +222,9 @@
 
                     </div>
                 </div>
+<!--                        <div class="col-12 col-md-9">
+                                                    <input type="file" id="file-input" name="file-input" class="form-control-file">
+                                                </div>-->
 
             </fieldset>
         </form>

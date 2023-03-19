@@ -47,6 +47,11 @@ public class ProductDetailServlet extends HttpServlet {
         try {
         ProductsDAO dao = new ProductsDAO();
         List<ProductsDTO> list = dao.getList(brandValue, typeValue, searchValue);
+        List<ProductsDTO> listCur = dao.getList("Curnon", typeValue, searchValue);
+        List<ProductsDTO> listEte = dao.getList("Eternowatch", typeValue, searchValue);
+        List<ProductsDTO> listVi = dao.getList("viwat", typeValue, searchValue);
+        List<ProductsDTO> listKla = dao.getList("Klasern", typeValue, searchValue);
+        List<ProductsDTO> listYo = dao.getList("yors", typeValue, searchValue);
         Cookie[] arr = request.getCookies();
         String txtCookie = "";
         if (arr != null) {
@@ -68,6 +73,11 @@ public class ProductDetailServlet extends HttpServlet {
             request.setAttribute("pDetail", dao.getProduct(pId));
             request.setAttribute("size", n);
             request.setAttribute("ListP", list);
+            request.setAttribute("ListCurnon", listCur);
+            request.setAttribute("ListEternowatch", listEte);
+            request.setAttribute("ListKlasern", listKla);
+            request.setAttribute("ListViwat", listVi);
+            request.setAttribute("ListYors", listYo);
         } catch (Exception e) {
         }
            

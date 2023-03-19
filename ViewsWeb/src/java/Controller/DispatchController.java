@@ -59,6 +59,9 @@ public class DispatchController extends HttpServlet {
             if (button.equals("create")) {
                 url = "creatAccount";
             }
+            if (button.equals("search")) {
+                url = "listProduct";
+            }
             if (button.equals("addcart")) {
                 url = "addcart";
             }
