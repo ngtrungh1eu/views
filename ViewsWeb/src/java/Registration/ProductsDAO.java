@@ -225,7 +225,7 @@ public class ProductsDAO implements Serializable {
 
     }
 
-    public List<ProductsDTO> load() {
+    public List<ProductsDTO> load(String search) {
         ArrayList<ProductsDTO> list;
         list = new ArrayList<ProductsDTO>();
         PreparedStatement stm = null;
@@ -236,7 +236,17 @@ public class ProductsDAO implements Serializable {
             if (con != null) {
                 String sql = " select * from products join Categories on products.CateID = Categories.CateID ";
                 String where = " where ";
+                if (search != null) {
+                    sql += where;
+                    sql += " Name like ? ";
+                    where = " and ";
+                }
                 stm = con.prepareStatement(sql);
+                int index = 1;
+                if (search != null) {
+                    stm.setString(index, "%" + search + "%");
+                    index++;
+                }
                 rs = stm.executeQuery();
                 while (rs.next()) {
                     int id = rs.getInt("ID");

@@ -37,11 +37,12 @@ public class ProductServlet extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         String url = "productmanager.jsp";
         String action = request.getParameter("action");
+        String txtSearch = request.getParameter("txtSearchProduct");
         ProductsDAO dao = new ProductsDAO();
         if (action == null || action.equals("list")) {
             try {
                 dao = new ProductsDAO();
-                List<ProductsDTO> list = dao.load();
+                List<ProductsDTO> list = dao.load(txtSearch);
                 request.setAttribute("ListP", list);
             } catch (Exception e) {
             }
@@ -56,12 +57,6 @@ public class ProductServlet extends HttpServlet {
 
             }
             ProductsDTO product = null;
-//            if (id != null) {
-//                list = dao.load();
-//                request.setAttribute("ListP", list);
-//                RequestDispatcher rd = request.getRequestDispatcher(url);
-//                rd.forward(request, response);
-//            }
             request.setAttribute("action", "insert");
             RequestDispatcher rd = request.getRequestDispatcher("editproduct.jsp");
             rd.forward(request, response);
@@ -95,7 +90,7 @@ public class ProductServlet extends HttpServlet {
             }
 
             dao = new ProductsDAO();
-            List<ProductsDTO> list = dao.load();
+            List<ProductsDTO> list = dao.load(txtSearch);
             request.setAttribute("ListP", list);
             RequestDispatcher rd = request.getRequestDispatcher(url);
             rd.forward(request, response);
@@ -123,7 +118,7 @@ public class ProductServlet extends HttpServlet {
             product.setType(type);
             product.setSaleoff((int) saleoff);
             id = dao.insert(product);
-            List<ProductsDTO> list = dao.load();
+            List<ProductsDTO> list = dao.load(txtSearch);
             request.setAttribute("ListP", list);
             RequestDispatcher rd = request.getRequestDispatcher(url);
             rd.forward(request, response);
@@ -164,7 +159,7 @@ public class ProductServlet extends HttpServlet {
                 product = dao.update(product);
             }
             request.setAttribute("pDetails", product);
-            List<ProductsDTO> list = dao.load();
+            List<ProductsDTO> list = dao.load(txtSearch);
             request.setAttribute("ListP", list);
             RequestDispatcher rd = request.getRequestDispatcher(url);
             rd.forward(request, response);
