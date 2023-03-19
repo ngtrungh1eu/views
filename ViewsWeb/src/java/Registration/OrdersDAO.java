@@ -21,11 +21,12 @@ import java.io.Serializable;
  * @author ROG
  */
 public class OrdersDAO {
-    public void addOder(AccountsDTO customer, CartsDTO cart){
+    double total = 0;
+    public void addOder(AccountsDTO customer, CartsDTO cart) {
         LocalDate curDate = LocalDate.now();
         String date = curDate.toString();
         try {
-            Connection con =  DBHelper.getConnection();
+            Connection con = DBHelper.getConnection();
             String sql = "insert into [Order] values (?,?,?,?,?,?)";
             PreparedStatement stm = con.prepareStatement(sql);
             stm.setString(1, date);
@@ -38,11 +39,11 @@ public class OrdersDAO {
             //
             String sql1 = "select top 1 id from [Order] order by id desc";
             PreparedStatement stm1 = con.prepareStatement(sql1);
-            ResultSet  rs = stm1.executeQuery();
-            if(rs.next()){
+            ResultSet rs = stm1.executeQuery();
+            if (rs.next()) {
                 int oderid = rs.getInt("id");
-                for(ItemsDTO i:cart.getItems()){
-                    String sql2="insert into [OrderLine] values (?,?,?,?,?)";
+                for (ItemsDTO i : cart.getItems()) {
+                    String sql2 = "insert into [OrderLine] values (?,?,?,?,?)";
                     PreparedStatement stm2 = con.prepareStatement(sql2);
                     stm2.setInt(1, oderid);
                     stm2.setInt(2, i.getProduct().getProduct_id());
@@ -63,17 +64,29 @@ public class OrdersDAO {
         } catch (SQLException e) {
         }
     }
-    public List<OrdersDTO> load() {
+
+    public List<OrdersDTO> load(String search) {
         ArrayList<OrdersDTO> list = new ArrayList<>();
         PreparedStatement stm;
         ResultSet rs;
         OrdersDTO result;
+        double total = 0;
         try {
             Connection con = DBHelper.getConnection();
             if (con != null) {
                 String sql = "SELECT * FROM [Order] join [OrderLine] on [Order].[id] = [OrderLine].[orderid]";
                 String where = " where ";
+                if (search != null) {
+                    sql += where;
+                    sql += " username like ? ";
+                    where = " and ";
+                }
                 stm = con.prepareStatement(sql);
+                int index = 1;
+                if (search != null) {
+                    stm.setString(index, "%" + search + "%");
+                    index++;
+                }
                 rs = stm.executeQuery();
                 while (rs.next()) {
                     int orderid = rs.getInt("orderid");
@@ -89,6 +102,7 @@ public class OrdersDAO {
                     String status = rs.getString("status");
                     result = new OrdersDTO(orderid, userid, username, phone, address, date, totalmoney, productid, quantity, price, status);
                     list.add(result);
+                    total+=price;
                 }
                 return list;
             }
@@ -97,6 +111,7 @@ public class OrdersDAO {
         return null;
 
     }
+
     public boolean delete(int id) {
         PreparedStatement stm;
         ResultSet rs;
@@ -110,7 +125,7 @@ public class OrdersDAO {
                 stm.setInt(2, id);
                 if (stm.executeUpdate() > 0) {
                     return true;
-                } 
+                }
             }
         } catch (Exception e) {
         }
