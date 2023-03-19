@@ -20,13 +20,13 @@
 
 
                             <!--====== Search Form ======-->
-                            <form class="main-form" action="listProduct">
+                            <form class="main-form" action="DispatchController">
 
                                 <label for="main-search"></label>
 
                                 <input class="input-text input-text--border-radius input-text--style-1" type="text" id="main-search" name="txtSearch" placeholder="Search">
 
-                                <button class="btn btn--icon fas fa-search main-search-button" type="submit"></button></form>
+                                <button class="btn btn--icon fas fa-search main-search-button" name="btAction" value="search" type="submit"></button></form>
                             <!--====== End - Search Form ======-->
 
 
@@ -1192,15 +1192,15 @@
                                                 <a href="account?id=${sessionScope.Account.user_id}"> Hello ${sessionScope.Account.last_name}<i ></i></a>
                                             </li>
                                         </c:if>
-                                        
+
                                         <li>
 
-                                            <a href="wishlist.html"><i class="far fa-heart"></i></a></li>
+                                            <a href="404.html"><i class="far fa-heart"></i></a></li>
                                         <li class="has-dropdown">
 
                                             <a class="mini-cart-shop-link"><i class="fas fa-shopping-bag"></i>
 
-                                                <span class="total-item-round">2</span></a>
+                                            </a>
 
                                             <!--====== Dropdown ======-->
 
@@ -1335,9 +1335,9 @@
                                                 <div class="mini-product-stat">
                                                     <div class="mini-total">
 
-                                                        <span class="subtotal-text">SUBTOTAL</span>
+<!--                                                        <span class="subtotal-text">SUBTOTAL</span>
 
-                                                        <span class="subtotal-value">$16</span></div>
+                                                        <span class="subtotal-value">$16</span></div>-->
                                                     <div class="mini-action">
                                                         <c:if test="${sessionScope.Account != null}">
 

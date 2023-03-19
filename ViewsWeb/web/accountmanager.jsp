@@ -19,7 +19,7 @@
         <meta name="keywords" content="au theme template">
 
         <!-- Title Page-->
-        <title>Dashboard 3</title>
+        <title>VieWS - VieWatchStore, Luxury</title>
 
         <!-- Fontfaces CSS-->
         <link href="css/font-face.css" rel="stylesheet" media="all">
@@ -47,35 +47,21 @@
     <body class="animsition">
         <div class="page-wrapper">
             <!-- HEADER DESKTOP-->
-            <header class="header-desktop3 d-none d-lg-block">
+            <header style="background-color: #000000" class="header-desktop3 d-none d-lg-block"> <!--tung -->
                 <div class="section__content section__content--p35">
                     <div class="header3-wrap">
                         <div class="header__logo">
-                            <a href="#">
-                                <img src="images/icon/logo-white.png" alt="CoolAdmin" />
+                            <a style="margin-top: 0px" href="#">
+                                <img src="images/icon/001.png" width="120px" height="50px" alt="" />
                             </a>
                         </div>
-                        <div class="header__navbar">
+                        <div  class="header__navbar">
                             <ul class="list-unstyled">
                                 <li class="has-sub">
                                     <a href="#">
                                         <i class="fas fa-tachometer-alt"></i>Dashboard
                                         <span class="bot-line"></span>
                                     </a>
-<!--                                    <ul class="header3-sub-list list-unstyled">
-                                        <li>
-                                            <a href="index.html">Dashboard 1</a>
-                                        </li>
-                                        <li>
-                                            <a href="index2.html">Dashboard 2</a>
-                                        </li>
-                                        <li>
-                                            <a href="index3.html">Dashboard 3</a>
-                                        </li>
-                                        <li>
-                                            <a href="index4.html">Dashboard 4</a>
-                                        </li>
-                                    </ul>-->
                                 </li>
                                 <li>
                                     <a href="/ViewsWeb/product">

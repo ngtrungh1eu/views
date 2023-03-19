@@ -48,13 +48,7 @@ public class ProfileAccount extends HttpServlet {
         String password = (String) request.getSession().getAttribute("txtPassword");
         String id = "";
         AccountsDAO dao = new AccountsDAO();
-        //              AccountsDTO result = dao.checklogin(email, password, id);
-//            if (result != null) {
         dao.updateAccount(id, email, password, newfirstname, newlastname, null, null, null, newphone, newgender, "user");
-//        request.setAttribute("txtFirstname", newfirstname);
-//        request.setAttribute("txtLastname", newlastname);
-//        request.setAttribute("txtPhone", newphone);
-//        request.setAttribute("gender", newgender);
 
         HttpSession session = request.getSession();
         try {
@@ -63,7 +57,6 @@ public class ProfileAccount extends HttpServlet {
             Logger.getLogger(ProfileAccount.class.getName()).log(Level.SEVERE, null, ex);
         }
         
-//            }
         RequestDispatcher rd = request.getRequestDispatcher(url);
         rd.forward(request, response);
         out.close();

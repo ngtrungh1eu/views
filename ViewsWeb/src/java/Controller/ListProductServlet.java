@@ -26,7 +26,8 @@ import javax.servlet.http.HttpServletResponse;
 public class ListProductServlet extends HttpServlet {
 
     /**
-     * Processes requests for both HTTP <code>GET</code> and <code>POST</code> methods.
+     * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
+     * methods.
      *
      * @param request servlet request
      * @param response servlet response
@@ -36,52 +37,62 @@ public class ListProductServlet extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
+
         String url = "list-products.jsp";
-        String typeValue = request.getParameter("type");
-        String brandValue = request.getParameter("brand");
-        String searchValue = request.getParameter("txtSearch");
-        String minPrice = request.getParameter("minPrice");
-        String maxPrice = request.getParameter("maxPrice");
-        ProductsDAO dao = new ProductsDAO();
-        List<ProductsDTO> list = dao.getList(brandValue, typeValue, searchValue);
-        Cookie[] arr = request.getCookies();
-        String txtCookie = "";
-        if (arr != null) {
-            for (Cookie o : arr) {
-                if (o.getName().equals("cart")) {
-                    txtCookie += o.getValue();
+        try {
+            int page, start, end, numperpage=9;
+            String typeValue = request.getParameter("type");
+            String brandValue = request.getParameter("brand");
+            String searchValue = request.getParameter("txtSearch");
+            String minPrice = request.getParameter("minPrice");
+            String maxPrice = request.getParameter("maxPrice");
+            String xpage = request.getParameter("page");
+            ProductsDAO dao = new ProductsDAO();
+            List<ProductsDTO> list = dao.getList(brandValue, typeValue, searchValue);
+            int sizeProduct = list.size();
+            Cookie[] arr = request.getCookies();
+            String txtCookie = "";
+            if (arr != null) {
+                for (Cookie o : arr) {
+                    if (o.getName().equals("cart")) {
+                        txtCookie += o.getValue();
+                    }
                 }
             }
-        }
-        CartsDTO cart = new CartsDTO(txtCookie, list);
-        request.setAttribute("cart", cart);
-        List<ItemsDTO> listItem = cart.getItems();
-        int n;
-        if (listItem != null) {
-            n = listItem.size();
-        } else {
-            n = 0;
-        }
-        try {
-            request.setAttribute("ListP", list);
+            List<ProductsDTO> listcart = dao.load();
+            int size= list.size();
+            int num = (size%9==0?(size/9):((size/9))+1);
+            CartsDTO cart = new CartsDTO(txtCookie, listcart);
+            request.setAttribute("cart", cart);
+            List<ItemsDTO> listItem = cart.getItems();
+            int n;
+            if (listItem != null) {
+                n = listItem.size();
+            } else {
+                n = 0;
+            }
+            
+            if(xpage==null){
+                page = 1;
+            }else{
+                page = Integer.parseInt(xpage);
+            }
+            start = (page-1)*numperpage;
+            end= Math.min((page*numperpage), size);
+            List<ProductsDTO> listpage = dao.getListByPage(list, start, end);
+            request.setAttribute("ListP", listpage);
+            request.setAttribute("sizeViews", sizeProduct);
+            request.setAttribute("page", page);
+            request.setAttribute("num", num);
             request.setAttribute("size", n);
-        } catch (Exception e) {
-        }
 
-//        try {
-//            dao = new ProductsDAO();
-//            request.setAttribute("ListP", dao.getList(brandValue, typeValue, searchValue));
-//        } catch (Exception e) {
-//        }
-        
-        if (minPrice != null || maxPrice != null) {
-            try {
+            if (minPrice != null || maxPrice != null) {
                 dao = new ProductsDAO();
                 request.setAttribute("ListP", dao.getListByPrice(minPrice, maxPrice));
-            } catch (Exception e) {
             }
-        }
 
+        } catch (Exception e) {
+        }
         RequestDispatcher rd = request.getRequestDispatcher(url);
         rd.forward(request, response);
     }

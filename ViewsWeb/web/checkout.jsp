@@ -16,7 +16,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <link href="images/favicon.png" rel="shortcut icon">
-    <title>Ludus - Electronics, Apparel, Computers, Books, DVDs & more</title>
+    <title>VieWS - VieWatchStore, Luxury</title>
 
     <!--====== Google Font ======-->
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800" rel="stylesheet">

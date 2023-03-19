@@ -16,7 +16,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <link href="images/favicon.png" rel="shortcut icon">
-    <title>Ludus - Electronics, Apparel, Computers, Books, DVDs & more</title>
+    <title>VieWS - VieWatchStore, Luxury</title>
 
     <!--====== Google Font ======-->
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800" rel="stylesheet">
@@ -640,7 +640,13 @@
                     <div class="container">
                         <div class="slider-fouc">
                             <div class="owl-carousel product-slider" data-item="4">
-                                <c:forEach begin="1" end="4" var="dto" items="${ListP}">
+                                <c:set var="Curnon" value="Curnon" ></c:set>
+                                <c:set var="Eternowatch" value="Eternowatch" ></c:set>
+                                <c:set var="VIWAT" value="VIWAT" ></c:set>
+                                <c:set var="Klasern" value="Klasern" ></c:set>
+                                <c:set var="Yors" value="Yors" ></c:set>
+                                <c:if test="${pDetail.brand == Curnon}">
+                                <c:forEach var="dto" items="${ListCurnon}">
                                 <div class="u-s-m-b-30">
                                     <div class="product-o product-o--hover-on">
                                         <div class="product-o__wrap">
@@ -681,8 +687,194 @@
 
                                             <span class="product-o__discount">$${dto.price}</span></span>
                                     </div>
+                 
                                 </div>
                                 </c:forEach>
+                                </c:if>
+                                <c:if test="${pDetail.brand == Eternowatch}">
+                                <c:forEach var="dto" items="${ListEternowatch}">
+                                <div class="u-s-m-b-30">
+                                    <div class="product-o product-o--hover-on">
+                                        <div class="product-o__wrap">
+
+                                            <a class="aspect aspect--bg-grey aspect--square u-d-block" href="/ViewsWeb/productdetail?pId=${dto.product_id}">
+
+                                                <img class="aspect__img" src="${dto.image}" alt=""></a>
+                                            <div class="product-o__action-wrap">
+                                                <ul class="product-o__action-list">
+                                                    <li>
+
+                                                        <a data-modal="modal" data-modal-id="#quick-look" data-tooltip="tooltip" data-placement="top" title="Quick View"><i class="fas fa-search-plus"></i></a></li>
+                                                    <li>
+
+                                                        <a data-modal="modal" data-modal-id="#add-to-cart" data-tooltip="tooltip" data-placement="top" title="Add to Cart"><i class="fas fa-plus-circle"></i></a></li>
+                                                    <li>
+
+                                                        <a href="signin.html" data-tooltip="tooltip" data-placement="top" title="Add to Wishlist"><i class="fas fa-heart"></i></a></li>
+                                                    <li>
+
+                                                        <a href="signin.html" data-tooltip="tooltip" data-placement="top" title="Email me When the price drops"><i class="fas fa-envelope"></i></a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+
+                                        <span class="product-o__category">
+
+                                            <a href="shop-side-version-2.html">${dto.type}</a></span>
+
+                                        <span class="product-o__name">
+
+                                            <a href="/ViewsWeb/productdetail?pId=${dto.product_id}">${dto.product_name}</a></span>
+                                        <div class="product-o__rating gl-rating-style"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+
+                                            <span class="product-o__review">(20)</span></div>
+
+                                        <span class="product-o__price">$${dto.newPrice}
+
+                                            <span class="product-o__discount">$${dto.price}</span></span>
+                                    </div>
+                 
+                                </div>
+                                </c:forEach>
+                                </c:if>
+                                <c:if test="${pDetail.brand == Klasern}">
+                                <c:forEach var="dto" items="${ListKlasern}">
+                                <div class="u-s-m-b-30">
+                                    <div class="product-o product-o--hover-on">
+                                        <div class="product-o__wrap">
+
+                                            <a class="aspect aspect--bg-grey aspect--square u-d-block" href="/ViewsWeb/productdetail?pId=${dto.product_id}">
+
+                                                <img class="aspect__img" src="${dto.image}" alt=""></a>
+                                            <div class="product-o__action-wrap">
+                                                <ul class="product-o__action-list">
+                                                    <li>
+
+                                                        <a data-modal="modal" data-modal-id="#quick-look" data-tooltip="tooltip" data-placement="top" title="Quick View"><i class="fas fa-search-plus"></i></a></li>
+                                                    <li>
+
+                                                        <a data-modal="modal" data-modal-id="#add-to-cart" data-tooltip="tooltip" data-placement="top" title="Add to Cart"><i class="fas fa-plus-circle"></i></a></li>
+                                                    <li>
+
+                                                        <a href="signin.html" data-tooltip="tooltip" data-placement="top" title="Add to Wishlist"><i class="fas fa-heart"></i></a></li>
+                                                    <li>
+
+                                                        <a href="signin.html" data-tooltip="tooltip" data-placement="top" title="Email me When the price drops"><i class="fas fa-envelope"></i></a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+
+                                        <span class="product-o__category">
+
+                                            <a href="shop-side-version-2.html">${dto.type}</a></span>
+
+                                        <span class="product-o__name">
+
+                                            <a href="/ViewsWeb/productdetail?pId=${dto.product_id}">${dto.product_name}</a></span>
+                                        <div class="product-o__rating gl-rating-style"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+
+                                            <span class="product-o__review">(20)</span></div>
+
+                                        <span class="product-o__price">$${dto.newPrice}
+
+                                            <span class="product-o__discount">$${dto.price}</span></span>
+                                    </div>
+                 
+                                </div>
+                                </c:forEach>
+                                </c:if>
+                                <c:if test="${pDetail.brand == VIWAT}">
+                                <c:forEach var="dto" items="${ListViwat}">
+                                <div class="u-s-m-b-30">
+                                    <div class="product-o product-o--hover-on">
+                                        <div class="product-o__wrap">
+
+                                            <a class="aspect aspect--bg-grey aspect--square u-d-block" href="/ViewsWeb/productdetail?pId=${dto.product_id}">
+
+                                                <img class="aspect__img" src="${dto.image}" alt=""></a>
+                                            <div class="product-o__action-wrap">
+                                                <ul class="product-o__action-list">
+                                                    <li>
+
+                                                        <a data-modal="modal" data-modal-id="#quick-look" data-tooltip="tooltip" data-placement="top" title="Quick View"><i class="fas fa-search-plus"></i></a></li>
+                                                    <li>
+
+                                                        <a data-modal="modal" data-modal-id="#add-to-cart" data-tooltip="tooltip" data-placement="top" title="Add to Cart"><i class="fas fa-plus-circle"></i></a></li>
+                                                    <li>
+
+                                                        <a href="signin.html" data-tooltip="tooltip" data-placement="top" title="Add to Wishlist"><i class="fas fa-heart"></i></a></li>
+                                                    <li>
+
+                                                        <a href="signin.html" data-tooltip="tooltip" data-placement="top" title="Email me When the price drops"><i class="fas fa-envelope"></i></a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+
+                                        <span class="product-o__category">
+
+                                            <a href="shop-side-version-2.html">${dto.type}</a></span>
+
+                                        <span class="product-o__name">
+
+                                            <a href="/ViewsWeb/productdetail?pId=${dto.product_id}">${dto.product_name}</a></span>
+                                        <div class="product-o__rating gl-rating-style"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+
+                                            <span class="product-o__review">(20)</span></div>
+
+                                        <span class="product-o__price">$${dto.newPrice}
+
+                                            <span class="product-o__discount">$${dto.price}</span></span>
+                                    </div>
+                 
+                                </div>
+                                </c:forEach>
+                                </c:if>
+                                <c:if test="${pDetail.brand == Yors}">
+                                <c:forEach var="dto" items="${ListYors}">
+                                <div class="u-s-m-b-30">
+                                    <div class="product-o product-o--hover-on">
+                                        <div class="product-o__wrap">
+
+                                            <a class="aspect aspect--bg-grey aspect--square u-d-block" href="/ViewsWeb/productdetail?pId=${dto.product_id}">
+
+                                                <img class="aspect__img" src="${dto.image}" alt=""></a>
+                                            <div class="product-o__action-wrap">
+                                                <ul class="product-o__action-list">
+                                                    <li>
+
+                                                        <a data-modal="modal" data-modal-id="#quick-look" data-tooltip="tooltip" data-placement="top" title="Quick View"><i class="fas fa-search-plus"></i></a></li>
+                                                    <li>
+
+                                                        <a data-modal="modal" data-modal-id="#add-to-cart" data-tooltip="tooltip" data-placement="top" title="Add to Cart"><i class="fas fa-plus-circle"></i></a></li>
+                                                    <li>
+
+                                                        <a href="signin.html" data-tooltip="tooltip" data-placement="top" title="Add to Wishlist"><i class="fas fa-heart"></i></a></li>
+                                                    <li>
+
+                                                        <a href="signin.html" data-tooltip="tooltip" data-placement="top" title="Email me When the price drops"><i class="fas fa-envelope"></i></a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+
+                                        <span class="product-o__category">
+
+                                            <a href="shop-side-version-2.html">${dto.type}</a></span>
+
+                                        <span class="product-o__name">
+
+                                            <a href="/ViewsWeb/productdetail?pId=${dto.product_id}">${dto.product_name}</a></span>
+                                        <div class="product-o__rating gl-rating-style"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+
+                                            <span class="product-o__review">(20)</span></div>
+
+                                        <span class="product-o__price">$${dto.newPrice}
+
+                                            <span class="product-o__discount">$${dto.price}</span></span>
+                                    </div>
+                 
+                                </div>
+                                </c:forEach>
+                                </c:if>
 <!--                                <div class="u-s-m-b-30">
                                     <div class="product-o product-o--hover-on">
                                         <div class="product-o__wrap">

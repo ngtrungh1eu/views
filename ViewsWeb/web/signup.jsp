@@ -8,7 +8,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <link href="images/favicon.png" rel="shortcut icon">
-    <title>Ludus - Electronics, Apparel, Computers, Books, DVDs & more</title>
+    <title>VieWS - VieWatchStore, Luxury</title>
 
     <!--====== Google Font ======-->
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800" rel="stylesheet">
@@ -51,10 +51,10 @@
                                 <ul class="breadcrumb__list">
                                     <li class="has-separator">
 
-                                        <a href="index.html">Home</a></li>
+                                        <a href="home">Home</a></li>
                                     <li class="is-marked">
 
-                                        <a href="signup.html">Signup</a></li>
+                                        <a href="signup.jsp">Signup</a></li>
                                 </ul>
                             </div>
                         </div>
@@ -92,18 +92,6 @@
                                         <h1 class="gl-h1">PERSONAL INFORMATION</h1>
                                         
                                         <form class="l-f-o__form" action="DispatchController">
-<!--                                            <div class="gl-s-api">
-                                                <div class="u-s-m-b-15">
-
-                                                    <button class="gl-s-api__btn gl-s-api__btn--fb" type="button"><i class="fab fa-facebook-f"></i>
-
-                                                        <span>Signup with Facebook</span></button></div>
-                                                <div class="u-s-m-b-30">
-
-                                                    <button class="gl-s-api__btn gl-s-api__btn--gplus" type="button"><i class="fab fa-google"></i>
-
-                                                        <span>Signup with Google</span></button></div>
-                                            </div>-->
                                             <div class="u-s-m-b-30">
 
                                                 <label class="gl-label" for="reg-fname">FIRST NAME *</label>
@@ -122,7 +110,7 @@
 
                                                     <span class="gl-label">BIRTHDAY</span>
                                                     <div class="gl-dob">
-                                                        <input class="date-calender" type="date" name="DoB">
+                                                        <input style="border-style: none" class="date-calender" type="date" name="DoB">
 <!--                                                        <select class="select-box select-box--primary-style">
                                                             <option selected>Month</option>
                                                             <option value="male">January</option>

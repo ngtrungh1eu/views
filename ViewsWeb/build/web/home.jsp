@@ -66,7 +66,7 @@
 
                                                     <span class="u-c-brand">$1050.00</span></span>
 
-                                                <a class="shop-now-link btn--e-brand" href="shop-side-version-2.html">SHOP NOW</a></div>
+                                                <a class="shop-now-link btn--e-brand" href="listProduct">SHOP NOW</a></div>
                                         </div>
                                     </div>
                                 </div>
@@ -87,7 +87,7 @@
 
                                                     <span class="u-c-brand">$380.00</span></span>
 
-                                                <a class="shop-now-link btn--e-brand" href="shop-side-version-2.html">SHOP NOW</a></div>
+                                                <a class="shop-now-link btn--e-brand" href="listProduct">SHOP NOW</a></div>
                                         </div>
                                     </div>
                                 </div>
@@ -108,7 +108,7 @@
 
                                                     <span class="u-c-brand">$550.00</span></span>
 
-                                                <a class="shop-now-link btn--e-brand" href="shop-side-version-2.html">SHOP NOW</a></div>
+                                                <a class="shop-now-link btn--e-brand" href="listProduct">SHOP NOW</a></div>
                                         </div>
                                     </div>
                                 </div>
@@ -151,7 +151,7 @@
                                         </a></div>
                                     <div class="col-lg-7 col-md-7 u-s-m-b-30">
 
-                                        <a class="collection" href="/ViewsWeb/listProduct?type=male">
+                                        <a class="collection" href="/ViewsWeb/listProduct?type=men">
                                             <div class="aspect aspect--bg-grey aspect--1286-890">
 
                                                 <img class="aspect__img collection__img" src="images/collection/men.jpg" alt=""></div>
@@ -1038,7 +1038,7 @@
 
                                         <span class="banner-bg__text-block banner-bg__text-3 u-c-white">Enjoy Free Shipping when you buy 2 items and above!</span>
 
-                                        <a class="banner-bg__shop-now btn--e-secondary" href="shop-side-version-2.html">Shop Now</a>
+                                        <a class="banner-bg__shop-now btn--e-secondary" href="listProduct">Shop Now</a>
                                     </div>
                                 </div>
                             </div>

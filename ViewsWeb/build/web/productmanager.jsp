@@ -19,7 +19,7 @@
         <meta name="keywords" content="au theme template">
 
         <!-- Title Page-->
-        <title>Dashboard 3</title>
+        <title>VieWS - VieWatchStore, Luxury</title>
 
         <!-- Fontfaces CSS-->
         <link href="css/font-face.css" rel="stylesheet" media="all">
@@ -258,7 +258,7 @@
                                             </div>
                                         </div>
                                         <div class="account-dropdown__footer">
-                                            <a href="#">
+                                            <a href="signout">
                                                 <i class="zmdi zmdi-power"></i>Logout</a>
                                         </div>
                                     </div>

@@ -35,6 +35,7 @@ public class ProductsDAO implements Serializable {
                      sql += where;
                      sql += " BrandName = ? ";
                      where = " and ";
+                     System.out.println("dmm");
                  }
                  if (searchValue != null){
                      sql += where;
@@ -254,7 +255,6 @@ public class ProductsDAO implements Serializable {
                 return list;
             }
         } catch (Exception e) {
-            System.out.println("loi me roi");
         }
 
         return null;
@@ -352,5 +352,13 @@ public class ProductsDAO implements Serializable {
             System.out.println("Query Student error!" + ex.getMessage());
         }
         return null;
+    }
+    
+    public List<ProductsDTO> getListByPage(List<ProductsDTO> list, int start, int end){
+        ArrayList<ProductsDTO> arr = new ArrayList<>();
+        for(int i = start; i<end;i++){
+            arr.add(list.get(i));
+        }
+        return arr;
     }
 }

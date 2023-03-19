@@ -30,7 +30,7 @@ public class AccountsDAO implements Serializable {
         try {
             con = DBHelper.getConnection();
             if (con != null) {
-                String sql = "SELECT * from users";
+                String sql = "SELECT * from users ";
                 stm = con.prepareStatement(sql);
 
                 rs = stm.executeQuery();

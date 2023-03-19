@@ -116,4 +116,30 @@ public class OrdersDAO {
         }
         return false;
     }
+    
+    public List<HistoryOderDTO> historyoder(String userid){
+        ArrayList<HistoryOderDTO> list;
+        list = new ArrayList<>();
+        PreparedStatement stm;
+        ResultSet rs;
+        HistoryOderDTO reuslt;
+        try {
+           Connection con = DBHelper.getConnection();
+            if (con != null) {
+                String sql = " select * from products join OrderLine on "
+                        + "products.ID = OrderLine.productid join [Order] "
+                        + "on OrderLine.orderid = [Order].id where userid = ? ";
+                stm = con.prepareStatement(sql);
+                stm.setString(1, userid);
+                rs = stm.executeQuery();
+                while(rs.next()){
+                    reuslt = new HistoryOderDTO(rs.getString(1), rs.getString(2), rs.getDouble(9), rs.getString(4), rs.getInt(5), rs.getInt(12), rs.getString("date"), rs.getDouble("totalmoney"));
+                    list.add(reuslt);
+                }
+            }
+        } catch (Exception e) {
+        }
+            
+        return list;       
+    }
 }

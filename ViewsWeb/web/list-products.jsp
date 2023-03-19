@@ -17,7 +17,7 @@
         <meta name="description" content="">
         <meta name="author" content="">
         <link href="images/favicon.png" rel="shortcut icon">
-        <title>Ludus - Electronics, Apparel, Computers, Books, DVDs & more</title>
+        <title>VieWS - VieWatchStore, Luxury</title>
 
         <!--====== Google Font ======-->
         <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800" rel="stylesheet">
@@ -978,36 +978,36 @@
                                         <div class="shop-p__toolbar u-s-m-b-30">
                                             <div class="shop-p__meta-wrap u-s-m-b-60">
 
-                                                <span class="shop-p__meta-text-1">FOUND 18 RESULTS</span>
-                                                <div class="shop-p__meta-text-2">
+                                                <span class="shop-p__meta-text-1">FOUND ${sizeViews} RESULTS</span>
+                                            <div class="shop-p__meta-text-2">
 
-                                                    <span>Related Searches:</span>
+                                                <span>Related Searches:</span>
 
-                                                    <a class="gl-tag btn--e-brand-shadow" href="#">Men's Watchs</a>
+                                                <a style="background-color: #000000; border-color: #000000" class="gl-tag btn--e-brand-shadow" href="listProduct?type=men">Men's Watchs</a>
 
-                                                    <a class="gl-tag btn--e-brand-shadow" href="#">Curnon</a>
+                                                <a style="background-color: #000000; border-color: #000000" class="gl-tag btn--e-brand-shadow" href="listProduct?brand=Curnon">Curnon</a>
 
 
-                                                </div>
-                                                <div class="shop-p__tool-style">
-                                                    <div class="tool-style__group u-s-m-b-8">
+                                            </div>
+                                            <div class="shop-p__tool-style">
+                                                <div class="tool-style__group u-s-m-b-8">
 
-                                                        <span class="js-shop-grid-target is-active">Grid</span>
+                                                    <span class="js-shop-grid-target is-active">Grid</span>
 
-                                                        <span class="js-shop-list-target">List</span></div>
-                                                    <form>
-                                                        <div class="tool-style__form-wrap">
-                                                            <div class="u-s-m-b-8"><select class="select-box select-box--transparent-b-2">
-                                                                    <option>Show: 8</option>
-                                                                    <option selected>Show: 12</option>
-                                                                    <option>Show: 16</option>
-                                                                    <option>Show: 28</option>
-                                                                </select></div>
-                                                            <div class="u-s-m-b-8"><select class="select-box select-box--transparent-b-2">
-                                                                    <option selected>Sort By: Newest Items</option>
-                                                                    <option>Sort By: Latest Items</option>
-                                                                    <option>Sort By: Best Selling</option>
-                                                                    <option>Sort By: Best Rating</option>
+                                                    <span class="js-shop-list-target">List</span></div>
+                                                <form>
+                                                    <div class="tool-style__form-wrap">
+                                                        <div class="u-s-m-b-8"><select class="select-box select-box--transparent-b-2">
+                                                                <option>Show: 8</option>
+                                                                <option selected>Show: 12</option>
+                                                                <option>Show: 16</option>
+                                                                <option>Show: 28</option>
+                                                            </select></div>
+                                                        <div class="u-s-m-b-8"><select class="select-box select-box--transparent-b-2">
+                                                                <option selected>Sort By: Newest Items</option>
+                                                                <option>Sort By: Latest Items</option>
+                                                                <option>Sort By: Best Selling</option>
+                                                                <option>Sort By: Best Rating</option>
                                                                     <option>Sort By: Lowest Price</option>
                                                                     <option>Sort By: Highest Price</option>
                                                                 </select></div>
@@ -1037,7 +1037,7 @@
                                                                     <a href="/ViewsWeb/productdetail?pId=${dto.product_id}">${dto.product_name}</a></div>
                                                                 <div class="product-m__rating gl-rating-style"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i><i class="far fa-star"></i><i class="far fa-star"></i>
 
-                                                                    <span class="product-m__review">(23)</span></div>
+                                                                    <span class="product-m__review"></span></div>
                                                                 <span class="product-o__price">$${dto.newPrice}
 
                                                                     <span class="product-o__discount">$${dto.price}</span></span>
@@ -1458,7 +1458,7 @@
                                             <div class="u-s-p-y-60">
 
                                                 <!--====== Pagination ======-->
-                                                <ul class="shop-p__pagination">
+<!--                                                <ul class="shop-p__pagination">
                                                     <li class="is-active">
 
                                                         <a href="shop-side-version-2.html">1</a></li>
@@ -1474,7 +1474,16 @@
                                                     <li>
 
                                                         <a class="fas fa-angle-right" href="shop-side-version-2.html"></a></li>
-                                                </ul>
+                                                </ul>-->
+                                            <c:set var="page" value="${page}"></c:set>
+                                                <div class="shop-p__pagination">
+                                                <c:forEach begin="${1}" end="${num}" var="p">
+                                                    <li class="is-active"> 
+                                                        <a class="${p==page?"active":""}" href="listProduct?page=${p}">${p}</a></li>
+                                                    
+                                                </c:forEach>
+<!--                                                <li><a class="fas fa-angle-right" href="listProduct?page=${p}"></a></li>-->
+                                            </div>
                                                 <!--====== End - Pagination ======-->
                                             </div>
                                         </div>

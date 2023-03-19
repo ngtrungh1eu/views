@@ -82,9 +82,9 @@ public class ProcessServlet extends HttpServlet {
                     + items.get(0).getProduct().getProduct_id() + "-"
                     + items.get(0).getQuantity();
             for (int i = 1; i < items.size(); i++) {
-                txt += "," + items.get(0).getUser_id() + ":"
-                        + items.get(0).getProduct().getProduct_id() + "-"
-                        + items.get(0).getQuantity();
+                txt += "," + items.get(1).getUser_id() + ":"
+                        + items.get(1).getProduct().getProduct_id() + "-"
+                        + items.get(1).getQuantity();
             }
         }
         
