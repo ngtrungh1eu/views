@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 <%@taglib prefix="sql" uri="http://java.sun.com/jsp/jstl/sql"%>
 <%-- 
     Document   : productmanager
@@ -7,16 +6,6 @@
 --%>
 
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-=======
-<%-- 
-    Document   : productmanager
-    Created on : Mar 12, 2023, 10:55:37 AM
-    Author     : khong
---%>
-
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%@page import="java.util.List"%>
->>>>>>> ea1a47ad0ceb09795d2d5db45e6750f63f971343
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="en">
@@ -58,6 +47,9 @@
     <body class="animsition">
         <div class="page-wrapper">
             <!-- HEADER DESKTOP-->
+<<<<<<< HEAD
+            <jsp:include page="headerad.jsp"></jsp:include>
+=======
             <header class="header-desktop3 d-none d-lg-block">
                 <div class="section__content section__content--p35">
                     <div class="header3-wrap">
@@ -283,6 +275,7 @@
                     </div>
                 </div>
             </header>
+>>>>>>> c64148bf77db46eae1bf63e22e5877cf714c49b5
             <!-- END HEADER DESKTOP-->
 
             <!-- HEADER MOBILE-->
@@ -544,8 +537,8 @@
                                             <li class="list-inline-item">Dashboard</li>
                                         </ul>
                                     </div>
-                                    <form class="au-form-icon--sm" action="" method="post">
-                                        <input class="au-input--w300 au-input--style2" type="text" placeholder="Search for datas &amp; reports...">
+                                    <form class="au-form-icon--sm" action="SearchProductServlet" method="POST">
+                                        <input class="au-input--w300 au-input--style2" type="text" placeholder="Search product" name="txtSearchProduct">
                                         <button class="au-btn--submit2" type="submit">
                                             <i class="zmdi zmdi-search"></i>
                                         </button>
@@ -562,8 +555,8 @@
                     <div class="container">
                         <div class="row">
                             <div class="col-md-12">
-                                <h1 class="title-4">Welcome back
-                                    <span>John!</span>
+                                <h1 class="title-4">Welcome back,${Account.first_name}
+                                   
                                 </h1>
                                 <hr class="line-seprate">
                             </div>

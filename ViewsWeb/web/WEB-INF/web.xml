@@ -66,6 +66,10 @@
         <servlet-class>Controller.OrderManagerSevlet</servlet-class>
 >>>>>>> ea1a47ad0ceb09795d2d5db45e6750f63f971343
     </servlet>
+    <servlet>
+        <servlet-name>SearchUserServlet</servlet-name>
+        <servlet-class>Controller.SearchUserServlet</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>SigninServlet</servlet-name>
         <url-pattern>/signin</url-pattern>
@@ -133,7 +137,14 @@
         <servlet-name>OrderManagerSevlet</servlet-name>
         <url-pattern>/ordermanager</url-pattern>
     </servlet-mapping>
+<<<<<<< HEAD
+    <servlet-mapping>
+        <servlet-name>SearchUserServlet</servlet-name>
+        <url-pattern>/SearchUserServlet</url-pattern>
+    </servlet-mapping>
+=======
 >>>>>>> ea1a47ad0ceb09795d2d5db45e6750f63f971343
+>>>>>>> c64148bf77db46eae1bf63e22e5877cf714c49b5
     <session-config>
         <session-timeout>
             30

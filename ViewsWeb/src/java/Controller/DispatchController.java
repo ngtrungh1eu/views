@@ -27,8 +27,7 @@ import javax.servlet.http.HttpServletResponse;
 public class DispatchController extends HttpServlet {
 
     /**
-     * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
-     * methods.
+     * Processes requests for both HTTP <code>GET</code> and <code>POST</code> methods.
      *
      * @param request servlet request
      * @param response servlet response
@@ -72,9 +71,17 @@ public class DispatchController extends HttpServlet {
                     url = "ProfileAccount";
                 }
             }
-            if(button.equals("save")){
-                url = "ProfileAccount";
+            if (button.equals("Usermanager")) {
+                url = "UserManager";
+
             }
+            if (button.equals("ProductManager")) {
+                url = "product";
+            }
+            if (button.equals("OrderManager")) {
+                url = "ordermanager";
+            }
+            
         } catch (Exception e) {
         }
         RequestDispatcher rd = request.getRequestDispatcher(url);

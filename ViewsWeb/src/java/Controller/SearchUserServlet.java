@@ -6,27 +6,20 @@
 package Controller;
 
 import Registration.AccountsDAO;
-import Registration.AccountsDTO;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.SQLException;
-import java.io.IOException;
-import java.io.PrintWriter;
-import java.sql.SQLException;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 
 /**
  *
- * @author ACER
+ * @author khong
  */
-public class ProfileAccount extends HttpServlet {
+public class SearchUserServlet extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code> methods.
@@ -35,45 +28,22 @@ public class ProfileAccount extends HttpServlet {
      * @param response servlet response
      * @throws ServletException if a servlet-specific error occurs
      * @throws IOException if an I/O error occurs
-     * @throws java.sql.SQLException
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-        PrintWriter out = response.getWriter();
-        response.setContentType("text/html;charset=UTF-8");
-        String url = "account.jsp";
-        String newfirstname = request.getParameter("txtFirstname");
-        System.out.println(newfirstname);
-        String newlastname = request.getParameter("txtLastname");
-        String newgender = request.getParameter("gender");
-        String newphone = request.getParameter("txtPhone");
-        String newDay = request.getParameter("txtDay");
-        String newMonth = request.getParameter("txtMonth");
-        String newYear = request.getParameter("txtYear");
-        String Date = newYear + "-" + newMonth + "-" + newDay;
-        String newCity = request.getParameter("txtCity");
-        String newCountry = request.getParameter("txtCountry");
-        String email = (String) request.getSession().getAttribute("txtEmail");
-        String password = (String) request.getSession().getAttribute("txtPassword");
-        String id = "";
-        AccountsDAO dao = new AccountsDAO();
+        String url = "accountmanager.jsp";
 
-        dao.updateAccount(id, email, password, newfirstname, newlastname, Date, newCountry, newCity, newphone, newgender, "user");
-
-        request.setAttribute("txtFirstname", newfirstname);
-        request.setAttribute("txtLastname", newlastname);
-        request.setAttribute("txtPhone", newphone);
-        request.setAttribute("gender", newgender);
-        HttpSession session = request.getSession();
         try {
-            session.setAttribute("AccountP", dao.checklogin(email, password, id));
-        } catch (SQLException ex) {
-            Logger.getLogger(ProfileAccount.class.getName()).log(Level.SEVERE, null, ex);
+            String searchUser = request.getParameter("txtSearchUser");
+            AccountsDAO dao = new AccountsDAO();
+            
+            request.setAttribute("result", dao.getUser(searchUser));
+        } catch (Exception ex) {
+            
         }
         RequestDispatcher rd = request.getRequestDispatcher(url);
-        rd.forward(request, response);
-        out.close();
+        rd.include(request, response);
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

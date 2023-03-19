@@ -39,7 +39,7 @@ public class DBHelper {
        /* serverName phu */
 =======
     private final static String userID = "sa";
-    private final static String password = "123456";
+    private final static String password = "12345";
     
 //       /* serverName phu */
 >>>>>>> ea1a47ad0ceb09795d2d5db45e6750f63f971343
