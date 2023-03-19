@@ -37,23 +37,22 @@ public class UserManager extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         String buttion = request.getParameter("btAction");
         String url = "accountmanager.jsp";
+        String searchUser = request.getParameter("txtSearchUser");
         AccountsDAO acc = new AccountsDAO();
 
         if (buttion.equals("delete")) {
             int id = Integer.parseInt(request.getParameter("id"));
-
             acc.delete(id);
             try {
-                request.setAttribute("UserList", acc.getList());
+                request.setAttribute("UserList", acc.getList(searchUser));
+            } catch (Exception ex) {
+            }
+        } else {
+            try {
+                request.setAttribute("UserList", acc.getList(searchUser));
             } catch (SQLException ex) {
 
             }
-        }
-
-        try {
-            request.setAttribute("UserList", acc.getList());
-        } catch (SQLException ex) {
-            Logger.getLogger(UserManager.class.getName()).log(Level.SEVERE, null, ex);
         }
 
 //        try {

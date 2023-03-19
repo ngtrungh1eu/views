@@ -35,7 +35,6 @@ public class ProfileAccount extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-        
         PrintWriter out = response.getWriter();
         response.setContentType("text/html;charset=UTF-8");
         String url = "account.jsp";
@@ -44,13 +43,19 @@ public class ProfileAccount extends HttpServlet {
         String newlastname = request.getParameter("txtLastname");
         String newgender = request.getParameter("gender");
         String newphone = request.getParameter("txtPhone");
+        String newDay = request.getParameter("txtDay");
+        String newMonth = request.getParameter("txtMonth");
+        String newYear = request.getParameter("txtYear");
+        String Date = newYear + "-" + newMonth + "-" + newDay;
+        String newCity = request.getParameter("txtCity");
+        String newCountry = request.getParameter("txtCountry");
         String email = (String) request.getSession().getAttribute("txtEmail");
         String password = (String) request.getSession().getAttribute("txtPassword");
         String id = "";
         AccountsDAO dao = new AccountsDAO();
         //              AccountsDTO result = dao.checklogin(email, password, id);
 //            if (result != null) {
-        dao.updateAccount(id, email, password, newfirstname, newlastname, null, null, null, newphone, newgender, "user");
+        dao.updateAccount(id, email, password, newfirstname, newlastname, Date, newCountry, newCity, newphone, newgender, "user");
 //        request.setAttribute("txtFirstname", newfirstname);
 //        request.setAttribute("txtLastname", newlastname);
 //        request.setAttribute("txtPhone", newphone);
@@ -62,11 +67,12 @@ public class ProfileAccount extends HttpServlet {
         } catch (SQLException ex) {
             Logger.getLogger(ProfileAccount.class.getName()).log(Level.SEVERE, null, ex);
         }
-        
+
 //            }
         RequestDispatcher rd = request.getRequestDispatcher(url);
         rd.forward(request, response);
         out.close();
+
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

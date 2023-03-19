@@ -56,6 +56,10 @@
         <servlet-name>OrderManagerSevlet</servlet-name>
         <servlet-class>Controller.OrderManagerSevlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>SearchUserServlet</servlet-name>
+        <servlet-class>Controller.SearchUserServlet</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>SigninServlet</servlet-name>
         <url-pattern>/signin</url-pattern>
@@ -111,6 +115,10 @@
     <servlet-mapping>
         <servlet-name>OrderManagerSevlet</servlet-name>
         <url-pattern>/ordermanager</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>SearchUserServlet</servlet-name>
+        <url-pattern>/SearchUserServlet</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

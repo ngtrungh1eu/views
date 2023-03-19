@@ -5,21 +5,21 @@
  */
 package Controller;
 
+import Registration.AccountsDAO;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.sql.SQLException;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
-import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
  *
- * @author ROG
+ * @author khong
  */
-@WebServlet(name = "DispatchController", urlPatterns = {"/DispatchController"})
-public class DispatchController extends HttpServlet {
+public class SearchUserServlet extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code> methods.
@@ -32,42 +32,18 @@ public class DispatchController extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-        String button = request.getParameter("btAction");
-        String url = "";
-        try {
-            if (button.equals("login")) {
-                url = "signin";
-            }
-            if (button.equals("create")) {
-                url = "creatAccount";
-            }
-            if (button.equals("addcart")) {
-                url = "addcart";
-            }
-            if (button.equals("checkout")) {
-                url = "checkout";
-            }
-            if (button.equals("buy")) {
-                url = "buy";
-                if (button.equals("save")) {
-                    url = "ProfileAccount";
-                }
-            }
-            if (button.equals("Usermanager")) {
-                url = "UserManager";
+        String url = "accountmanager.jsp";
 
-            }
-            if (button.equals("ProductManager")) {
-                url = "product";
-            }
-            if (button.equals("OrderManager")) {
-                url = "ordermanager";
-            }
+        try {
+            String searchUser = request.getParameter("txtSearchUser");
+            AccountsDAO dao = new AccountsDAO();
             
-        } catch (Exception e) {
+            request.setAttribute("result", dao.getUser(searchUser));
+        } catch (Exception ex) {
+            
         }
         RequestDispatcher rd = request.getRequestDispatcher(url);
-        rd.forward(request, response);
+        rd.include(request, response);
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

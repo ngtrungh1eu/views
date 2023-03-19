@@ -20,29 +20,37 @@ import java.util.List;
  * @author ROG
  */
 public class AccountsDAO implements Serializable {
-    
-    public List<AccountsDTO> getList() throws SQLException {
+
+    public List<AccountsDTO> getList(String searchUser) throws SQLException {
         ArrayList<AccountsDTO> list = new ArrayList<AccountsDTO>();
         PreparedStatement stm = null;
         Connection con = null;
         ResultSet rs = null;
         AccountsDTO result = null;
+        String keyValue = " %" + searchUser + "%";
         try {
             con = DBHelper.getConnection();
             if (con != null) {
-                String sql = "SELECT * from users";
+                String sql = " SELECT *from users ";
+                String where = "";
+
+                if (searchUser != null) {
+                    where = " where ";
+                    sql += where;
+                    sql += "first_name like ?";
+                }
                 stm = con.prepareStatement(sql);
-
+                if (searchUser != null) {
+                    stm.setString(1, keyValue);
+                }
                 rs = stm.executeQuery();
-                System.out.println("yyy");
                 while (rs.next()) {
-
                     int User_id = rs.getInt("id");
                     String Email = rs.getString("email");
                     String Password = rs.getString("password");
                     String setFirst_name = rs.getString("first_name");
                     String setLast_name = rs.getString("last_name");
-                    Date Dob = rs.getDate("DoB");                  
+                    Date Dob = rs.getDate("DoB");
                     String Country = rs.getString("country");
                     String City = rs.getString("city");
                     String Phone = rs.getString("phone");
@@ -54,7 +62,7 @@ public class AccountsDAO implements Serializable {
 //                    System.out.println("yyy");
 
                 }
-                System.out.println(list);
+
                 return list;
 
             }
@@ -136,23 +144,26 @@ public class AccountsDAO implements Serializable {
         }
         return result;
     }
-    
+
     public boolean updateAccount(String id, String email, String password, String firstname, String lastname, String Dob, String country, String city, String phone, String gender, String role) {
         boolean r = false;
         try {
             Connection con = DBHelper.getConnection();
 
-            String sql2 = "UPDATE users SET first_name=?, last_name=?, phone=?, gender=? WHERE email =? AND password =?";
+            String sql2 = "UPDATE users SET first_name=?, last_name=?, DoB=?, country=?, city=?, phone=?, gender=? WHERE email =? AND password =?";
 
             PreparedStatement stm2 = con.prepareStatement(sql2);
 
             stm2.setString(1, firstname);
             stm2.setString(2, lastname);
+            stm2.setString(3, Dob);
+            stm2.setString(4, country);
+            stm2.setString(5, city);
 
-            stm2.setString(3, phone);
-            stm2.setString(4, gender);
-            stm2.setString(5, email);
-            stm2.setString(6, password);
+            stm2.setString(6, phone);
+            stm2.setString(7, gender);
+            stm2.setString(8, email);
+            stm2.setString(9, password);
 
             System.out.println(email);
             int rs2 = stm2.executeUpdate();
@@ -166,25 +177,25 @@ public class AccountsDAO implements Serializable {
         }
         return r;
     }
-    
-    public boolean delete(int id){
-        String sql = "DELETE FROM users WHERE id = ?";   
+
+    public boolean delete(int id) {
+        String sql = "DELETE FROM users WHERE id = ?";
         try {
-            
+
             Connection conn = DBHelper.getConnection();
-            PreparedStatement ps = conn.prepareStatement(sql);                      
+            PreparedStatement ps = conn.prepareStatement(sql);
             ps.setInt(1, id);
-            
-            if (ps.executeUpdate() > 0)
+
+            if (ps.executeUpdate() > 0) {
                 return true;
-            else
+            } else {
                 return false;
-            
-	}
-        catch (SQLException ex) {
-            
+            }
+
+        } catch (SQLException ex) {
+
         }
-        
+
         return false;
     }
 
@@ -257,6 +268,72 @@ public class AccountsDAO implements Serializable {
             }
         }
         return result;
+    }
+
+    public List<AccountsDTO> getUser(String searchUser) throws SQLException {
+        ArrayList<AccountsDTO> UserList = new ArrayList<AccountsDTO>();
+        PreparedStatement stm = null;
+        Connection con = null;
+        ResultSet rs = null;
+        AccountsDTO result = null;
+        String keyValue = "%" + searchUser + "%";
+        try {
+
+            con = DBHelper.getConnection();
+            if (con != null) {
+                String sql = "SELECT *from users";
+                String where = "";
+
+                if (searchUser != null) {
+                    where = " where ";
+                    sql += where;
+                    sql += "first_name like ?";
+                }
+                stm = con.prepareStatement(sql);
+                if (searchUser != null) {
+                    stm.setString(1, keyValue);
+                }
+
+                rs = stm.executeQuery();
+
+                while (rs.next()) {
+
+                    int User_id = rs.getInt("id");
+                    String Email = rs.getString("email");
+                    String Password = rs.getString("password");
+                    String setFirst_name = rs.getString("first_name");
+                    String setLast_name = rs.getString("last_name");
+                    Date Dob = rs.getDate("DoB");
+
+                    String Country = rs.getString("country");
+                    String City = rs.getString("city");
+                    String Phone = rs.getString("phone");
+                    String Gender = rs.getString("gender");
+                    String Role = rs.getString("role");
+                    result = new AccountsDTO(User_id, Email, Password, setFirst_name, setLast_name, Dob, Country, City, Phone, Gender, Role);
+                    UserList.add(result);
+//                    System.out.println(result.getDob());
+//                    System.out.println("yyy");
+
+                }
+                System.out.println(UserList);
+
+                return UserList;
+
+            }
+        } finally {
+            if (rs != null) {
+                rs.close();
+            }
+            if (stm != null) {
+                stm.close();
+            }
+            if (con != null) {
+                con.close();
+            }
+        }
+        return UserList;
+
     }
 
 //     public List<ViewsDTO> getListByPara(String keyword){
