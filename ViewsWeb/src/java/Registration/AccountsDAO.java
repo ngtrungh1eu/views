@@ -15,6 +15,7 @@ import java.sql.SQLException;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
+import javax.ejb.Local;
 
 /**
  *
@@ -32,8 +33,9 @@ public class AccountsDAO implements Serializable {
         try {
             con = DBHelper.getConnection();
             if (con != null) {
-                String sql = " SELECT * from users ";
+                String sql = " SELECT *from users WHERE role = 'user'";
                 String where = " where ";
+
                 if (searchUser != null) {
                     sql += where;
                     sql += " first_name like ? or last_name like ? ";

@@ -158,15 +158,12 @@
                                                                                                             </div>
                                                                                                         </div>-->
 
-                                                                    <a href="edit-profile.jsp">Edit</a></div>
+                                                                   </div>
 
                                                                 <!--                                                                <span class="dash__text">John Doe</span>
                                                                 
                                                                                                                                 <span class="dash__text">johndoe@domain.com</span>-->
-                                                                <div class="dash__link dash__link--secondary u-s-m-t-8">
-
-                                                                    <a data-modal="modal" data-modal-id="#dash-newsletter">Subscribe Newsletter</a></div>
-                                                            </div>
+                                                            
                                                             <div class="dash__pad-3">
                                                                 <h1 class="dash__h2 u-s-m-b-8">User Profile</h1>
                                                                 <table class="dash__text">
@@ -186,8 +183,19 @@
                                                                         <td>Gender:</td>
                                                                         <td>${sessionScope.AccountP.gender}</td>
                                                                     </tr>
+                                                                  
+                                                                     <tr>
+                                                                        <td>Country:</td>
+                                                                        <td>${sessionScope.AccountP.country}</td>
+                                                                    </tr>
+                                                                     <tr>
+                                                                        <td>City:</td>
+                                                                        <td>${sessionScope.AccountP.city}</td>
+                                                                    </tr>
                                                                 </table>
+                                                                    <a class="dash__h2 u-s-m-b-8" href="edit-profile.jsp">Edit</a>
                                                             </div>
+                                                                     
                                                         </div>
                                                     </div>
                                                     <!--                                                    <div class="col-lg-4 u-s-m-b-30">
@@ -198,7 +206,7 @@
                                                                                                                     <span class="dash__text-2 u-s-m-b-8">Default Shipping Address</span>
                                                                                                                     <div class="dash__link dash__link--secondary u-s-m-b-8">
                                                     
-                                                                                                                        <a href="dash-address-book.html">Edit</a></div>
+                                                                                                                        <a href="dash-address-book.html"></a></div>
                                                     
                                                                                                                     <span class="dash__text">4247 Ashford Drive Virginia - VA-20006 - USA</span>
                                                     

@@ -19,7 +19,6 @@ public class AccountsDTO {
     private String first_name;
     private String last_name;
     private LocalDate Dob;
-//    private Date Dob;
     private String country;
     private String city;
     private String phone;
