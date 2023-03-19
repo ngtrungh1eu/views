@@ -32,7 +32,7 @@
                             <i class="fas fa-trophy"></i>
                             <span class="bot-line"></span>Order Manager</a>
                     </li>
-                   
+                </ul>
 
                 <!--                            <ul class="list-unstyled">
                                                 <li>

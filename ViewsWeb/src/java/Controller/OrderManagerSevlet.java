@@ -36,13 +36,13 @@ public class OrderManagerSevlet extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         String url = "ordermanager.jsp";
         String action = request.getParameter("action");
+        String txtSearch = request.getParameter("txtSearch");
         OrdersDAO dao = new OrdersDAO();
         if (action == null || action.equals("list")) {
             try {
                 dao = new OrdersDAO();
-                List<OrdersDTO> list = dao.load();
+                List<OrdersDTO> list = dao.load(txtSearch);
                 request.setAttribute("ListO", list);
-//                System.out.println(list.get(0).getPhone());
             } catch (Exception e) {
             }
             RequestDispatcher rd = request.getRequestDispatcher(url);
@@ -58,7 +58,7 @@ public class OrderManagerSevlet extends HttpServlet {
                 dao.delete(id);
             }
             dao = new OrdersDAO();
-            List<OrdersDTO> list = dao.load();
+            List<OrdersDTO> list = dao.load(txtSearch);
             request.setAttribute("ListO", list);
             RequestDispatcher rd = request.getRequestDispatcher(url);
             rd.forward(request, response);

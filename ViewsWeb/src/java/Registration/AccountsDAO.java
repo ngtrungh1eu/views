@@ -23,7 +23,7 @@ import javax.ejb.Local;
  */
 public class AccountsDAO implements Serializable {
 
-    public List<AccountsDTO> getList(String searchUser) throws SQLException {
+    public List<AccountsDTO> getList(String searchUser) {
         ArrayList<AccountsDTO> list = new ArrayList<AccountsDTO>();
         PreparedStatement stm = null;
         Connection con = null;
@@ -34,16 +34,17 @@ public class AccountsDAO implements Serializable {
             con = DBHelper.getConnection();
             if (con != null) {
                 String sql = " SELECT *from users WHERE role = 'user'";
-                String where = "";
+                String where = " where ";
 
                 if (searchUser != null) {
-                    where = " where ";
                     sql += where;
-                    sql += "first_name like ?";
+                    sql += " first_name like ? or last_name like ? ";
+                    where = " and ";
                 }
                 stm = con.prepareStatement(sql);
                 if (searchUser != null) {
                     stm.setString(1, keyValue);
+                    stm.setString(2, keyValue);
                 }
                 rs = stm.executeQuery();
                 while (rs.next()) {
@@ -58,86 +59,73 @@ public class AccountsDAO implements Serializable {
                     String Phone = rs.getString("phone");
                     String Gender = rs.getString("gender");
                     String Role = rs.getString("role");
-                    result = new AccountsDTO(User_id, Email, Password, setFirst_name, setLast_name, Dob, Country, City,
-                            Phone, Gender, Role);
+                    result = new AccountsDTO(User_id, Email, Password, setFirst_name, setLast_name, Dob, Country, City, Phone, Gender, Role);
                     list.add(result);
-                    // System.out.println(result.getDob());
-                    // System.out.println("yyy");
-
                 }
-
                 return list;
 
             }
-        } finally {
-            if (rs != null) {
-                rs.close();
-            }
-            if (stm != null) {
-                stm.close();
-            }
-            if (con != null) {
-                con.close();
-            }
-        }
-        return list;
+        } catch (Exception e) {
+            System.out.println("loi me roi");
+        } 
+        return null;
 
     }
 
-    public List<AccountsDTO> getList() throws SQLException {
-        ArrayList<AccountsDTO> list = new ArrayList<AccountsDTO>();
-        PreparedStatement stm = null;
-        Connection con = null;
-        ResultSet rs = null;
-        AccountsDTO result = null;
-        try {
-            con = DBHelper.getConnection();
-            if (con != null) {
-                String sql = "SELECT * from users";
-                stm = con.prepareStatement(sql);
-
-                rs = stm.executeQuery();
-                System.out.println("yyy");
-                while (rs.next()) {
-
-                    int User_id = rs.getInt("id");
-                    String Email = rs.getString("email");
-                    String Password = rs.getString("password");
-                    String setFirst_name = rs.getString("first_name");
-                    String setLast_name = rs.getString("last_name");
-                    LocalDate Dob = rs.getDate("DoB").toLocalDate();
-
-                    String Country = rs.getString("country");
-                    String City = rs.getString("city");
-                    String Phone = rs.getString("phone");
-                    String Gender = rs.getString("gender");
-                    String Role = rs.getString("role");
-                    result = new AccountsDTO(User_id, Email, Password, setFirst_name, setLast_name, Dob, Country, City,
-                            Phone, Gender, Role);
-                    list.add(result);
-                    // System.out.println(result.getDob());
-                    // System.out.println("yyy");
-
-                }
-                System.out.println(list);
-                return list;
-
-            }
-        } finally {
-            if (rs != null) {
-                rs.close();
-            }
-            if (stm != null) {
-                stm.close();
-            }
-            if (con != null) {
-                con.close();
-            }
-        }
-        return list;
-
-    }
-
+//    public List<AccountsDTO> getList() throws SQLException {
+//        ArrayList<AccountsDTO> list = new ArrayList<AccountsDTO>();
+//        PreparedStatement stm = null;
+//        Connection con = null;
+//        ResultSet rs = null;
+//        AccountsDTO result = null;
+//        try {
+//            con = DBHelper.getConnection();
+//            if (con != null) {
+//                String sql = "SELECT * from users";
+//                stm = con.prepareStatement(sql);
+//
+//                rs = stm.executeQuery();
+//                System.out.println("yyy");
+//                while (rs.next()) {
+//
+//                    int User_id = rs.getInt("id");
+//                    String Email = rs.getString("email");
+//                    String Password = rs.getString("password");
+//                    String setFirst_name = rs.getString("first_name");
+//                    String setLast_name = rs.getString("last_name");
+//                    Date Dob = rs.getDate("DoB");
+//
+//                    String Country = rs.getString("country");
+//                    String City = rs.getString("city");
+//                    String Phone = rs.getString("phone");
+//                    String Gender = rs.getString("gender");
+//                    String Role = rs.getString("role");
+//                    result = new AccountsDTO(User_id, Email, Password, setFirst_name, setLast_name, Dob, Country, City,
+//                            Phone, Gender, Role);
+//                    list.add(result);
+//                    // System.out.println(result.getDob());
+//                    // System.out.println("yyy");
+//
+//                }
+//                System.out.println(list);
+//                return list;
+//
+//            }
+//        } finally {
+//            if (rs != null) {
+//                rs.close();
+//            }
+//            if (stm != null) {
+//                stm.close();
+//            }
+//            if (con != null) {
+//                con.close();
+//            }
+//        }
+//        return list;
+//
+//    }
+    
     public AccountsDTO checklogin(String email, String password, String id) throws SQLException {
         // ArrayList<AccountsDTO> list;
         // list = new ArrayList<AccountsDTO>();
@@ -199,7 +187,7 @@ public class AccountsDAO implements Serializable {
             }
         }
         return result;
-    } 
+    }
 
     public boolean updateAccount(String id, String email, String password, String firstname, String lastname, String Dob, String country, String city, String phone, String gender, String role) {
         boolean r = false;
@@ -215,7 +203,6 @@ public class AccountsDAO implements Serializable {
             stm2.setString(3, Dob);
             stm2.setString(4, country);
             stm2.setString(5, city);
-
             stm2.setString(6, phone);
             stm2.setString(7, gender);
             stm2.setString(8, email);
@@ -232,8 +219,6 @@ public class AccountsDAO implements Serializable {
         }
         return r;
     }
-
-    
 
     public boolean addAccount(int id, String email, String password, String firstname, String lastname, String Dob, String country, String city, String phone, String gender, String role) {
         boolean r = false;
@@ -378,10 +363,11 @@ public class AccountsDAO implements Serializable {
             PreparedStatement ps = conn.prepareStatement(sql);
             ps.setInt(1, id);
 
-            if (ps.executeUpdate() > 0)
+            if (ps.executeUpdate() > 0) {
                 return true;
-            else
+            } else {
                 return false;
+            }
 
         } catch (SQLException ex) {
 
@@ -390,5 +376,3 @@ public class AccountsDAO implements Serializable {
         return false;
     }
 }
-
-
