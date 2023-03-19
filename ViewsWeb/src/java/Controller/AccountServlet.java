@@ -12,7 +12,6 @@ import Registration.OrdersDAO;
 import Registration.ProductsDAO;
 import Registration.ProductsDTO;
 import java.io.IOException;
-import java.io.PrintWriter;
 import java.sql.SQLException;
 import java.util.List;
 import javax.servlet.RequestDispatcher;

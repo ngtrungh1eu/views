@@ -6,6 +6,10 @@
 package Controller;
 
 import Registration.AccountsDAO;
+import Registration.AccountsDTO;
+import java.io.IOException;
+import java.io.PrintWriter;
+import java.sql.SQLException;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.SQLException;
@@ -20,7 +24,7 @@ import javax.servlet.http.HttpSession;
 
 /**
  *
- * @author khong
+ * @author ACER
  */
 public class ProfileAccount extends HttpServlet {
 
@@ -31,11 +35,11 @@ public class ProfileAccount extends HttpServlet {
      * @param response servlet response
      * @throws ServletException if a servlet-specific error occurs
      * @throws IOException if an I/O error occurs
+     * @throws java.sql.SQLException
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-        
         PrintWriter out = response.getWriter();
         response.setContentType("text/html;charset=UTF-8");
         String url = "account.jsp";
@@ -44,19 +48,29 @@ public class ProfileAccount extends HttpServlet {
         String newlastname = request.getParameter("txtLastname");
         String newgender = request.getParameter("gender");
         String newphone = request.getParameter("txtPhone");
+        String newDay = request.getParameter("txtDay");
+        String newMonth = request.getParameter("txtMonth");
+        String newYear = request.getParameter("txtYear");
+        String Date = newYear + "-" + newMonth + "-" + newDay;
+        String newCity = request.getParameter("txtCity");
+        String newCountry = request.getParameter("txtCountry");
         String email = (String) request.getSession().getAttribute("txtEmail");
         String password = (String) request.getSession().getAttribute("txtPassword");
         String id = "";
         AccountsDAO dao = new AccountsDAO();
-        dao.updateAccount(id, email, password, newfirstname, newlastname, null, null, null, newphone, newgender, "user");
 
+        dao.updateAccount(id, email, password, newfirstname, newlastname, Date, newCountry, newCity, newphone, newgender, "user");
+
+        request.setAttribute("txtFirstname", newfirstname);
+        request.setAttribute("txtLastname", newlastname);
+        request.setAttribute("txtPhone", newphone);
+        request.setAttribute("gender", newgender);
         HttpSession session = request.getSession();
         try {
             session.setAttribute("AccountP", dao.checklogin(email, password, id));
         } catch (SQLException ex) {
             Logger.getLogger(ProfileAccount.class.getName()).log(Level.SEVERE, null, ex);
         }
-        
         RequestDispatcher rd = request.getRequestDispatcher(url);
         rd.forward(request, response);
         out.close();

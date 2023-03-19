@@ -159,29 +159,46 @@
                                                                                                             </div>
                                                                                                         </div>-->
 
-                                                    <!--Toan code-->
-                                                    <div class="dash__pad-3">
-                                                        <h1 class="dash__h2 u-s-m-b-8">User Profile</h1>
-                                                        <table class="dash__text">
-                                                            <tr>
-                                                                <td>First Name:</td>
-                                                                <td>${sessionScope.AccountP.first_name}</td>
-                                                            </tr>
-                                                            <tr>
-                                                                <td>Last Name:</td>
-                                                                <td>${sessionScope.AccountP.last_name}</td>
-                                                            </tr>
-                                                            <tr>
-                                                                <td>Phone:</td>
-                                                                <td>${sessionScope.AccountP.phone}</td>
-                                                            </tr>
-                                                            <tr>
-                                                                <td>Gender:</td>
-                                                                <td>${sessionScope.AccountP.gender}</td>
-                                                            </tr>
-                                                        </table>
-                                                    </div>
+                                                                   </div>
 
+                                                                <!--                                                                <span class="dash__text">John Doe</span>
+                                                                
+                                                                                                                                <span class="dash__text">johndoe@domain.com</span>-->
+                                                            
+                                                            <div class="dash__pad-3">
+                                                                <h1 class="dash__h2 u-s-m-b-8">User Profile</h1>
+                                                                <table class="dash__text">
+                                                                    <tr>
+                                                                        <td>First Name:</td>
+                                                                        <td>${sessionScope.AccountP.first_name}</td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td>Last Name:</td>
+                                                                        <td>${sessionScope.AccountP.last_name}</td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td>Phone:</td>
+                                                                        <td>${sessionScope.AccountP.phone}</td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td>Gender:</td>
+                                                                        <td>${sessionScope.AccountP.gender}</td>
+                                                                    </tr>
+                                                                  
+                                                                     <tr>
+                                                                        <td>Country:</td>
+                                                                        <td>${sessionScope.AccountP.country}</td>
+                                                                    </tr>
+                                                                     <tr>
+                                                                        <td>City:</td>
+                                                                        <td>${sessionScope.AccountP.city}</td>
+                                                                    </tr>
+                                                                </table>
+                                                                    <a class="dash__h2 u-s-m-b-8" href="edit-profile.jsp">Edit</a>
+                                                            </div>
+                                                                     
+                                                        </div>
+                                                    </div>
                                                     <!--                                                    <div class="col-lg-4 u-s-m-b-30">
                                                                                                             <div class="dash__box dash__box--bg-grey dash__box--shadow-2 u-h-100">
                                                                                                                 <div class="dash__pad-3">
@@ -190,13 +207,15 @@
                                                                                                                     <span class="dash__text-2 u-s-m-b-8">Default Shipping Address</span>
                                                                                                                     <div class="dash__link dash__link--secondary u-s-m-b-8">
                                                     
-                                                                                                                        <a href="dash-address-book.html">Edit</a></div>
+                                                                                                                        <a href="dash-address-book.html"></a></div>
                                                     
                                                                                                                     <span class="dash__text">4247 Ashford Drive Virginia - VA-20006 - USA</span>
                                                     
                                                                                                                     <span class="dash__text">(+0) 900901904</span>
                                                                                                                 </div>
                                                                                                             </div>
+                                                                                                        </div>-->
+                                                    <!--                                                    <div class="col-lg-4 u-s-m-b-30">
                                                                                                         </div>
                                                                                                         <div class="col-lg-4 u-s-m-b-30">
                                                                                                             <div class="dash__box dash__box--bg-grey dash__box--shadow-2 u-h-100">

@@ -6,6 +6,7 @@
 package Registration;
 
 import java.sql.Date;
+import java.util.List;
 
 /**
  *
@@ -42,8 +43,6 @@ public class OrdersDTO {
         this.status = status;
     }
 
-    
-    
     public int getOrderid() {
         return orderid;
     }
@@ -96,6 +95,14 @@ public class OrdersDTO {
         return totalmoney;
     }
 
+    public double getTotalmoney(List<OrdersDTO> list) {
+        totalmoney = 0;
+        for(int i=0;i<list.size();i++) {
+            totalmoney += list.get(i).getPrice();
+        }
+        return totalmoney;
+    }
+
     public void setTotalmoney(double totalmoney) {
         this.totalmoney = totalmoney;
     }
@@ -131,7 +138,5 @@ public class OrdersDTO {
     public void setStatus(String status) {
         this.status = status;
     }
-
-    
 
 }

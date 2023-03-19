@@ -1,9 +1,9 @@
+
 <%-- 
     Document   : edit-profile
     Created on : Mar 15, 2023, 10:11:21 PM
     Author     : khong
 --%>
-
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html class="no-js" lang="en">
@@ -163,19 +163,57 @@
                                                                     <!--====== Date of Birth Select-Box ======-->
 
                                                                     <span class="gl-label">BIRTHDAY</span>
-                                                                    <div class="gl-dob"><select class="select-box select-box--primary-style">
-                                                                            <option selected>Month</option>
-                                                                            <option value="male">January</option>
-                                                                            <option value="male">February</option>
-                                                                            <option value="male">March</option>
-                                                                            <option value="male">April</option>
-                                                                        </select><select class="select-box select-box--primary-style">
+                                                                    <div class="gl-dob"><select class="select-box select-box--primary-style" selected name="txtMonth" type="text">
+                                                                            <option >Month</option>
+                                                                            <option value="1">January</option>
+                                                                            <option value="2">February</option>
+                                                                            <option value="3">March</option>
+                                                                            <option value="4">April</option>
+                                                                            <option value="5">May</option>
+                                                                            <option value="6">June</option>
+                                                                            <option value="7">July</option>
+                                                                            <option value="8">August</option>
+                                                                            <option value="9">Septemper</option>
+                                                                            <option value="10">October</option>
+                                                                            <option value="11">November</option>
+                                                                            <option value="12">December</option>
+
+                                                                        </select><select class="select-box select-box--primary-style" name="txtDay" type="text">
                                                                             <option selected>Day</option>
                                                                             <option value="01">01</option>
                                                                             <option value="02">02</option>
                                                                             <option value="03">03</option>
                                                                             <option value="04">04</option>
-                                                                        </select><select class="select-box select-box--primary-style">
+                                                                            <option value="05">05</option>
+                                                                            <option value="06">06</option>
+                                                                            <option value="07">07</option>
+                                                                            <option value="08">08</option>
+                                                                            <option value="09">09</option>
+                                                                            <option value="10">10</option>
+                                                                            <option value="11">11</option>
+                                                                            <option value="12">12</option>
+                                                                            <option value="13">13</option>
+                                                                            <option value="14">14</option>
+                                                                            <option value="15">15</option>
+                                                                            <option value="16">16</option>
+                                                                            <option value="17">17</option>
+                                                                            <option value="18">18</option>
+                                                                            <option value="19">19</option>
+                                                                            <option value="20">20</option>
+                                                                            <option value="21">21</option>
+                                                                            <option value="22">22</option>
+                                                                            <option value="23">23</option>
+                                                                            <option value="24">24</option>
+                                                                            <option value="25">25</option>
+                                                                            <option value="26">26</option>
+                                                                            <option value="27">27</option>
+                                                                            <option value="28">28</option>
+                                                                            <option value="29">29</option>
+                                                                            <option value="30">30</option>
+                                                                            <option value="31">31</option>
+
+
+                                                                        </select><select class="select-box select-box--primary-style" name="txtYear" type="text">
                                                                             <option selected>Year</option>
                                                                             <option value="1991">1991</option>
                                                                             <option value="1992">1992</option>
@@ -200,6 +238,18 @@
                                                                         <option value="Female">Female</option>
                                                                     </select></div>
                                                             </div>
+                                                            <div class="u-s-m-b-30">
+
+                                                                <label class="gl-label" for="reg-fname">City *</label>
+
+
+                                                                <input class="input-text input-text--primary-style" type="text" id="reg-fname" name="txtCity"></div>
+                                                            <div class="u-s-m-b-30">
+
+                                                                <label class="gl-label" for="reg-fname">Country *</label>
+
+
+                                                                <input class="input-text input-text--primary-style" type="text" id="reg-fname" name="txtCountry"></div>
                                                             <div class="gl-inline">
                                                                 <!--                                                            <div class="u-s-m-b-30">
                                                                                                                                 <h2 class="dash__h2 u-s-m-b-8">E-mail</h2>
@@ -242,6 +292,7 @@
             </div>
 
             <!--====== Main Footer ======-->
+
             <jsp:include page="footer.jsp"></jsp:include>
 
             <!--====== Modal Section ======-->
@@ -316,3 +367,4 @@
         </noscript>
     </body>
 </html>
+
