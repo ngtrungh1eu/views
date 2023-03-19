@@ -309,12 +309,12 @@
                                                 <li class="list-inline-item">Dashboard</li>
                                             </ul>
                                         </div>
-                                        <form class="au-form-icon--sm" action="UserManager" method="GET">
+<!--                                        <form class="au-form-icon--sm" action="UserManager" method="GET">
                                             <input class="au-input--w300 au-input--style2" type="text" placeholder="Search user" name ="txtSearchUser">
                                             <button class="au-btn--submit2" type="submit">
                                                 <i class="zmdi zmdi-search"></i>
                                             </button>
-                                        </form>
+                                        </form>-->
                                     </div>
                                 </div>
                             </div>

@@ -44,6 +44,12 @@ public class UserManager extends HttpServlet {
         List<AccountsDTO> list;
         AccountsDAO acc = new AccountsDAO();
         OrdersDAO dao = new OrdersDAO();
+        try {
+            list = acc.getList(txtSearch);
+            request.setAttribute("UserList", list);
+        } catch (Exception e) {
+            System.out.println(e);
+        }
         if (buttion.equals("delete")) {
             int id = Integer.parseInt(request.getParameter("id"));
             acc.delete(id);
@@ -52,12 +58,6 @@ public class UserManager extends HttpServlet {
             } catch (Exception e) {
                 System.out.println(e);
             }
-        }
-        try {
-            list = acc.getList(txtSearch);
-            request.setAttribute("UserList", list);
-        } catch (Exception e) {
-            System.out.println(e);
         }
         List<OrdersDTO> listO = dao.load(txtSearch);
         request.setAttribute("ListO", listO);
