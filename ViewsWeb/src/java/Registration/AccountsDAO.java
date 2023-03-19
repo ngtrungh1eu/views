@@ -12,8 +12,10 @@ import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
+import javax.ejb.Local;
 
 /**
  *
@@ -31,7 +33,7 @@ public class AccountsDAO implements Serializable {
         try {
             con = DBHelper.getConnection();
             if (con != null) {
-                String sql = " SELECT *from users ";
+                String sql = " SELECT *from users WHERE role = 'user'";
                 String where = "";
 
                 if (searchUser != null) {
@@ -50,7 +52,7 @@ public class AccountsDAO implements Serializable {
                     String Password = rs.getString("password");
                     String setFirst_name = rs.getString("first_name");
                     String setLast_name = rs.getString("last_name");
-                    Date Dob = rs.getDate("DoB");
+                    LocalDate Dob = rs.getDate("DoB").toLocalDate();
                     String Country = rs.getString("country");
                     String City = rs.getString("city");
                     String Phone = rs.getString("phone");
@@ -103,7 +105,7 @@ public class AccountsDAO implements Serializable {
                     String Password = rs.getString("password");
                     String setFirst_name = rs.getString("first_name");
                     String setLast_name = rs.getString("last_name");
-                    Date Dob = rs.getDate("DoB");
+                    LocalDate Dob = rs.getDate("DoB").toLocalDate();
 
                     String Country = rs.getString("country");
                     String City = rs.getString("city");
@@ -177,7 +179,7 @@ public class AccountsDAO implements Serializable {
                             rs.getString(3),
                             rs.getString(4),
                             rs.getString(5),
-                            rs.getDate(6),
+                            rs.getDate(6).toLocalDate(),
                             rs.getString(7),
                             rs.getString(8),
                             rs.getString(9),
@@ -337,7 +339,7 @@ public class AccountsDAO implements Serializable {
                     String Password = rs.getString("password");
                     String setFirst_name = rs.getString("first_name");
                     String setLast_name = rs.getString("last_name");
-                    Date Dob = rs.getDate("DoB");
+                    LocalDate Dob = rs.getDate("DoB").toLocalDate();
 
                     String Country = rs.getString("country");
                     String City = rs.getString("city");

@@ -1,4 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
+    <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
+        <group>
+            <file>file:/C:/Users/ACER/Documents/NetBeansProjects/ViewsProject/views/ViewsWeb/web/images/logo/logo-1.png</file>
+            <file>file:/C:/Users/ACER/Documents/NetBeansProjects/ViewsProject/views/ViewsWeb/web/productdetail.jsp</file>
+            <file>file:/C:/Users/ACER/Documents/NetBeansProjects/ViewsProject/views/ViewsWeb/web/css/theme.css</file>
+            <file>file:/C:/Users/ACER/Documents/NetBeansProjects/ViewsProject/views/ViewsWeb/web/META-INF/context.xml</file>
+            <file>file:/C:/Users/ACER/Documents/NetBeansProjects/ViewsProject/views/ViewsWeb/src/java/Mylib/DBHelper.java</file>
+            <file>file:/C:/Users/ACER/Documents/NetBeansProjects/ViewsProject/views/ViewsWeb/web/footer.jsp</file>
+            <file>file:/C:/Users/ACER/Documents/NetBeansProjects/ViewsProject/views/ViewsWeb/web/account.jsp</file>
+            <file>file:/C:/Users/ACER/Documents/NetBeansProjects/ViewsProject/views/ViewsWeb/src/java/Controller/AccountServlet.java</file>
+            <file>file:/C:/Users/ACER/Documents/NetBeansProjects/ViewsProject/views/ViewsWeb/web/edit-profile.jsp</file>
+            <file>file:/C:/Users/ACER/Documents/NetBeansProjects/ViewsProject/views/ViewsWeb/src/java/Controller/SignoutServlet.java</file>
+            <file>file:/C:/Users/ACER/Documents/NetBeansProjects/ViewsProject/views/ViewsWeb/web/images/logo/logo-2.png</file>
+            <file>file:/C:/Users/ACER/Documents/NetBeansProjects/ViewsProject/views/ViewsWeb/web/images/logo/logo.png</file>
+            <file>file:/C:/Users/ACER/Documents/NetBeansProjects/ViewsProject/views/ViewsWeb/src/java/Registration/AccountsDTO.java</file>
+            <file>file:/C:/Users/ACER/Documents/NetBeansProjects/ViewsProject/views/ViewsWeb/web/headerad.jsp</file>
+            <file>file:/C:/Users/ACER/Documents/NetBeansProjects/ViewsProject/views/ViewsWeb/web/css/app.css</file>
+            <file>file:/C:/Users/ACER/Documents/NetBeansProjects/ViewsProject/views/ViewsWeb/web/css/font-face.css</file>
+        </group>
+    </open-files>
 </project-private>
