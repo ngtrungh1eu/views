@@ -1,11 +1,11 @@
+<%@taglib prefix="sql" uri="http://java.sun.com/jsp/jstl/sql"%>
 <%-- 
     Document   : productmanager
-    Created on : Mar 12, 2023, 10:55:37 AM
-    Author     : khong
+    Created on : Mar 12, 2023, 2:29:52 PM
+    Author     : ACER
 --%>
 
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%@page import="java.util.List"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="en">
@@ -47,7 +47,235 @@
     <body class="animsition">
         <div class="page-wrapper">
             <!-- HEADER DESKTOP-->
+<<<<<<< HEAD
             <jsp:include page="headerad.jsp"></jsp:include>
+=======
+            <header class="header-desktop3 d-none d-lg-block">
+                <div class="section__content section__content--p35">
+                    <div class="header3-wrap">
+                        <div class="header__logo">
+<<<<<<< HEAD
+                            <a href="#">
+=======
+                            <a href="product">
+>>>>>>> ea1a47ad0ceb09795d2d5db45e6750f63f971343
+                                <img src="images/icon/logo-white.png" alt="CoolAdmin" />
+                            </a>
+                        </div>
+                        <div class="header__navbar">
+                            <ul class="list-unstyled">
+                                <li class="has-sub">
+                                    <a href="#">
+                                        <i class="fas fa-tachometer-alt"></i>Dashboard
+                                        <span class="bot-line"></span>
+                                    </a>
+                                    <ul class="header3-sub-list list-unstyled">
+                                        <li>
+                                            <a href="index.html">Dashboard 1</a>
+                                        </li>
+                                        <li>
+                                            <a href="index2.html">Dashboard 2</a>
+                                        </li>
+                                        <li>
+                                            <a href="index3.html">Dashboard 3</a>
+                                        </li>
+                                        <li>
+                                            <a href="index4.html">Dashboard 4</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <i class="fas fa-shopping-basket"></i>
+                                        <span class="bot-line"></span>eCommerce</a>
+                                </li>
+                                <li>
+                                    <a href="table.html">
+                                        <i class="fas fa-trophy"></i>
+                                        <span class="bot-line"></span>Features</a>
+                                </li>
+                                <li class="has-sub">
+                                    <a href="#">
+                                        <i class="fas fa-copy"></i>
+                                        <span class="bot-line"></span>Pages</a>
+                                    <ul class="header3-sub-list list-unstyled">
+                                        <li>
+                                            <a href="login.html">Login</a>
+                                        </li>
+                                        <li>
+                                            <a href="register.html">Register</a>
+                                        </li>
+                                        <li>
+                                            <a href="forget-pass.html">Forget Password</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="has-sub">
+                                    <a href="#">
+                                        <i class="fas fa-desktop"></i>
+                                        <span class="bot-line"></span>UI Elements</a>
+                                    <ul class="header3-sub-list list-unstyled">
+                                        <li>
+                                            <a href="button.html">Button</a>
+                                        </li>
+                                        <li>
+                                            <a href="badge.html">Badges</a>
+                                        </li>
+                                        <li>
+                                            <a href="tab.html">Tabs</a>
+                                        </li>
+                                        <li>
+                                            <a href="card.html">Cards</a>
+                                        </li>
+                                        <li>
+                                            <a href="alert.html">Alerts</a>
+                                        </li>
+                                        <li>
+                                            <a href="progress-bar.html">Progress Bars</a>
+                                        </li>
+                                        <li>
+                                            <a href="modal.html">Modals</a>
+                                        </li>
+                                        <li>
+                                            <a href="switch.html">Switchs</a>
+                                        </li>
+                                        <li>
+                                            <a href="grid.html">Grids</a>
+                                        </li>
+                                        <li>
+                                            <a href="fontawesome.html">FontAwesome</a>
+                                        </li>
+                                        <li>
+                                            <a href="typo.html">Typography</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="header__tool">
+                            <div class="header-button-item has-noti js-item-menu">
+                                <i class="zmdi zmdi-notifications"></i>
+                                <div class="notifi-dropdown notifi-dropdown--no-bor js-dropdown">
+                                    <div class="notifi__title">
+                                        <p>You have 3 Notifications</p>
+                                    </div>
+                                    <div class="notifi__item">
+                                        <div class="bg-c1 img-cir img-40">
+                                            <i class="zmdi zmdi-email-open"></i>
+                                        </div>
+                                        <div class="content">
+                                            <p>You got a email notification</p>
+                                            <span class="date">April 12, 2018 06:50</span>
+                                        </div>
+                                    </div>
+                                    <div class="notifi__item">
+                                        <div class="bg-c2 img-cir img-40">
+                                            <i class="zmdi zmdi-account-box"></i>
+                                        </div>
+                                        <div class="content">
+                                            <p>Your account has been blocked</p>
+                                            <span class="date">April 12, 2018 06:50</span>
+                                        </div>
+                                    </div>
+                                    <div class="notifi__item">
+                                        <div class="bg-c3 img-cir img-40">
+                                            <i class="zmdi zmdi-file-text"></i>
+                                        </div>
+                                        <div class="content">
+                                            <p>You got a new file</p>
+                                            <span class="date">April 12, 2018 06:50</span>
+                                        </div>
+                                    </div>
+                                    <div class="notifi__footer">
+                                        <a href="#">All notifications</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="header-button-item js-item-menu">
+                                <i class="zmdi zmdi-settings"></i>
+                                <div class="setting-dropdown js-dropdown">
+                                    <div class="account-dropdown__body">
+                                        <div class="account-dropdown__item">
+                                            <a href="#">
+                                                <i class="zmdi zmdi-account"></i>Account</a>
+                                        </div>
+                                        <div class="account-dropdown__item">
+                                            <a href="#">
+                                                <i class="zmdi zmdi-settings"></i>Setting</a>
+                                        </div>
+                                        <div class="account-dropdown__item">
+                                            <a href="#">
+                                                <i class="zmdi zmdi-money-box"></i>Billing</a>
+                                        </div>
+                                    </div>
+                                    <div class="account-dropdown__body">
+                                        <div class="account-dropdown__item">
+                                            <a href="#">
+                                                <i class="zmdi zmdi-globe"></i>Language</a>
+                                        </div>
+                                        <div class="account-dropdown__item">
+                                            <a href="#">
+                                                <i class="zmdi zmdi-pin"></i>Location</a>
+                                        </div>
+                                        <div class="account-dropdown__item">
+                                            <a href="#">
+                                                <i class="zmdi zmdi-email"></i>Email</a>
+                                        </div>
+                                        <div class="account-dropdown__item">
+                                            <a href="#">
+                                                <i class="zmdi zmdi-notifications"></i>Notifications</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="account-wrap">
+                                <div class="account-item account-item--style2 clearfix js-item-menu">
+                                    <div class="image">
+                                        <img src="images/icon/avatar-01.jpg" alt="John Doe" />
+                                    </div>
+                                    <div class="content">
+                                        <a class="js-acc-btn" href="#">john doe</a>
+                                    </div>
+                                    <div class="account-dropdown js-dropdown">
+                                        <div class="info clearfix">
+                                            <div class="image">
+                                                <a href="#">
+                                                    <img src="images/icon/avatar-01.jpg" alt="John Doe" />
+                                                </a>
+                                            </div>
+                                            <div class="content">
+                                                <h5 class="name">
+                                                    <a href="#">john doe</a>
+                                                </h5>
+                                                <span class="email">johndoe@example.com</span>
+                                            </div>
+                                        </div>
+                                        <div class="account-dropdown__body">
+                                            <div class="account-dropdown__item">
+                                                <a href="#">
+                                                    <i class="zmdi zmdi-account"></i>Account</a>
+                                            </div>
+                                            <div class="account-dropdown__item">
+                                                <a href="#">
+                                                    <i class="zmdi zmdi-settings"></i>Setting</a>
+                                            </div>
+                                            <div class="account-dropdown__item">
+                                                <a href="#">
+                                                    <i class="zmdi zmdi-money-box"></i>Billing</a>
+                                            </div>
+                                        </div>
+                                        <div class="account-dropdown__footer">
+                                            <a href="#">
+                                                <i class="zmdi zmdi-power"></i>Logout</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </header>
+>>>>>>> c64148bf77db46eae1bf63e22e5877cf714c49b5
             <!-- END HEADER DESKTOP-->
 
             <!-- HEADER MOBILE-->
@@ -344,7 +572,11 @@
                             <div class="col-md-6 col-lg-3">
                                 <div class="statistic__item statistic__item--green">
                                     <h2 class="number">10,368</h2>
+<<<<<<< HEAD
+                                    <span class="desc">members online</span>
+=======
                                     <span class="desc">members</span>
+>>>>>>> ea1a47ad0ceb09795d2d5db45e6750f63f971343
                                     <div class="icon">
                                         <i class="zmdi zmdi-account-o"></i>
                                     </div>
@@ -472,6 +704,42 @@
                         <div class="row">
                             <div class="col-md-12">
                                 <h3 class="title-5 m-b-35">data table</h3>
+<<<<<<< HEAD
+                                <!--                                                            <div class="table-data__tool">
+                                                                                                <div class="table-data__tool-left">
+                                                                                                    <div class="rs-select2--light rs-select2--md">
+                                                                                                        <select class="js-select2" name="property">
+                                                                                                            <option selected="selected">All Properties</option>
+                                                                                                            <option value="">Option 1</option>
+                                                                                                            <option value="">Option 2</option>
+                                                                                                        </select>
+                                                                                                        <div class="dropDownSelect2"></div>
+                                                                                                    </div>
+                                                                                                    <div class="rs-select2--light rs-select2--sm">
+                                                                                                        <select class="js-select2" name="time">
+                                                                                                            <option selected="selected">Today</option>
+                                                                                                            <option value="">3 Days</option>
+                                                                                                            <option value="">1 Week</option>
+                                                                                                        </select>
+                                                                                                        <div class="dropDownSelect2"></div>
+                                                                                                    </div>
+                                                                                                    <button class="au-btn-filter">
+                                                                                                        <i class="zmdi zmdi-filter-list"></i>filters</button>
+                                                                                                </div>
+                                                                                                <div class="table-data__tool-right">
+                                                                                                    <button class="au-btn au-btn-icon au-btn--green au-btn--small">
+                                                                                                        <i class="zmdi zmdi-plus"></i>add item</button>
+                                                                                                    <div class="rs-select2--dark rs-select2--sm rs-select2--dark2">
+                                                                                                        <select class="js-select2" name="type">
+                                                                                                            <option selected="selected">Export</option>
+                                                                                                            <option value="">Option 1</option>
+                                                                                                            <option value="">Option 2</option>
+                                                                                                        </select>
+                                                                                                        <div class="dropDownSelect2"></div>
+                                                                                                    </div>
+                                                                                                </div>
+                                                                                            </div>-->
+=======
                                 <div class="table-data__tool">
                                     <div class="table-data__tool-left">
                                         <div class="rs-select2--light rs-select2--md">
@@ -512,10 +780,213 @@
                                                                                 </div>-->
                                     </div>
                                 </div>
+>>>>>>> ea1a47ad0ceb09795d2d5db45e6750f63f971343
                                 <div class="table-responsive table-responsive-data2">
                                     <table class="table table-data2">
                                         <thead>
                                             <tr>
+<<<<<<< HEAD
+
+                                                <th>id</th>
+                                                <th>First name</th>
+                                                <th>Last name</th>
+                                                <th>Email</th>
+                                                <th>Password</th>
+                                                <th>DoB</th>  
+                                                <th>Country</th>
+                                                <th>City</th>
+                                                <th>Phone</th>
+                                                <th>Gender</th>
+                                                <th>Role</th>
+
+
+
+
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+
+                                            <c:forEach items="${UserList}" var="user">
+
+
+                                                <tr>
+                                                    <td>${user.user_id}</td>
+                                                    <td>${user.first_name}</td>
+                                                    <td>${user.last_name}</td>
+                                                    <td>${user.email}</td>
+                                                    <td>${user.password}</td>
+                                                    <td>${user.Dob}</td>
+                                                    <td>${user.country}</td>
+                                                    <td>${user.city}</td>
+                                                    <td>${user.phone}</td>
+                                                    <td>${user.gender}</td>
+                                                    <td>${user.role} </td
+                                            <br>
+                                            <td>
+                                                <form action="UserManager" method="GET">
+                                                    <input type="hidden" name="id" value="${user.user_id}">
+                                                    <button class="item" data-toggle="tooltip" data-placement="top" title="Delete" type="submit" value="delete" name ="btAction">
+                                                        <i class="zmdi zmdi-delete"></i>
+                                                    </button>
+                                                </form>
+                                            </td>
+
+
+                                            </tr>
+                                        </c:forEach>
+
+
+
+
+
+
+
+
+
+
+
+                                        <!--                                        <tr class="tr-shadow">
+                                                                                    <td>
+                                                                                        <label class="au-checkbox">
+                                                                                            <input type="checkbox">
+                                                                                            <span class="au-checkmark"></span>
+                                                                                        </label>
+                                                                                    </td>
+                                                                                    <td>Lori Lynch</td>
+                                                                                    <td>
+                                                                                        <span class="block-email">lori@example.com</span>
+                                                                                    </td>
+                                                                                    <td class="desc">Samsung S8 Black</td>
+                                                                                    <td>2018-09-27 02:12</td>
+                                                                                    <td>
+                                                                                        <span class="status--process">Processed</span>
+                                                                                    </td>
+                                                                                    <td>$679.00</td>
+                                                                                    <td><form action="UserManager" method="GET">
+                                                                                             <div class="table-data-feature">
+                                                                                            
+                                                                                            <button class="item" data-toggle="tooltip" data-placement="top" title="Edit" type="submit" value="edit" name = "btAction">
+                                                                                                
+                                                                                                <i class="zmdi zmdi-edit"></i>
+                                                                                            </button>
+                                                                                            <button class="item" data-toggle="tooltip" data-placement="top" title="Delete" type="submit" value="delete" action ="btAction">
+                                                                                                <i class="zmdi zmdi-delete"></i>
+                                                                                            </button>
+                                                                                            <button class="item" data-toggle="tooltip" data-placement="top" title="More" type="submit" value="details" action ="btAction">
+                                                                                                <i class="zmdi zmdi-more"></i>
+                                                                                            </button>
+                                                                                        </div>
+                                                                                        </form>
+                                                                                       
+                                                                                    </td>
+                                                                                </tr>-->
+                                        <!--                                        <tr class="spacer"></tr>
+                                                                                <tr class="tr-shadow">
+                                                                                    <td>
+                                                                                        <label class="au-checkbox">
+                                                                                            <input type="checkbox">
+                                                                                            <span class="au-checkmark"></span>
+                                                                                        </label>
+                                                                                    </td>
+                                                                                    <td>Lori Lynch</td>
+                                                                                    <td>
+                                                                                        <span class="block-email">john@example.com</span>
+                                                                                    </td>
+                                                                                    <td class="desc">iPhone X 64Gb Grey</td>
+                                                                                    <td>2018-09-29 05:57</td>
+                                                                                    <td>
+                                                                                        <span class="status--process">Processed</span>
+                                                                                    </td>
+                                                                                    <td>$999.00</td>
+                                                                                    <td>
+                                                                                        <div class="table-data-feature">
+                                                                                            <button class="item" data-toggle="tooltip" data-placement="top" title="Send">
+                                                                                                <i class="zmdi zmdi-mail-send"></i>
+                                                                                            </button>
+                                                                                            <button class="item" data-toggle="tooltip" data-placement="top" title="Edit">
+                                                                                                <i class="zmdi zmdi-edit"></i>
+                                                                                            </button>
+                                                                                            <button class="item" data-toggle="tooltip" data-placement="top" title="Delete">
+                                                                                                <i class="zmdi zmdi-delete"></i>
+                                                                                            </button>
+                                                                                            <button class="item" data-toggle="tooltip" data-placement="top" title="More">
+                                                                                                <i class="zmdi zmdi-more"></i>
+                                                                                            </button>
+                                                                                        </div>
+                                                                                    </td>
+                                                                                </tr>
+                                                                                <tr class="spacer"></tr>
+                                                                                <tr class="tr-shadow">
+                                                                                    <td>
+                                                                                        <label class="au-checkbox">
+                                                                                            <input type="checkbox">
+                                                                                            <span class="au-checkmark"></span>
+                                                                                        </label>
+                                                                                    </td>
+                                                                                    <td>Lori Lynch</td>
+                                                                                    <td>
+                                                                                        <span class="block-email">lyn@example.com</span>
+                                                                                    </td>
+                                                                                    <td class="desc">iPhone X 256Gb Black</td>
+                                                                                    <td>2018-09-25 19:03</td>
+                                                                                    <td>
+                                                                                        <span class="status--denied">Denied</span>
+                                                                                    </td>
+                                                                                    <td>$1199.00</td>
+                                                                                    <td>
+                                                                                        <div class="table-data-feature">
+                                                                                            <button class="item" data-toggle="tooltip" data-placement="top" title="Send">
+                                                                                                <i class="zmdi zmdi-mail-send"></i>
+                                                                                            </button>
+                                                                                            <button class="item" data-toggle="tooltip" data-placement="top" title="Edit">
+                                                                                                <i class="zmdi zmdi-edit"></i>
+                                                                                            </button>
+                                                                                            <button class="item" data-toggle="tooltip" data-placement="top" title="Delete">
+                                                                                                <i class="zmdi zmdi-delete"></i>
+                                                                                            </button>
+                                                                                            <button class="item" data-toggle="tooltip" data-placement="top" title="More">
+                                                                                                <i class="zmdi zmdi-more"></i>
+                                                                                            </button>
+                                                                                        </div>
+                                                                                    </td>
+                                                                                </tr>
+                                                                                <tr class="spacer"></tr>
+                                                                                <tr class="tr-shadow">
+                                                                                    <td>
+                                                                                        <label class="au-checkbox">
+                                                                                            <input type="checkbox">
+                                                                                            <span class="au-checkmark"></span>
+                                                                                        </label>
+                                                                                    </td>
+                                                                                    <td>Lori Lynch</td>
+                                                                                    <td>
+                                                                                        <span class="block-email">doe@example.com</span>
+                                                                                    </td>
+                                                                                    <td class="desc">Camera C430W 4k</td>
+                                                                                    <td>2018-09-24 19:10</td>
+                                                                                    <td>
+                                                                                        <span class="status--process">Processed</span>
+                                                                                    </td>
+                                                                                    <td>$699.00</td>
+                                                                                    <td>
+                                        -->                                                                                                                                        <div class="table-data-feature">
+                                            <!--                                            <button class="item" data-toggle="tooltip" data-placement="top" title="Send">
+                                                                                            <i class="zmdi zmdi-mail-send"></i>
+                                                                                        </button>
+                                                                                        <button class="item" data-toggle="tooltip" data-placement="top" title="Edit">
+                                                                                            <i class="zmdi zmdi-edit"></i>
+                                                                                        </button>
+                                                                                        <button class="item" data-toggle="tooltip" data-placement="top" title="Delete">
+                                                                                            <i class="zmdi zmdi-delete"></i>
+                                                                                        </button>
+                                                                                        <button class="item" data-toggle="tooltip" data-placement="top" title="More">
+                                                                                            <i class="zmdi zmdi-more"></i>
+                                                                                        </button>
+                                                                                    </div>
+                                                                                </td>
+                                                                            </tr>-->
+                                            </tbody>
+=======
                                                 <th>
                                                     <!--                                                <label class="au-checkbox">
                                                                                                         <input type="checkbox">
@@ -706,6 +1177,7 @@
                                                                                         </td>
                                                                                     </tr>-->
                                         </tbody>
+>>>>>>> ea1a47ad0ceb09795d2d5db45e6750f63f971343
                                     </table>
                                 </div>
                             </div>

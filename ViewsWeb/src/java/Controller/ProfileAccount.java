@@ -6,6 +6,10 @@
 package Controller;
 
 import Registration.AccountsDAO;
+import Registration.AccountsDTO;
+import java.io.IOException;
+import java.io.PrintWriter;
+import java.sql.SQLException;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.SQLException;
@@ -20,7 +24,7 @@ import javax.servlet.http.HttpSession;
 
 /**
  *
- * @author khong
+ * @author ACER
  */
 public class ProfileAccount extends HttpServlet {
 
@@ -31,6 +35,7 @@ public class ProfileAccount extends HttpServlet {
      * @param response servlet response
      * @throws ServletException if a servlet-specific error occurs
      * @throws IOException if an I/O error occurs
+     * @throws java.sql.SQLException
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
@@ -53,26 +58,22 @@ public class ProfileAccount extends HttpServlet {
         String password = (String) request.getSession().getAttribute("txtPassword");
         String id = "";
         AccountsDAO dao = new AccountsDAO();
-        //              AccountsDTO result = dao.checklogin(email, password, id);
-//            if (result != null) {
-        dao.updateAccount(id, email, password, newfirstname, newlastname, Date, newCountry, newCity, newphone, newgender, "user");
-//        request.setAttribute("txtFirstname", newfirstname);
-//        request.setAttribute("txtLastname", newlastname);
-//        request.setAttribute("txtPhone", newphone);
-//        request.setAttribute("gender", newgender);
 
+        dao.updateAccount(id, email, password, newfirstname, newlastname, Date, newCountry, newCity, newphone, newgender, "user");
+
+        request.setAttribute("txtFirstname", newfirstname);
+        request.setAttribute("txtLastname", newlastname);
+        request.setAttribute("txtPhone", newphone);
+        request.setAttribute("gender", newgender);
         HttpSession session = request.getSession();
         try {
             session.setAttribute("AccountP", dao.checklogin(email, password, id));
         } catch (SQLException ex) {
             Logger.getLogger(ProfileAccount.class.getName()).log(Level.SEVERE, null, ex);
         }
-
-//            }
         RequestDispatcher rd = request.getRequestDispatcher(url);
         rd.forward(request, response);
         out.close();
-
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

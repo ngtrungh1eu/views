@@ -8,11 +8,14 @@ package Controller;
 import Registration.ProductsDAO;
 import Registration.AccountsDAO;
 import Registration.AccountsDTO;
+import Registration.CartsDTO;
+import Registration.ProductsDTO;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.List;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
+import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -41,12 +44,27 @@ public class HomeServlet extends HttpServlet {
 
         try {
             ProductsDAO dao = new ProductsDAO();
-            request.setAttribute("ListP", dao.getList(brandValue, typeValue, searchValue));
+            List<ProductsDTO> list = dao.getList(brandValue, typeValue, searchValue);
+            request.setAttribute("ListP", list);
+
+            Cookie[] arr = request.getCookies();
+            String txtCookie = "";
+            if (arr != null) {
+                for (Cookie o : arr) {
+                    if (o.getName().equals("cart")) {
+                        txtCookie += o.getValue();
+                    }
+                }
+            }
+            CartsDTO cart = new CartsDTO(txtCookie, list);
+            request.setAttribute("cart", cart);
         } catch (Exception e) {
         }
         RequestDispatcher rd = request.getRequestDispatcher(url);
         rd.forward(request, response);
     }
+    
+
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**

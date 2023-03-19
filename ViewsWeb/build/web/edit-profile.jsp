@@ -1,11 +1,24 @@
 
 <%-- 
+<<<<<<< HEAD
 Document   : edit-profile
 Created on : Mar 15, 2023, 10:11:21 PM
 Author     : khong
+=======
+    Document   : edit-profile
+<<<<<<< HEAD
+    Created on : Mar 9, 2023, 10:39:55 PM
+    Author     : ACER
+--%>
+
+=======
+    Created on : Mar 15, 2023, 10:11:21 PM
+    Author     : khong
+>>>>>>> c64148bf77db46eae1bf63e22e5877cf714c49b5
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+>>>>>>> ea1a47ad0ceb09795d2d5db45e6750f63f971343
 <!DOCTYPE html>
 <html class="no-js" lang="en">
     <head>
@@ -40,6 +53,7 @@ Author     : khong
         <div id="app">
 
             <!--====== Main Header ======-->
+<<<<<<< HEAD
             <header class="header--style-1 header--box-shadow">
 
                 <!--====== Nav 1 ======-->
@@ -155,7 +169,7 @@ Author     : khong
                                                             <a class="u-c-brand">$ - US DOLLAR</a></li>
                                                         <li>
 
-                                                            <a>Â£ - BRITISH POUND STERLING</a></li>
+                                                            <a>£ - BRITISH POUND STERLING</a></li>
                                                         <li>
 
                                                             <a>? - EURO</a></li>
@@ -1380,6 +1394,9 @@ Author     : khong
                 </nav>
                 <!--====== End - Nav 2 ======-->
             </header>
+=======
+            <jsp:include page="header.jsp" ></jsp:include>
+>>>>>>> ea1a47ad0ceb09795d2d5db45e6750f63f971343
             <!--====== End - Main Header ======-->
 
 
@@ -1432,6 +1449,7 @@ Author     : khong
                                                     <li>
 
                                                         <a href="dash-my-profile.html">My Profile</a></li>
+<<<<<<< HEAD
                                                     <li>
 
                                                         <!--                                                        <a href="dash-address-book.html">Address Book</a></li>-->
@@ -1446,7 +1464,14 @@ Author     : khong
                                                         <!--                                                        <a href="dash-payment-option.html">My Payment Options</a></li>-->
                                                     <li>
 
+<<<<<<< HEAD
                                                         <!--                                                        <a href="dash-cancellation.html">My Returns & Cancellations</a></li>-->
+=======
+                                                        <a href="dash-cancellation.html">My Returns & Cancellations</a></li>
+=======
+                                                    
+>>>>>>> ea1a47ad0ceb09795d2d5db45e6750f63f971343
+>>>>>>> c64148bf77db46eae1bf63e22e5877cf714c49b5
                                                 </ul>
                                             </div>
                                         </div>
@@ -1485,7 +1510,10 @@ Author     : khong
                                         </div>
                                         <!--====== End - Dashboard Features ======-->
                                     </div>
+<<<<<<< HEAD
+=======
                                     <!-- Toan code -->
+>>>>>>> ea1a47ad0ceb09795d2d5db45e6750f63f971343
                                     <div class="col-lg-9 col-md-12">
                                         <div class="dash__box dash__box--shadow dash__box--radius dash__box--bg-white">
                                             <div class="dash__pad-2">
@@ -1573,6 +1601,8 @@ Author     : khong
                                                                             <option value="1992">1992</option>
                                                                             <option value="1993">1993</option>
                                                                             <option value="1994">1994</option>
+<<<<<<< HEAD
+=======
                                                                             <option value="1995">1995</option>
                                                                             <option value="1996">1996</option>
                                                                             <option value="1997">1997</option>
@@ -1581,6 +1611,7 @@ Author     : khong
                                                                             <option value="2000">2000</option>
                                                                             <option value="2001">2001</option>
                                                                             <option value="2002">2002</option>
+>>>>>>> ea1a47ad0ceb09795d2d5db45e6750f63f971343
                                                                         </select></div>
                                                                     <!--====== End - Date of Birth Select-Box ======-->
                                                                 </div>
@@ -1588,8 +1619,13 @@ Author     : khong
 
                                                                     <label class="gl-label" for="gender">GENDER</label><select class="select-box select-box--primary-style u-w-100" id="gender" name="gender">
                                                                         <option selected>Select</option>
+<<<<<<< HEAD
+                                                                        <option value="male">Male</option>
+                                                                        <option value="male">Female</option>
+=======
                                                                         <option value="Male">Male</option>
                                                                         <option value="Female">Female</option>
+>>>>>>> ea1a47ad0ceb09795d2d5db45e6750f63f971343
                                                                     </select></div>
                                                             </div>
                                                             <div class="u-s-m-b-30">
@@ -1635,7 +1671,10 @@ Author     : khong
                                             </div>
                                         </div>
                                     </div>
+<<<<<<< HEAD
+=======
                                     <!-- Toan code -->
+>>>>>>> ea1a47ad0ceb09795d2d5db45e6750f63f971343
                                 </div>
                             </div>
                         </div>
@@ -1646,6 +1685,7 @@ Author     : khong
             </div>
 
             <!--====== Main Footer ======-->
+<<<<<<< HEAD
             <footer>
                 <div class="outer-footer">
                     <div class="container">
@@ -1781,7 +1821,7 @@ Author     : khong
                                 <div class="lower-footer__content">
                                     <div class="lower-footer__copyright">
 
-                                        <span>Copyright Â© 2018</span>
+                                        <span>Copyright © 2018</span>
 
                                         <a href="index.html">Reshop</a>
 
@@ -1802,6 +1842,9 @@ Author     : khong
                     </div>
                 </div>
             </footer>
+=======
+            <jsp:include page="footer.jsp"></jsp:include>
+>>>>>>> ea1a47ad0ceb09795d2d5db45e6750f63f971343
 
             <!--====== Modal Section ======-->
 
@@ -1874,4 +1917,8 @@ Author     : khong
         </div>
         </noscript>
     </body>
+<<<<<<< HEAD
 </html>
+=======
+</html>
+>>>>>>> ea1a47ad0ceb09795d2d5db45e6750f63f971343

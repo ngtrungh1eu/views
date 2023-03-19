@@ -57,6 +57,7 @@ public class ProductDetailServlet extends HttpServlet {
             }
         }
         CartsDTO cart = new CartsDTO(txtCookie, list);
+        request.setAttribute("cart", cart);
         List<ItemsDTO> listItem = cart.getItems();
         int n;
         if (listItem != null) {
@@ -72,6 +73,8 @@ public class ProductDetailServlet extends HttpServlet {
            
         RequestDispatcher rd = request.getRequestDispatcher(url);
         rd.forward(request, response);
+        
+        
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

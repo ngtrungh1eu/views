@@ -1,3 +1,4 @@
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -77,13 +78,19 @@ public class SigninServlet extends HttpServlet {
 
             request.getSession().setAttribute("txtEmail", email);
             request.getSession().setAttribute("txtPassword", password);
+<<<<<<< HEAD
+=======
             //Toan code
+>>>>>>> ea1a47ad0ceb09795d2d5db45e6750f63f971343
             if (result != null) {
                 if (result.getRole().equals("Admin")) {
                     url = "UserManager";
                     HttpSession session = request.getSession();
                     session.setAttribute("Account", result);
+<<<<<<< HEAD
+=======
                     //Toan code
+>>>>>>> ea1a47ad0ceb09795d2d5db45e6750f63f971343
                 } else if (result.getRole().equals("user")) {
                     url = "home.jsp";
                     HttpSession session = request.getSession();
