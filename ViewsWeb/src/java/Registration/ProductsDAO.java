@@ -20,18 +20,12 @@ import java.util.List;
  */
 public class ProductsDAO implements Serializable {
 
-<<<<<<< HEAD
-   
-
-=======
->>>>>>> ea1a47ad0ceb09795d2d5db45e6750f63f971343
     public List<ProductsDTO> getList(String brandValue, String typeValue, String searchValue) {
         ArrayList<ProductsDTO> list;
         list = new ArrayList<ProductsDTO>();
         PreparedStatement stm = null;
         ResultSet rs = null;
         ProductsDTO result = null;
-<<<<<<< HEAD
         try {
             Connection con = DBHelper.getConnection();
             if (con != null) {
@@ -66,63 +60,28 @@ public class ProductsDAO implements Serializable {
                     stm.setString(index, typeValue);
                     index++;
                 }
-=======
-         try {
-             Connection con =  DBHelper.getConnection();
-             if(con != null){
-                 String sql = "select * from products join Categories on products.CateID = Categories.CateID ";
-                 String where = " where ";
-                 if (brandValue != null){
-                     sql += where;
-                     sql += " BrandName = ? ";
-                     where = " and ";
-                 }
-                 if (searchValue != null){
-                     sql += where;
-                     sql += " [Name] like ? ";
-                     where = " and ";
-                 }
-                 if (typeValue != null){
-                     sql += where;
-                     sql += " Type  = ? ";
-                     where = " and ";
-                 }
-                 stm = con.prepareStatement(sql);
-                 int index = 1;
-                 if (brandValue != null){
-                     stm.setString(index, brandValue);
-                     index ++; 
-                 }
-                 if (searchValue != null){
-                     stm.setString(index, "%" + searchValue + "%");
-                     index ++; 
-                 }
-                 if (typeValue != null ){
-                     stm.setString(index, typeValue);
-                     index ++;
-                 }
-                 rs =stm.executeQuery();
-                 while (rs.next()){
-                     int product_id = rs.getInt("ID");
-                     String product_name = rs.getString("Name");
-                     double price = rs.getDouble("Price");
-                     String image = rs.getString("Image");
-                     int cateID = rs.getInt("CateID");
-                     String type = rs.getString("Type");
-                     String brand = rs.getString("brandName");
-                     int saleof = rs.getInt("SaleOff");
-                     int quantity = rs.getInt("Quantity");
-                     result = new ProductsDTO(product_id, product_name, price, image, brand, cateID, type, saleof, quantity);
-                     list.add(result);
-                    
-                 }
-                 return list;
-             }
-         } catch (SQLException e) {
-         }
-         return null;
-     }
-    
+                rs = stm.executeQuery();
+                while (rs.next()) {
+                    int product_id = rs.getInt("ID");
+                    String product_name = rs.getString("Name");
+                    double price = rs.getDouble("Price");
+                    String image = rs.getString("Image");
+                    int cateID = rs.getInt("CateID");
+                    String type = rs.getString("Type");
+                    String brand = rs.getString("brandName");
+                    int saleof = rs.getInt("SaleOff");
+                    int quantity = rs.getInt("Quantity");
+                    result = new ProductsDTO(product_id, product_name, price, image, brand, cateID, type, saleof, quantity);
+                    list.add(result);
+
+                }
+                return list;
+            }
+        } catch (SQLException e) {
+        }
+        return null;
+    }
+
     public ProductsDTO getProductByid(int id) {
         ArrayList<ProductsDTO> list;
         list = new ArrayList<ProductsDTO>();
@@ -154,9 +113,9 @@ public class ProductsDAO implements Serializable {
         } catch (SQLException e) {
         }
         return result;
-             
+
     }
-    
+
     public ProductsDTO getProduct(String pId) {
 
         ProductsDTO p = null;
@@ -219,7 +178,7 @@ public class ProductsDAO implements Serializable {
         ProductsDTO result = null;
         try {
             Connection con = DBHelper.getConnection();
-            
+
             if (con != null) {
                 String sql = " select * from products ";
                 String where = " where ";
@@ -246,7 +205,6 @@ public class ProductsDAO implements Serializable {
                     index++;
                 }
 
->>>>>>> ea1a47ad0ceb09795d2d5db45e6750f63f971343
                 rs = stm.executeQuery();
                 while (rs.next()) {
                     int product_id = rs.getInt("ID");
@@ -257,22 +215,13 @@ public class ProductsDAO implements Serializable {
                     String type = rs.getString("Type");
                     int saleof = rs.getInt("SaleOff");
                     result = new ProductsDTO(product_id, product_name, price, image, cateID, type, saleof);
-<<<<<<< HEAD
-                    System.out.println(rs.getString("Image"));
                     list.add(result);
-                    System.out.println(list.get(0));
-
-=======
-                    list.add(result);
->>>>>>> ea1a47ad0ceb09795d2d5db45e6750f63f971343
                 }
                 return list;
             }
         } catch (SQLException e) {
         }
         return null;
-<<<<<<< HEAD
-=======
 
     }
 
@@ -403,6 +352,5 @@ public class ProductsDAO implements Serializable {
             System.out.println("Query Student error!" + ex.getMessage());
         }
         return null;
->>>>>>> ea1a47ad0ceb09795d2d5db45e6750f63f971343
     }
 }

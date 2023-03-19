@@ -53,19 +53,12 @@ public class CreatAccountServlet extends HttpServlet {
             } else {
                 AccountsDAO dao = new AccountsDAO();
                 String MailChecked = dao.checkEmail(email);
-<<<<<<< HEAD
-
                 System.out.println(MailChecked);
-=======
->>>>>>> ea1a47ad0ceb09795d2d5db45e6750f63f971343
                 if (MailChecked == null) {
                     boolean rs = dao.addAccount(id, email, password, firstname, lastname, dob, country, city, phone, gender, role);
                     if (rs == true) {
                         url = "home.jsp";
-<<<<<<< HEAD
 
-=======
->>>>>>> ea1a47ad0ceb09795d2d5db45e6750f63f971343
                     } else {
                         url = "signup.jsp";
                     }
